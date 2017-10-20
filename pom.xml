@@ -30,9 +30,9 @@
     </description>
 
     <scm>
-        <connection>scm:svn:http://svn.apache.org/repos/asf/sling/trunk/launchpad/builder</connection>
-        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/sling/trunk/launchpad/builder</developerConnection>
-        <url>http://svn.apache.org/viewvc/sling/trunk/launchpad/builder</url>
+        <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</conncetion>
+        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</developerConnection>
+        <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-starter.git</url>
     </scm>
 
     <properties>
