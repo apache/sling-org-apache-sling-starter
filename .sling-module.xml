@@ -20,7 +20,7 @@
 <sling-module>
     <jenkins>
         <jdks>
-            <jdk>8</jdk>
+            <jdk>1.8</jdk>
             <jdk>9</jdk>
         </jdks>
     </jenkins>
