@@ -16,8 +16,10 @@
 #  specific language governing permissions and limitations
 #  under the License.
 #
-# The :launchpad feature defines Sling's launchpad version
-# Only a single artifact is allowed within this feature.
+# The :standalone feature contains artifacts for the standalone jar
 #
-[feature name=:launchpad]
-    org.apache.sling/org.apache.sling.launchpad.base/5.6.10-2.6.26
+[feature name=webapp]
+
+# Add the felix servlet bridge for the webapp case
+[artifacts runModes=:webapp]
+    org.apache.felix/org.apache.felix.http.bridge/3.0.18
