@@ -21,9 +21,9 @@ in the current directory.
 
 2) Start the generated jar with
 
-	 java -jar target/org.apache.sling.starter-10-SNAPSHOT.jar 
+	 java -jar target/org.apache.sling.starter-10.jar 
 	 
-Use the correct version number instead of 10-SNAPSHOT, if needed.
+Use the correct version number instead of 10, if needed.
 
 3) Browse Sling in:
 
@@ -38,5 +38,5 @@ How to run the Sling Starter module in webapp mode
 	
 in the current directory.
 
-2) Deploy target/org.apache.sling.starter-10-SNAPSHOT.war to your favorite application
+2) Deploy target/org.apache.sling.starter-10.war to your favorite application
 server or servlet container. Servlet 3.1 is a minimum requirement for the web app.
