@@ -15,3 +15,5 @@ maven-eclipse.xml
 .DS_Store
 jcr.log
 atlassian-ide-plugin.xml
+
+/sling/
