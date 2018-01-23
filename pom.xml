@@ -22,7 +22,7 @@
 
     <artifactId>org.apache.sling.starter</artifactId>
     <packaging>slingstart</packaging>
-    <version>11-SNAPSHOT</version>
+    <version>10-SNAPSHOT</version>
 
     <name>Apache Sling Starter Application</name>
     <description>
