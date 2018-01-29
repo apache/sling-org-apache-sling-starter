@@ -51,7 +51,7 @@
     org.apache.sling/org.apache.sling.hc.api/1.0.2
     org.apache.sling/org.apache.sling.hc.core/1.2.10
     org.apache.sling/org.apache.sling.hc.webconsole/1.1.2
-    org.apache.sling/org.apache.sling.i18n/2.5.10
+    org.apache.sling/org.apache.sling.i18n/2.5.12
     org.apache.sling/org.apache.sling.installer.console/1.0.2
     org.apache.sling/org.apache.sling.installer.provider.jcr/3.1.26
     org.apache.sling/org.apache.sling.jcr.contentloader/2.2.4
