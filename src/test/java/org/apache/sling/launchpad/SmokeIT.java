@@ -126,7 +126,7 @@ public class SmokeIT {
     public void ensureRepositoryIsStarted() throws Exception {
         try ( CloseableHttpClient client = newClient() ) {
 
-            HttpGet get = new HttpGet("http://localhost:" + LAUNCHPAD_PORT + "/server/default/jcr:root");
+            HttpGet get = new HttpGet("http://localhost:" + LAUNCHPAD_PORT + "/server/default/jcr:root/content");
 
             try ( CloseableHttpResponse response = client.execute(get) ) {
 
@@ -147,7 +147,7 @@ public class SmokeIT {
 
                 Node nameAttr = attrs.getNamedItemNS("http://www.jcp.org/jcr/sv/1.0", "name");
                 assertThat("no 'name' attribute found", nameAttr, notNullValue());
-                assertThat("Invalid name attribute value", nameAttr.getNodeValue(), equalTo("jcr:root"));
+                assertThat("Invalid name attribute value", nameAttr.getNodeValue(), equalTo("content"));
             }
         }
     }
