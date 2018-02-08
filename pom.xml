@@ -38,7 +38,7 @@
 
     <properties>
         <sling.java.version>8</sling.java.version>
-        <IT.expected.bundles.count>125</IT.expected.bundles.count>
+        <IT.expected.bundles.count>126</IT.expected.bundles.count>
     </properties>
 
     <build>
