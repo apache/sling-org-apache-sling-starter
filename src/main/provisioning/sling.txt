@@ -37,7 +37,7 @@
     org.apache.sling/org.apache.sling.adapter/2.1.10
     org.apache.sling/org.apache.sling.api/2.16.4
     org.apache.sling/org.apache.sling.auth.core/1.4.2
-    org.apache.sling/org.apache.sling.auth.form/1.0.8
+    org.apache.sling/org.apache.sling.auth.form/1.0.9-SNAPSHOT
     org.apache.sling/org.apache.sling.bundleresource.impl/2.3.0
     org.apache.sling/org.apache.sling.commons.classloader/1.4.2
     org.apache.sling/org.apache.sling.commons.compiler/2.3.6
