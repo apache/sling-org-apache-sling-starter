@@ -24,7 +24,7 @@
 
 [artifacts]
     # Add the Slingshot Sample provisioning model
-    org.apache.sling/org.apache.sling.sample.slingshot/0.8.0/slingfeature/slingfeature
+    org.apache.sling/org.apache.sling.sample.slingshot/0.8.1-SNAPSHOT/slingfeature/slingfeature
     commons-collections/commons-collections/3.2.2
     org.apache.commons/commons-collections4/4.1
     commons-codec/commons-codec/1.11
@@ -57,7 +57,6 @@
     org.apache.sling/org.apache.sling.installer.hc/1.0.0
     org.apache.sling/org.apache.sling.jcr.contentloader/2.2.4
     org.apache.sling/org.apache.sling.jcr.resource/3.0.10
-    org.apache.sling/org.apache.sling.launchpad.content/2.0.13-SNAPSHOT
     org.apache.sling/org.apache.sling.models.api/1.3.6
     org.apache.sling/org.apache.sling.models.impl/1.4.6
     org.apache.sling/org.apache.sling.resourceresolver/1.6.0
@@ -72,6 +71,7 @@
     org.apache.felix/org.apache.felix.http.whiteboard/3.0.0
 
 [artifacts startLevel=5]
+    org.apache.sling/org.apache.sling.starter.content/1.0.0-SNAPSHOT
     org.apache.sling/org.apache.sling.starter.startup/1.0.4
     org.apache.sling/org.apache.sling.extensions.webconsolebranding/1.0.2
     org.apache.sling/org.apache.sling.extensions.webconsolesecurityprovider/1.0.0
