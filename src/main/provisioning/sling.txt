@@ -97,9 +97,9 @@
     org.apache.felix/org.apache.felix.http.sslfilter/1.2.4
     org.apache.felix/org.apache.felix.scr/2.1.0
     org.apache.felix/org.apache.felix.metatype/1.1.6
-    org.apache.pdfbox/pdfbox/2.0.8
-    org.apache.pdfbox/fontbox/2.0.8
-    org.apache.pdfbox/jempbox/1.8.13
+    org.apache.pdfbox/pdfbox/2.0.9
+    org.apache.pdfbox/fontbox/2.0.9
+    org.apache.pdfbox/jempbox/1.8.14
     org.apache.tika/tika-core/1.18
     org.apache.tika/tika-parsers/1.18
 
