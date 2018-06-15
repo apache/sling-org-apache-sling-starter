@@ -17,7 +17,7 @@
 #  under the License.
 #
 #
-[feature name=sling-validation]
+[feature name=sling-caconfig]
 
 [artifacts]
     org.apache.sling/org.apache.sling.caconfig.api/1.1.0
