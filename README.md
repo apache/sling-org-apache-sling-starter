@@ -10,7 +10,7 @@ The starter project produces both a Standalone Java Application which
 contains everything needed to run the Launchpad in a single JAR file and a Web
 Application.
 
-How to run the Sling Starer module in Standalone mode
+How to run the Sling Starter module in Standalone mode
 ----------------------------------------
 
   NOTE: "mvn clean" deletes the "sling" work directory in the project base
