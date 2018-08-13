@@ -46,7 +46,7 @@
     org.apache.sling/org.apache.sling.commons.osgi/2.4.0
     org.apache.sling/org.apache.sling.commons.scheduler/2.7.2
     org.apache.sling/org.apache.sling.commons.threads/3.2.18
-    org.apache.sling/org.apache.sling.engine/2.6.12
+    org.apache.sling/org.apache.sling.engine/2.6.14
     org.apache.sling/org.apache.sling.fsresource/2.1.12
     org.apache.sling/org.apache.sling.hc.api/1.0.2
     org.apache.sling/org.apache.sling.hc.core/1.2.10
