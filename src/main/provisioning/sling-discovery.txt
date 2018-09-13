@@ -17,7 +17,7 @@
 #  under the License.
 #
 #
-[feature name=sling-event]
+[feature name=sling-discovery]
 
 [artifacts]
     org.apache.sling/org.apache.sling.discovery.api/1.0.4
