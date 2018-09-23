@@ -78,7 +78,7 @@
     org.apache.felix/org.apache.felix.inventory/1.0.6
     org.apache.felix/org.apache.felix.prefs/1.1.0
     org.apache.felix/org.apache.felix.webconsole/4.3.8
-    org.apache.felix/org.apache.felix.webconsole.plugins.ds/2.0.8
+    org.apache.felix/org.apache.felix.webconsole.plugins.ds/2.1.0
     org.apache.felix/org.apache.felix.webconsole.plugins.obr/1.0.4
     org.apache.felix/org.apache.felix.webconsole.plugins.packageadmin/1.0.4
     org.apache.felix/org.apache.felix.webconsole.plugins.event/1.1.8
@@ -95,7 +95,7 @@
 
 [artifacts startLevel=10]
     org.apache.felix/org.apache.felix.http.sslfilter/1.2.4
-    org.apache.felix/org.apache.felix.scr/2.1.2
+    org.apache.felix/org.apache.felix.scr/2.1.8
     org.apache.felix/org.apache.felix.metatype/1.2.0
     org.apache.pdfbox/pdfbox/2.0.9
     org.apache.pdfbox/fontbox/2.0.9
