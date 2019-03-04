@@ -62,8 +62,7 @@
     org.apache.sling/org.apache.sling.serviceusermapper/1.4.4
     org.apache.sling/org.apache.sling.serviceuser.webconsole/1.0.0
     org.apache.sling/org.apache.sling.servlets.get/2.1.40
-    # 2.3.28 breaks ITs, see SLING-8300
-    org.apache.sling/org.apache.sling.servlets.post/2.3.26
+    org.apache.sling/org.apache.sling.servlets.post/2.3.28
     org.apache.sling/org.apache.sling.servlets.resolver/2.5.2
     org.apache.sling/org.apache.sling.xss/2.1.0
     javax.mail/mail/1.5.0-b01
