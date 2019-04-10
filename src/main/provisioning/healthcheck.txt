@@ -27,7 +27,8 @@
 
 # sling health check bundles at startlevel 20
 [artifacts startLevel=20]
-    org.apache.sling/org.apache.sling.hc.api/1.0.2
+    org.apache.sling/org.apache.sling.hc.api/1.0.4
+    org.apache.sling/org.apache.sling.hc.support/1.0.6
 
 [configurations]
     
@@ -48,27 +49,35 @@
       "org.apache.sling.jcr.api.SlingRepository",
       "org.apache.sling.engine.auth.Authenticator",
       "org.apache.sling.api.resource.ResourceResolverFactory",
-      "org.apache.sling.api.servlets.ServletResolver",      
+      "org.apache.sling.api.servlets.ServletResolver",
       "javax.script.ScriptEngineManager",
     ]
 
   ## bundles
   
-  org.apache.felix.hc.generalchecks.BundlesStartedCheck  
+  org.apache.felix.hc.generalchecks.BundlesStartedCheck
     hc.tags=["bundles"]
     
-  ## system resources    
+  ## system resources
   
-  org.apache.felix.hc.generalchecks.ThreadUsageCheck  
+  org.apache.felix.hc.generalchecks.ThreadUsageCheck
     hc.tags=["threads", "cpu", "system-resources"]
 
   org.apache.felix.hc.generalchecks.CpuCheck
     hc.tags=["cpu", "system-resources"]
-        
-   org.apache.felix.hc.generalchecks.DiskSpaceCheck    
+    cpuPercentageThresholdWarn=L"95"
+    
+   org.apache.felix.hc.generalchecks.DiskSpaceCheck
     hc.tags=["diskspace", "system-resources"]
+    diskPaths=["."]
   
    org.apache.felix.hc.generalchecks.MemoryCheck
     hc.tags=["memory", "system-resources"]
-    
-  
+    heapUsedPercentageThresholdWarn=L"95"
+    heapUsedPercentageThresholdCritical=L"100"
+
+   ## service user for scripted health check (to make it easy to use jcr:/path/to/script urls)
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-hc-support
+    user.mapping=[
+      "org.apache.sling.hc.support\=sling-readall"
+    ]
