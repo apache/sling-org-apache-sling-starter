@@ -90,5 +90,6 @@
     osgi.http.whiteboard.context.select="(osgi.http.whiteboard.context.name\=*)"
     osgi.http.whiteboard.filter.regex="(?!/system/).*"
     responseTextFor503="classpath:org.apache.sling.starter.content:content/content/startup/index.html"
+    includeExecutionResult=B"false"
     autoDisableFilter=B"true"
     avoid404DuringStartup=B"true"
