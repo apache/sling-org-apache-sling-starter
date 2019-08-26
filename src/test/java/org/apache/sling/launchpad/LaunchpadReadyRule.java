@@ -39,7 +39,7 @@ public class LaunchpadReadyRule extends ExternalResource {
     public LaunchpadReadyRule(int launchpadPort) {
 
         checks.add(new Check("http://localhost:" + launchpadPort + "/server/default/jcr:root/content"));
-        checks.add(new Check("http://localhost:" + launchpadPort + "/content/starter/index.html") {
+        checks.add(new Check("http://localhost:" + launchpadPort + "/content/starter.html") {
             @Override
             public String runCheck(HttpResponse response) throws Exception {
                 try (InputStreamReader isr = new InputStreamReader(response.getEntity().getContent());
