@@ -87,7 +87,7 @@
     org.apache.sling/org.apache.sling.starter.content/1.0.6
     commons-collections/commons-collections/3.2.2
     org.apache.commons/commons-collections4/4.2
-    commons-codec/commons-codec/1.12
+    commons-codec/commons-codec/1.13
     org.apache.commons/commons-math/2.2
     org.apache.httpcomponents/httpcore-osgi/4.4.10
     org.apache.httpcomponents/httpclient-osgi/4.5.6
