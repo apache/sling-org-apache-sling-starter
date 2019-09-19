@@ -84,6 +84,7 @@
     # Add the Slingshot Sample provisioning model
     org.apache.sling/org.apache.sling.sample.slingshot/0.9.0/slingfeature/slingfeature
     # Default Starter content
+    # Adjust responseTextFor503 in healthcheck.txt to "classpath:org.apache.sling.starter.content:startup/index.html" when updating org.apache.sling.starter.content, see SLING-8721
     org.apache.sling/org.apache.sling.starter.content/1.0.6
     commons-collections/commons-collections/3.2.2
     org.apache.commons/commons-collections4/4.2
