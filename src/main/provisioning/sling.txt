@@ -29,7 +29,7 @@
 [artifacts startLevel=5]
     org.apache.felix/org.apache.felix.http.whiteboard/4.0.0
     org.apache.sling/org.apache.sling.extensions.webconsolebranding/1.0.2
-    org.apache.sling/org.apache.sling.extensions.webconsolesecurityprovider/1.2.2
+    org.apache.sling/org.apache.sling.extensions.webconsolesecurityprovider/1.2.4
     org.apache.felix/org.apache.felix.inventory/1.0.6
     org.apache.felix/org.apache.felix.prefs/1.1.0
     org.apache.felix/org.apache.felix.webconsole/4.3.8
@@ -48,7 +48,7 @@
     commons-fileupload/commons-fileupload/1.3.3
     org.apache.sling/org.apache.sling.commons.log.webconsole/1.0.0
     org.apache.sling/org.apache.sling.api/2.20.0
-    org.apache.sling/org.apache.sling.auth.core/1.4.2
+    org.apache.sling/org.apache.sling.auth.core/1.4.4
     
 [artifacts startLevel=10]
     org.apache.felix/org.apache.felix.http.sslfilter/1.2.6
@@ -61,7 +61,7 @@
 [artifacts startLevel=15]
     org.apache.sling/org.apache.sling.jcr.jcr-wrapper/2.0.0
     org.apache.sling/org.apache.sling.jcr.api/2.4.0
-    org.apache.sling/org.apache.sling.jcr.base/3.0.6
+    org.apache.sling/org.apache.sling.jcr.base/3.1.0
     org.apache.sling/org.apache.sling.jcr.registration/1.0.6
     org.apache.jackrabbit/jackrabbit-api/${jackrabbit.version}
     org.apache.jackrabbit/jackrabbit-jcr-commons/${jackrabbit.version}
@@ -97,13 +97,13 @@
     org.apache.sling/org.apache.sling.bundleresource.impl/2.3.2
     org.apache.sling/org.apache.sling.commons.classloader/1.4.4
     org.apache.sling/org.apache.sling.commons.compiler/2.3.6
-    org.apache.sling/org.apache.sling.commons.fsclassloader/1.0.10
+    org.apache.sling/org.apache.sling.commons.fsclassloader/1.0.12
     org.apache.sling/org.apache.sling.commons.mime/2.2.0
     org.apache.sling/org.apache.sling.commons.osgi/2.4.0
-    org.apache.sling/org.apache.sling.commons.scheduler/2.7.2
+    org.apache.sling/org.apache.sling.commons.scheduler/2.7.4
     org.apache.sling/org.apache.sling.commons.threads/3.2.18
-    org.apache.sling/org.apache.sling.engine/2.6.18
-    org.apache.sling/org.apache.sling.fsresource/2.1.14
+    org.apache.sling/org.apache.sling.engine/2.6.20
+    org.apache.sling/org.apache.sling.fsresource/2.1.16
     org.apache.sling/org.apache.sling.i18n/2.5.14
     org.apache.sling/org.apache.sling.installer.console/1.0.2
     org.apache.sling/org.apache.sling.installer.provider.jcr/3.1.26
@@ -112,12 +112,12 @@
     org.apache.sling/org.apache.sling.jcr.resource/3.0.18
     org.apache.sling/org.apache.sling.models.api/1.3.8
     org.apache.sling/org.apache.sling.models.impl/1.4.10
-    org.apache.sling/org.apache.sling.resourceresolver/1.6.8
+    org.apache.sling/org.apache.sling.resourceresolver/1.6.12
     org.apache.sling/org.apache.sling.serviceusermapper/1.4.4
-    org.apache.sling/org.apache.sling.serviceuser.webconsole/1.0.0
+    org.apache.sling/org.apache.sling.serviceuser.webconsole/1.0.2
     org.apache.sling/org.apache.sling.servlets.get/2.1.40
-    org.apache.sling/org.apache.sling.servlets.post/2.3.30
-    org.apache.sling/org.apache.sling.servlets.resolver/2.5.2
+    org.apache.sling/org.apache.sling.servlets.post/2.3.32
+    org.apache.sling/org.apache.sling.servlets.resolver/2.5.6
     org.apache.sling/org.apache.sling.xss/2.1.8
     javax.mail/mail/1.5.0-b01
     org.apache.geronimo.bundles/jstl/1.2_1
