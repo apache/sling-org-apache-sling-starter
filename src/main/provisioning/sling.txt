@@ -101,7 +101,7 @@
     org.apache.sling/org.apache.sling.commons.mime/2.2.2
     org.apache.sling/org.apache.sling.commons.osgi/2.4.0
     org.apache.sling/org.apache.sling.commons.scheduler/2.7.4
-    org.apache.sling/org.apache.sling.commons.threads/3.2.18
+    org.apache.sling/org.apache.sling.commons.threads/3.2.20
     org.apache.sling/org.apache.sling.engine/2.6.20
     org.apache.sling/org.apache.sling.fsresource/2.1.16
     org.apache.sling/org.apache.sling.i18n/2.5.14
