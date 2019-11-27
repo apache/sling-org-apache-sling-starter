@@ -21,7 +21,7 @@
 
 [artifacts]
     org.apache.sling/org.apache.sling.scripting.api/2.2.0
-    org.apache.sling/org.apache.sling.scripting.core/2.0.58
+    org.apache.sling/org.apache.sling.scripting.core/2.1.0
     org.apache.sling/org.apache.sling.scripting.javascript/3.0.4
     org.apache.sling/org.apache.sling.scripting.jsp/2.3.4
     org.apache.sling/org.apache.sling.scripting.jsp-api/1.0.0
