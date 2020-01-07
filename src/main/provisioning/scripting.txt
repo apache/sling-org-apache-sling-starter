@@ -23,9 +23,9 @@
     org.apache.sling/org.apache.sling.scripting.api/2.2.0
     org.apache.sling/org.apache.sling.scripting.core/2.1.0
     org.apache.sling/org.apache.sling.scripting.javascript/3.1.2
-    org.apache.sling/org.apache.sling.scripting.jsp/2.4.0
+    org.apache.sling/org.apache.sling.scripting.jsp/2.4.2
     org.apache.sling/org.apache.sling.scripting.jsp-api/1.0.2
-    org.apache.sling/org.apache.sling.scripting.el-api/1.0.0
+    org.apache.sling/org.apache.sling.scripting.el-api/1.0.2
     org.apache.sling/org.apache.sling.scripting.jsp.taglib/2.4.0
     org.antlr/antlr4-runtime/4.7.2
     org.apache.sling/org.apache.sling.scripting.sightly.runtime/1.2.0-1.4.0
