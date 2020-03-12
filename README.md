@@ -10,6 +10,8 @@ The starter project produces both a Standalone Java Application which
 contains everything needed to run the Launchpad in a single JAR file and a Web
 Application.
 
+It is not meant to be a production-ready setup, more as a way to facilitate experimenting and learning Sling. 
+
 How to run the Sling Starter module in Standalone mode
 ----------------------------------------
 
