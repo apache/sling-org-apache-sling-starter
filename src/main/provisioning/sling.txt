@@ -38,7 +38,7 @@
     org.apache.felix/org.apache.felix.webconsole.plugins.packageadmin/1.0.4
     org.apache.felix/org.apache.felix.webconsole.plugins.event/1.1.8
     org.apache.felix/org.apache.felix.webconsole.plugins.memoryusage/1.0.10
-    org.apache.sling/org.apache.sling.commons.johnzon/1.1.2
+    org.apache.sling/org.apache.sling.commons.johnzon/1.2.0
     org.apache.felix/org.apache.felix.bundlerepository/2.0.10
     org.apache.sling/org.apache.sling.extensions.threaddump/0.2.2
     org.apache.aries.jmx/org.apache.aries.jmx.api/1.1.5
