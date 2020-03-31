@@ -21,6 +21,7 @@
 
 [variables]
     oak.version=1.26.0
+    sling.home=""
 
 # The segment node store is used via a configuration
 [artifacts startLevel=10]
@@ -45,6 +46,9 @@
     org.apache.jackrabbit/oak-store-spi/${oak.version}
 
 [artifacts startLevel=15 runModes=oak_tar]
+    org.apache.jackrabbit/oak-segment-tar/${oak.version}
+
+[artifacts startLevel=15 runModes=oak_composite_seed]
     org.apache.jackrabbit/oak-segment-tar/${oak.version}
 
 [artifacts startLevel=15 runModes=oak_mongo]
@@ -95,6 +99,22 @@
 [configurations runModes=oak_tar]
   org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
     name="Default\ NodeStore"
+
+[configurations runModes=oak_composite_seed]
+  org.apache.jackrabbit.oak.composite.CrossMountReferenceValidatorProvider
+    failOnDetection=B"true"
+
+  org.apache.jackrabbit.oak.composite.MountInfoProviderService
+    mountName="libs"
+    readOnlyMount=B"false"
+    pathsSupportingFragments=[]
+    mountedPaths=["/libs","/apps"]
+
+  org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
+    service.ranking=I"100"
+    name="Oak-Segment-Tar"
+    repository.home="${sling.home}/repository-libs"
+    host="localhost"
 
 [configurations runModes=oak_mongo]
   org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService
