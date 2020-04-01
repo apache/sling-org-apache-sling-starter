@@ -51,6 +51,9 @@
 [artifacts startLevel=15 runModes=oak_composite_seed]
     org.apache.jackrabbit/oak-segment-tar/${oak.version}
 
+[artifacts startLevel=15 runModes=oak_composite_run]
+    org.apache.jackrabbit/oak-segment-tar/${oak.version}
+
 [artifacts startLevel=15 runModes=oak_mongo]
     org.mongodb/mongo-java-driver/3.8.2
     com.h2database/h2-mvstore/1.4.194
@@ -101,6 +104,10 @@
     name="Default\ NodeStore"
 
 [configurations runModes=oak_composite_seed]
+  org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
+    name="Default\ NodeStore"
+    repository.home="sling/sling-seed/repository-libs"
+
   org.apache.jackrabbit.oak.composite.CrossMountReferenceValidatorProvider
     failOnDetection=B"true"
 
@@ -110,11 +117,43 @@
     pathsSupportingFragments=[]
     mountedPaths=["/libs","/apps"]
 
-  org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
-    service.ranking=I"100"
-    name="Oak-Segment-Tar"
-    repository.home="${sling.home}/repository-libs"
-    host="localhost"
+[configurations runModes=oak_composite_run]
+    org.apache.jackrabbit.oak.composite.CompositeNodeStoreService
+      seedMount="libs"
+      enabled=B"true"
+      enableChecks=B"false"
+      partialReadOnly=B"true"
+
+    org.apache.jackrabbit.oak.composite.CrossMountReferenceValidatorProvider
+      failOnDetection=B"true"
+
+    org.apache.jackrabbit.oak.composite.MountInfoProviderService
+      mountName="libs"
+      readOnlyMount=B"true"
+      pathsSupportingFragments=["/oak:index/*$"]
+      mountedPaths=["/libs", "/apps", "/jcr:system/rep:permissionStore/oak:mount-libs-default"]
+
+    org.apache.jackrabbit.oak.composite.checks.NodeTypeMountedNodeStoreChecker~referenceable
+      errorLabel="referenceable node"
+      invalidNodeType="mix:referenceable"
+      excludedNodeTypes=["nt:resource"]
+
+    org.apache.jackrabbit.oak.composite.checks.NodeTypeMountedNodeStoreChecker~versionable
+      errorLabel="versionable node"
+      invalidNodeType="mix:versionable"
+
+    org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory~libs
+      role="composite-mount-libs"
+      customBlobStore=B"false"
+      nodeDeduplicationCache.size=I"0"
+      repository.home="sling/sling-composite/repository-libs"
+
+    org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory~global
+      service.ranking=I"100"
+      role="composite-global"
+      registerDescriptors=B"true"
+      dispatchChanges=B"true"
+      repository.home="sling/sling-composite/repository" # for clarity
 
 [configurations runModes=oak_mongo]
   org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService
