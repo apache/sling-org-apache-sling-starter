@@ -219,3 +219,8 @@
       "org.apache.sling.jcr.resource:validation\=sling-readall"
     ]
 
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-installer-factories
+    user.mapping=[
+      "org.apache.sling.installer.factory.packages\=sling-package-install"
+    ]
+
