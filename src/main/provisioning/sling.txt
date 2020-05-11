@@ -91,7 +91,7 @@
     org.apache.httpcomponents/httpcore-osgi/4.4.12
     org.apache.httpcomponents/httpclient-osgi/4.5.10
     org.apache.sling/org.apache.sling.adapter/2.1.10
-    org.apache.sling/org.apache.sling.auth.form/1.0.16
+    org.apache.sling/org.apache.sling.auth.form/1.0.20
     org.apache.sling/org.apache.sling.bundleresource.impl/2.3.2
     org.apache.sling/org.apache.sling.commons.classloader/1.4.4
     org.apache.sling/org.apache.sling.commons.compiler/2.3.6
