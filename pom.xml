@@ -129,7 +129,82 @@
                         <IT.expected.bundles.count>${IT.expected.bundles.count}</IT.expected.bundles.count>
                     </systemPropertyVariables>
                 </configuration>
-            </plugin>            
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>sling-feature-converter-maven-plugin</artifactId>
+                <version>1.0.4</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>convert-pm</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>convert-pm</goal>
+                        </goals>
+                        <configuration>
+                            <inputFolder>src/main/provisioning</inputFolder>
+                            <outputFolder>target/fm</outputFolder>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <version>${project.version}</version>
+                            <frameworkProperties>
+                                launchpad:felix.systempackages.substitution=true,
+                                launchpad:felix.systempackages.calculate.uses=true
+                            </frameworkProperties>
+                            <excludeBundles>
+                                org.apache.sling.launchpad.installer,
+                                org.apache.sling.jcr.repoinit.impl.RepositoryInitializer
+                            </excludeBundles>
+                            <runModes>
+                                oak_tar,
+                                :standalone
+                            </runModes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>slingfeature-maven-plugin</artifactId>
+                <version>1.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <features>target/fm</features>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>aggregate-features</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>aggregate-features</goal>
+                            <!--  fails for now, but application starts ...
+                            <goal>analyse-features</goal>
+                             -->
+                            <goal>attach-features</goal>
+                        </goals>
+                        <configuration>
+                            <framework>
+                                <groupId>org.apache.felix</groupId>
+                                <artifactId>org.apache.felix.framework</artifactId>
+                                <version>6.0.3</version>
+                            </framework>
+                            <scans>
+                                <scan>
+                                    <includeClassifier>oak_tar</includeClassifier>
+                                </scan>
+                            </scans>
+                            <aggregates>
+                                <aggregate>
+                                    <classifier>oak_tar</classifier>
+                                    <filesInclude>**/*.json</filesInclude>
+                                    <title>Sling With Oak Segment NS Persistence</title>
+                                </aggregate>
+                            </aggregates>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <pluginManagement>
