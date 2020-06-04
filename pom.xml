@@ -171,6 +171,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <features>target/fm</features>
+                    <generatedFeatures>${basedir}/target/fm</generatedFeatures>
                 </configuration>
                 <executions>
                     <execution>
