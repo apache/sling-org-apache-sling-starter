@@ -63,6 +63,7 @@
                             <includes>
                                 <include>sling/**</include>
                                 <include>coverage.ec</include>
+                                <include>launcher/**</include>
                             </includes>
                         </fileset>
                     </filesets>
@@ -226,6 +227,7 @@
                         <excludes combine.children="append">
                             <!-- Exclude sling instance -->
                             <exclude>sling/**</exclude>
+                            <exclude>launcher/**</exclude>
                         </excludes>
                     </configuration>
                 </plugin>
