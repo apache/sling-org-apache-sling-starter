@@ -48,3 +48,36 @@ in the current directory.
 
 2) Deploy target/org.apache.sling.starter-10-SNAPSHOT.war to your favorite application
 server or servlet container. Servlet 3.1 is a minimum requirement for the web app.
+
+Experimental Feature Model support
+----------------------------------------
+
+During the build the provisioning model files will be converted on the fly to feature model files
+on-the-fly. The conversion taking into account the `oak_tar` runmode places its results in
+`target/fm/oak_tar`. In a similar way, the MongoDB feature files are placed under
+`target/fm/oak_mongo`.
+
+For convenience, the results are aggregates in a single, standalone feature file. Due to technical
+limitations only a single aggregate feature file is created, by default the `oak_tar` one, found
+under  `target/slingfeature-tmp/feature-oak_tar.json`.
+
+If you don't have a copy of the feature launcher jar, download it, for instance using
+
+    $ mvn dependency:get dependency:copy \
+        -Dartifact=org.apache.sling:org.apache.sling.feature.launcher:LATEST \
+        -DoutputDirectory=.
+
+To launch Sling using the feature launcher, simply execute
+
+    $ java -jar org.apache.sling.feature.launcher-*.jar -f target/slingfeature-tmp/feature-oak_tar.json
+    
+To clean up the repository state just delete the `launcher` directory.
+
+To generate the oak_mongo aggregate run the build and define the `fm.oak_mongo` property, e.g.
+
+    $ mvn clean package -Dfm.oak_mongo
+    
+The instruction to launch Sling then becomes
+
+     $ java -jar org.apache.sling.feature.launcher-*.jar -f target/slingfeature-tmp/feature-oak_mongo.json
+     
