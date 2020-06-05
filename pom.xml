@@ -135,29 +135,45 @@
                 <artifactId>sling-feature-converter-maven-plugin</artifactId>
                 <version>1.0.4</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>${project.artifactId}</artifactId>
+                    <version>${project.version}</version>
+                    <inputFolder>src/main/provisioning</inputFolder>
+                    <frameworkProperties>
+                        launchpad:felix.systempackages.substitution=true,
+                        launchpad:felix.systempackages.calculate.uses=true
+                    </frameworkProperties>
+                    <excludeBundles>
+                        org.apache.sling.launchpad.installer,
+                        org.apache.sling.jcr.repoinit.impl.RepositoryInitializer
+                    </excludeBundles>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>convert-pm</id>
+                        <id>convert-pm-oak_tar</id>
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>convert-pm</goal>
                         </goals>
                         <configuration>
-                            <inputFolder>src/main/provisioning</inputFolder>
-                            <outputFolder>target/fm</outputFolder>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <version>${project.version}</version>
-                            <frameworkProperties>
-                                launchpad:felix.systempackages.substitution=true,
-                                launchpad:felix.systempackages.calculate.uses=true
-                            </frameworkProperties>
-                            <excludeBundles>
-                                org.apache.sling.launchpad.installer,
-                                org.apache.sling.jcr.repoinit.impl.RepositoryInitializer
-                            </excludeBundles>
+                            <outputFolder>target/fm/oak_tar</outputFolder>
                             <runModes>
                                 oak_tar,
+                                :standalone
+                            </runModes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>convert-pm-oak_mongo</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>convert-pm</goal>
+                        </goals>
+                        <configuration>
+                            <outputFolder>target/fm/oak_mongo</outputFolder>
+                            <runModes>
+                                oak_mongo,
                                 :standalone
                             </runModes>
                         </configuration>
@@ -170,8 +186,12 @@
                 <version>1.3.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <features>target/fm</features>
-                    <generatedFeatures>${basedir}/target/fm</generatedFeatures>
+                    <features>target/fm/features</features>
+                    <framework>
+                        <groupId>org.apache.felix</groupId>
+                        <artifactId>org.apache.felix.framework</artifactId>
+                        <version>6.0.3</version>
+                    </framework>
                 </configuration>
                 <executions>
                     <execution>
@@ -184,27 +204,15 @@
                              -->
                             <goal>attach-features</goal>
                         </goals>
-                        <configuration>
-                            <framework>
-                                <groupId>org.apache.felix</groupId>
-                                <artifactId>org.apache.felix.framework</artifactId>
-                                <version>6.0.3</version>
-                            </framework>
-                            <scans>
-                                <scan>
-                                    <includeClassifier>oak_tar</includeClassifier>
-                                </scan>
-                            </scans>
-                            <aggregates>
-                                <aggregate>
-                                    <classifier>oak_tar</classifier>
-                                    <filesInclude>**/*.json</filesInclude>
-                                    <title>Sling With Oak Segment NS Persistence</title>
-                                </aggregate>
-                            </aggregates>
-                        </configuration>
+                        <!-- 
+                            Actual configuration is in the profiles
+                            
+                            We can't have both aggregations running at the same time, presumably since
+                            the oak feature has the same GAV for oak_tar and oak_mongo, but different
+                            contents. Since this is temporary, we'll just live with profile-based activation.
+                        -->
                     </execution>
-                </executions>
+               </executions>
             </plugin>
         </plugins>
 
@@ -225,6 +233,71 @@
         </pluginManagement>
 
     </build>
+    
+    <profiles>
+        <profile>
+            <id>fm-oak_tar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>slingfeature-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <generatedFeatures>${basedir}/target/fm/oak_tar</generatedFeatures>
+                            <scans>
+                                <scan>
+                                    <includeClassifier>oak_tar</includeClassifier>
+                                </scan>
+                            </scans>
+                            <aggregates>
+                                <aggregate>
+                                    <classifier>oak_tar</classifier>
+                                    <filesInclude>**/*.json</filesInclude>
+                                    <title>Sling With Oak Segment NS Persistence</title>
+                                </aggregate>
+                            </aggregates>
+                        </configuration>                        
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>fm-oak_mongo</id>
+            <activation>
+                <property>
+                    <name>fm.oak_mongo</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>slingfeature-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <generatedFeatures>${basedir}/target/fm/oak_mongo</generatedFeatures>
+                            <scans>
+                                <scan>
+                                    <includeClassifier>oak_mongo</includeClassifier>
+                                </scan>
+                            </scans>
+                            <aggregates>
+                                <aggregate>
+                                    <classifier>oak_mongo</classifier>
+                                    <filesInclude>**/*.json</filesInclude>
+                                    <title>Sling With Oak Document NS + MongoDB Persistence</title>
+                                </aggregate>
+                            </aggregates>
+                        </configuration>                        
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     
     <dependencies>
         <dependency>
