@@ -48,7 +48,7 @@
     org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.2/2.9.0
     org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/2.2.11_1
     org.slf4j/slf4j-api/${slf4j.version}
-    org.apache.sling/org.apache.sling.commons.log/5.1.10
+    org.apache.sling/org.apache.sling.commons.log/5.1.12
     org.apache.sling/org.apache.sling.commons.logservice/1.1.0
     org.apache.sling/org.apache.sling.commons.johnzon/1.2.2
     org.slf4j/jcl-over-slf4j/${slf4j.version}
