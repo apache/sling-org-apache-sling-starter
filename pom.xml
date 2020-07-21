@@ -98,7 +98,17 @@
                             <includeClassifier>oak_tar</includeClassifier>
                             <includeClassifier>oak_mongo</includeClassifier>
                         </scan>
-                    </scans>                    
+                    </scans>
+                    <archives>
+                        <archive>
+                            <classifier>oak_tar_far</classifier>
+                            <includeClassifier>oak_tar</includeClassifier>
+                        </archive>
+                        <archive>
+                            <classifier>oak_mongo_far</classifier>
+                            <includeClassifier>oak_mongo</includeClassifier>
+                        </archive>
+                    </archives>                 
                 </configuration>
                 <executions>
                     <execution>
@@ -108,6 +118,7 @@
                             <goal>aggregate-features</goal>
                             <goal>analyse-features</goal>
                             <goal>attach-features</goal>
+                            <goal>attach-featurearchives</goal>
                         </goals>
                     </execution>
                </executions>
