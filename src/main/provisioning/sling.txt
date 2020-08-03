@@ -23,7 +23,6 @@
     jackrabbit.version=2.20.0
 
 [artifacts startLevel=4]
-    org.apache.felix/org.apache.felix.scr/2.1.20
     org.apache.felix/org.apache.felix.metatype/1.2.2
 
 [artifacts startLevel=5]
@@ -103,7 +102,7 @@
     org.apache.sling/org.apache.sling.fsresource/2.1.16
     org.apache.sling/org.apache.sling.i18n/2.5.14
     org.apache.sling/org.apache.sling.installer.console/1.1.0
-    org.apache.sling/org.apache.sling.installer.provider.jcr/3.2.2
+    org.apache.sling/org.apache.sling.installer.provider.jcr/3.3.0
     org.apache.sling/org.apache.sling.installer.hc/2.0.2
     org.apache.jackrabbit.vault/org.apache.jackrabbit.vault/3.4.4
     org.apache.sling/org.apache.sling.installer.factory.packages/1.0.4

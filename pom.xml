@@ -83,6 +83,7 @@
                     </execution>
                 </executions>                
                 <configuration>
+                    <shouldBlockUntilKeyIsPressed>true</shouldBlockUntilKeyIsPressed>
                     <createWebapp>true</createWebapp>
                     <servers>
                         <server>
