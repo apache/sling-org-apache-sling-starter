@@ -58,7 +58,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.johnzon:1.2.2",
+            "id":"org.apache.sling:org.apache.sling.commons.johnzon:1.2.4",
             "start-order":"1"
         },
         {
@@ -82,7 +82,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.provider.file:1.2.2",
+            "id":"org.apache.sling:org.apache.sling.installer.provider.file:1.3.0",
             "start-order":"1"
         },
         {
@@ -90,7 +90,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.settings:1.3.10",
+            "id":"org.apache.sling:org.apache.sling.settings:1.4.0",
             "start-order":"1"
         },
         {
@@ -124,7 +124,12 @@
         {
             "id":"org.slf4j:slf4j-api:1.7.25",
             "start-order":"1"
+        },
+        {
+            "id":"org.apache.felix:org.apache.felix.scr:2.1.20",
+            "start-order":"1"
         }
+
     ],
     "framework-properties":{
         "sling.run.mode.install.options":"oak_tar,oak_mongo",

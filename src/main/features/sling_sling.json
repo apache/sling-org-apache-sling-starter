@@ -102,7 +102,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.provider.jcr:3.2.2",
+            "id":"org.apache.sling:org.apache.sling.installer.provider.jcr:3.3.0",
             "start-order":"20"
         },
         {
@@ -318,7 +318,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:3.0.4",
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:3.0.6",
             "start-order":"20"
         },
         {
