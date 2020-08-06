@@ -42,6 +42,7 @@ in the current directory.
 
 For MongoDB support replace the launch command with
 
-    java -jar target/dependency/org.apache.sling.feature.launcher-1.1.4.jar -f target/slingfeature-tmp/feature-oak_tar.json
+    java -jar target/dependency/org.apache.sling.feature.launcher-1.1.4.jar -f target/slingfeature-tmp/feature-oak_mongo.json
 
-This expects a MongoDB server to be running locally.
+This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
+(currently `mongodb://localhost:27017`).
