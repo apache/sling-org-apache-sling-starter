@@ -71,7 +71,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingfeature-maven-plugin</artifactId>
-                <version>1.3.0</version>
+                <version>1.3.14</version>
                 <extensions>true</extensions>
                 <configuration>
                     <framework>
