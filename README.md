@@ -29,8 +29,6 @@ in the current directory.
 2) Download the feature launcher using
 
     mvn dependency:get dependency:copy -Dartifact=org.apache.sling:org.apache.sling.feature.launcher:1.1.4
-    
-    mvn dependency:copy -Dartifact=org.apache.sling:org.apache.sling.feature.launcher:1.1.4
 
 3) Start Sling backed by an Oak SegmentStore with
 
