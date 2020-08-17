@@ -1,6 +1,6 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:sling:12-SNAPSHOT",
+    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:base:12-SNAPSHOT",
     "bundles":[
         {
             "id":"commons-codec:commons-codec:1.14",

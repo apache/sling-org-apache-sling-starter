@@ -1,6 +1,6 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:sling-discovery:12-SNAPSHOT",
+    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:discovery:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.sling:org.apache.sling.discovery.api:1.0.4",

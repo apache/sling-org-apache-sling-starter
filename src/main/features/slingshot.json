@@ -1,6 +1,6 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:sling_slingshot:12-SNAPSHOT",
+    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:slingshot:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.sling:org.apache.sling.sample.slingshot:0.9.0",
