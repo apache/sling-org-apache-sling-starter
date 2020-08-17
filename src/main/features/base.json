@@ -154,10 +154,6 @@
             "start-order":"4"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.scr:2.1.20",
-            "start-order":"4"
-        },
-        {
             "id":"commons-fileupload:commons-fileupload:1.4",
             "start-order":"5"
         },
