@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:repoinit:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.24",

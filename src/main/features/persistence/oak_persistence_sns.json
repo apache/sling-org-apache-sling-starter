@@ -1,5 +1,4 @@
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:oak_persistence_sns:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.jackrabbit:oak-segment-tar:1.26.0",

@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:caconfig:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.sling:org.apache.sling.caconfig.api:1.2.0",

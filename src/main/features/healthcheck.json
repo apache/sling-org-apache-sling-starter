@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:healthcheck:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.felix:org.apache.felix.healthcheck.api:2.0.4",

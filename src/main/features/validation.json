@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:validation:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.sling:org.apache.sling.models.validation-impl:1.0.0",

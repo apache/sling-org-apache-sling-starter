@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:boot:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.aries:org.apache.aries.util:1.1.3",

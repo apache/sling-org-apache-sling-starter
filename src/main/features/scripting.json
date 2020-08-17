@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:scripting:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.antlr:antlr4-runtime:4.7.2",

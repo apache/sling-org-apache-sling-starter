@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:oak:12-SNAPSHOT",
     "bundles":[
         {
             "id":"org.apache.felix:org.apache.felix.jaas:1.0.2",

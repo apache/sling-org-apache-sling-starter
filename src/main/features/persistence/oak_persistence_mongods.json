@@ -1,5 +1,4 @@
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:oak_persistence_mongods:12-SNAPSHOT",
     "bundles":[
          {
             "id":"com.h2database:h2-mvstore:1.4.194",

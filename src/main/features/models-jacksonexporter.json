@@ -1,6 +1,5 @@
 
 {
-    "id":"org.apache.sling:org.apache.sling.starter:slingfeature:models-jacksonexporter:12-SNAPSHOT",
     "bundles":[
         {
             "id":"com.fasterxml.jackson.core:jackson-annotations:${jackson.version}",
