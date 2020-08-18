@@ -82,10 +82,6 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.console:1.1.0",
-            "start-order":"20"
-        },
-        {
             "id":"org.apache.sling:org.apache.sling.installer.factory.packages:1.0.4",
             "start-order":"20"
         },
