@@ -26,21 +26,17 @@ How to run the Sling Starter module in Standalone mode
 	
 in the current directory.
 
-2) Download the feature launcher using
+2) Start Sling backed by an Oak SegmentStore with
 
-    mvn dependency:get dependency:copy -Dartifact=org.apache.sling:org.apache.sling.feature.launcher:1.1.4
-
-3) Start Sling backed by an Oak SegmentStore with
-
-    java -jar target/dependency/org.apache.sling.feature.launcher-1.1.4.jar -f target/slingfeature-tmp/feature-oak_tar.json
+    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_tar.json
 	
-4) Browse Sling in:
+3) Browse Sling in:
 
         http://localhost:8080
 
 For MongoDB support replace the launch command with
 
-    java -jar target/dependency/org.apache.sling.feature.launcher-1.1.4.jar -f target/slingfeature-tmp/feature-oak_mongo.json
+    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_mongo.json
 
 This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
 (currently `mongodb://localhost:27017`).
