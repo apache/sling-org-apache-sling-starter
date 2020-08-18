@@ -13,8 +13,8 @@ It is **not meant to be a production-ready setup**, more as a way to facilitate 
 
 See [Releasing a new version of the Sling starter](https://cwiki.apache.org/confluence/display/SLING/Releasing+a+new+version+of+the+Sling+Starter) for how to create a release of this module.
 
-How to run the Sling Starter module in Standalone mode
-----------------------------------------
+## How to run the Sling Starter module in Standalone mode
+
 
   NOTE: "mvn clean" deletes the "launcher" work directory in the project base
         directory. It is advisable to use a work directory outside of the
@@ -40,3 +40,18 @@ For MongoDB support replace the launch command with
 
 This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
 (currently `mongodb://localhost:27017`).
+
+## Extending the Sling Starter
+
+If you wish the extend the Sling Starter but would like to keep various application-level features out, you ca
+start with the `nosample_base` aggregate, which contains:
+
+- all the base features
+- Oak base features, without the NodeStore setup
+- No applications ( Composum, Slingshot, etc )
+
+For instance, launching an empty Sling Starter with segment persistence can be achieved by running
+
+    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
+    
+Your own feature files can be added to the feature list.

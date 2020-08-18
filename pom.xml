@@ -104,11 +104,18 @@
                             <filesInclude>app/*.json</filesInclude>
                             <title>Sling With Oak Document NS Mongo Persistence</title>
                         </aggregate>
+                        <aggregate>
+                            <classifier>nosample_base</classifier>
+                            <filesInclude>*.json</filesInclude>
+                            <filesInclude>oak/*.json</filesInclude>
+                            <title>Sling With No Samples and No Persistence</title>
+                        </aggregate>
                     </aggregates>
                     <scans>
                         <scan>
                             <includeClassifier>oak_tar</includeClassifier>
                             <includeClassifier>oak_mongo</includeClassifier>
+                            <includeClassifier>nosample_base</includeClassifier>
                         </scan>
                     </scans>
                     <archives>
