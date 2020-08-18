@@ -128,6 +128,14 @@
         {
             "id":"org.apache.sling:org.apache.sling.jcr.contentloader:2.3.0",
             "start-order":"20"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:3.0.6",
+            "start-order":"20"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.10",
+            "start-order":"20"
         }
     ],
     "configurations":{
