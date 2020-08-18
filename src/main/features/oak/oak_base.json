@@ -118,6 +118,10 @@
             "start-order":"16"
         },
         {
+            "id":"org.apache.sling:org.apache.sling.jcr.resource:3.0.22",
+            "start-order":"20"
+        },
+        {
             "id":"org.apache.sling:org.apache.sling.installer.provider.jcr:3.3.0",
             "start-order":"20"
         },    

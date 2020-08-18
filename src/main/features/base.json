@@ -89,11 +89,6 @@
             "id":"org.apache.sling:org.apache.sling.installer.hc:2.0.2",
             "start-order":"20"
         },
-
-        {
-            "id":"org.apache.sling:org.apache.sling.jcr.resource:3.0.22",
-            "start-order":"20"
-        },
         {
             "id":"org.apache.sling:org.apache.sling.models.api:1.3.8",
             "start-order":"20"
