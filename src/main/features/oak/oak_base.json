@@ -90,6 +90,10 @@
             "start-order":"15"
         },
         {
+            "id":"org.apache.jackrabbit:oak-authorization-principalbased:${oak.version}",
+            "start-order":"15"
+        },
+        {
             "id":"org.apache.sling:org.apache.sling.jcr.api:2.4.0",
             "start-order":"15"
         },
@@ -183,6 +187,23 @@
             "jaas.controlFlag":"sufficient",
             "jaas.classname":"org.apache.jackrabbit.oak.security.authentication.token.TokenLoginModule",
             "jaas.ranking:Integer":"200"
-        }
+        },
+        "org.apache.jackrabbit.oak.spi.security.authorization.principalbased.impl.PrincipalBasedAuthorizationConfiguration":{
+            "enableAggregationFilter":true
+        },
+        "org.apache.jackrabbit.oak.spi.security.authorization.principalbased.impl.FilterProviderImpl":{
+            "path":"/home/users/system/sling"
+        },
+        "org.apache.jackrabbit.oak.security.internal.SecurityProviderRegistration":{
+            "requiredServicePids":[
+                "org.apache.jackrabbit.oak.security.authorization.AuthorizationConfigurationImpl",
+                "org.apache.jackrabbit.oak.security.principal.PrincipalConfigurationImpl",
+                "org.apache.jackrabbit.oak.security.authentication.token.TokenConfigurationImpl",
+                "org.apache.jackrabbit.oak.spi.security.user.action.DefaultAuthorizableActionProvider",
+                "org.apache.jackrabbit.oak.security.authorization.restriction.RestrictionProviderImpl",
+                "org.apache.jackrabbit.oak.security.user.UserAuthenticationFactoryImpl",
+                "org.apache.jackrabbit.oak.spi.security.authorization.principalbased.impl.PrincipalBasedAuthorizationConfiguration"
+            ]
+         }
     }
 }
