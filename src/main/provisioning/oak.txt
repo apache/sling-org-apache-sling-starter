@@ -100,3 +100,17 @@
   org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService
     mongouri="mongodb://localhost:27017"
     db="sling"
+
+[configurations runModes=fds]
+  org.apache.jackrabbit.oak.plugins.blob.datastore.FileDataStore
+    minRecordLength=I"4096"
+    path="sling/repository/datastore"
+    cacheSizeInMB=I"128"
+
+[configurations runModes=fds,oak_tar]
+  org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
+    customBlobStore=B"true"
+
+[configurations runModes=fds,oak_mongo]
+  org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService
+    customBlobStore=B"true"
