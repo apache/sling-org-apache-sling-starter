@@ -21,17 +21,28 @@ How to run the Sling Starter module in Standalone mode
         directory. It is advisable to use a work directory outside of the
         project directory.
 
-1) Build the Sling Starter using 
-
-	mvn clean install
+1) Build the Sling Starter using   
+        
+        mvn clean install
 	
 in the current directory.
 
 2) Start the generated jar with
 
-	 java -jar target/org.apache.sling.starter-10-SNAPSHOT.jar 
+        java -jar target/org.apache.sling.starter-12-SNAPSHOT.jar 
 	 
-Use the correct version number instead of 10-SNAPSHOT, if needed.
+Note: Use the correct version number instead of 12-SNAPSHOT, if needed.
+
+Use optional flags after the .jar
+Such as help using the `-h` flag
+   
+        java -jar org.apache.sling.starter-12-SNAPSHOT.jar -h
+
+or add Run Modes for example `-Dsling.run.modes=author,notshared,oak_tar,fds`
+* oak_mongo (DocumentStore)
+* oak_tar (SegmentStore)
+* oak_tar,fds (SegmentStore with a file datastore)
+* oak_mongo,fds (DocumentStore with a file datastore)
 
 3) Browse Sling in:
 
