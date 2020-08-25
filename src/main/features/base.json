@@ -54,7 +54,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.fsclassloader:1.0.12",
+            "id":"org.apache.sling:org.apache.sling.commons.fsclassloader:1.0.14",
             "start-order":"20"
         },
         {
@@ -114,11 +114,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.7.6",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.7.8",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.xss:2.2.2",
+            "id":"org.apache.sling:org.apache.sling.xss:2.2.6",
             "start-order":"20"
         },
         {
