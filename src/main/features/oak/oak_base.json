@@ -163,6 +163,9 @@
             "importBehavior":"besteffort",
             "usersPath":"/home/users"
         },
+        "org.apache.jackrabbit.oak.security.authorization.AuthorizationConfigurationImpl":{
+            "importBehavior":"besteffort"
+        },
         "org.apache.jackrabbit.oak.spi.security.user.action.DefaultAuthorizableActionProvider":{
             "userPrivilegeNames":[
                 "jcr:all"
