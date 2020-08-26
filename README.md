@@ -1,94 +1,66 @@
-[<img src="https://sling.apache.org/res/logos/sling.png"/>](https://sling.apache.org)
+[![Apache Sling](https://sling.apache.org/res/logos/sling.png)](https://sling.apache.org)
 
- [![Build Status](https://builds.apache.org/buildStatus/icon?job=Sling/sling-org-apache-sling-starter/master)](https://builds.apache.org/job/Sling/job/sling-org-apache-sling-starter/job/master) [![Test Status](https://img.shields.io/jenkins/t/https/builds.apache.org/job/Sling/job/sling-org-apache-sling-starter/job/master.svg)](https://builds.apache.org/job/Sling/job/sling-org-apache-sling-starter/job/master/test_results_analyzer/) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.apache.sling/org.apache.sling.starter/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.sling%22%20a%3A%22org.apache.sling.starter%22) [![JavaDocs](https://www.javadoc.io/badge/org.apache.sling/org.apache.sling.starter.svg)](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.starter) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+&#32;[![Build Status](https://ci-builds.apache.org/job/Sling/job/modules/job/sling-org-apache-sling-starter/job/master/badge/icon)](https://ci-builds.apache.org/job/Sling/job/modules/job/sling-org-apache-sling-starter/job/master/)&#32;[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=apache_sling-org-apache-sling-starter&metric=alert_status)](https://sonarcloud.io/dashboard?id=apache_sling-org-apache-sling-starter)&#32;[![JavaDoc](https://www.javadoc.io/badge/org.apache.sling/org.apache.sling.starter.svg)](https://www.javadoc.io/doc/org.apache.sling/org-apache-sling-starter)&#32;[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.apache.sling/org.apache.sling.starter/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.sling%22%20a%3A%22org.apache.sling.starter%22) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # Apache Sling Starter
 
 This module is part of the [Apache Sling](https://sling.apache.org) project.
 
-The starter project produces both a Standalone Java Application which
-contains everything needed to run the Launchpad in a single JAR file and a Web
-Application.
+The starter project produces feature artifacts that can be launched using the
+[Feature Launcher](https://github.com/apache/sling-org-apache-sling-feature-launcher).
 
 It is **not meant to be a production-ready setup**, more as a way to facilitate experimenting and learning Sling. 
 
 See [Releasing a new version of the Sling starter](https://cwiki.apache.org/confluence/display/SLING/Releasing+a+new+version+of+the+Sling+Starter) for how to create a release of this module.
 
-How to run the Sling Starter module in Standalone mode
-----------------------------------------
+## How to run the Sling Starter module in Standalone mode
 
-  NOTE: "mvn clean" deletes the "sling" work directory in the project base
+
+  NOTE: "mvn clean" deletes the "launcher" work directory in the project base
         directory. It is advisable to use a work directory outside of the
         project directory.
 
-1) Build the Sling Starter using   
-        
-        mvn clean install
-	
-in the current directory.
+1) Build the Sling Starter using `mvn clean install` in the current directory.
+2) Copy the launch to project directory `cp target/dependency/org.apache.sling.feature.launcher.jar $path-to-project`
+3) Copy either the feature archive (*.far) or individual set of feature.json files to the project folder 
 
-2) Start the generated jar with
 
-        java -jar target/org.apache.sling.starter-12-SNAPSHOT.jar 
+Example 1: Start an instance using the launcher specifying a feature archive (.far)
+This example uses the aggregate `oak_tar_far` as defined in the pom.xml
+
+        java -jar org.apache.sling.feature.launcher.jar -f org.apache.sling.starter-12-SNAPSHOT-oak_tar_far.far 
 	 
-Note: Use the correct version number instead of 12-SNAPSHOT, if needed.
+Example 2: Start an instance using the launcher specifying an aggregate feature file. 
+This example uses the aggregate `feature-oak_tar_fds.json` as defined in the pom.xml
 
-Use optional flags after the .jar
-Such as help using the `-h` flag
-   
-        java -jar org.apache.sling.starter-12-SNAPSHOT.jar -h
+        java -jar org.apache.sling.feature.launcher.jar -f feature-oak_tar_fds.json
 
-or add Run Modes for example `-Dsling.run.modes=author,notshared,oak_tar,fds`
-* oak_mongo (DocumentStore)
-* oak_tar (SegmentStore)
-* oak_tar,fds (SegmentStore with a file datastore)
-* oak_mongo,fds (DocumentStore with a file datastore)
+Example 3: Start an instance using the launcher specifying a set feature files.
+ 
+        java -jar org.apache.sling.feature.launcher.jar -f feature-base.json,feature-boot.json,....
 
-3) Browse Sling in:
+Browse Sling in:
 
         http://localhost:8080
 
-How to run the Sling Starter module in webapp mode
-----------------------------------------
+For MongoDB support replace the launch command with
 
-1) Build the Sling Starter using 
+    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_mongo.json
 
-	mvn clean install
-	
-in the current directory.
+This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
+(currently `mongodb://localhost:27017`).
 
-2) Deploy target/org.apache.sling.starter-10-SNAPSHOT.war to your favorite application
-server or servlet container. Servlet 3.1 is a minimum requirement for the web app.
+## Extending the Sling Starter
 
-Experimental Feature Model support
-----------------------------------------
+If you wish to extend the Sling Starter but would like to keep various application-level features out, you can
+start with the `nosample_base` aggregate, which contains:
 
-During the build the provisioning model files will be converted on the fly to feature model files
-on-the-fly. The conversion taking into account the `oak_tar` runmode places its results in
-`target/fm/oak_tar`. In a similar way, the MongoDB feature files are placed under
-`target/fm/oak_mongo`.
+- all the base features
+- Oak base features, without the NodeStore setup
+- No applications ( Composum, Slingshot, etc )
 
-For convenience, the results are aggregates in a single, standalone feature file. Due to technical
-limitations only a single aggregate feature file is created, by default the `oak_tar` one, found
-under  `target/slingfeature-tmp/feature-oak_tar.json`.
+For instance, launching an empty Sling Starter with segment persistence can be achieved by running
 
-If you don't have a copy of the feature launcher jar, download it, for instance using
-
-    $ mvn dependency:get dependency:copy \
-        -Dartifact=org.apache.sling:org.apache.sling.feature.launcher:LATEST \
-        -DoutputDirectory=.
-
-To launch Sling using the feature launcher, simply execute
-
-    $ java -jar org.apache.sling.feature.launcher-*.jar -f target/slingfeature-tmp/feature-oak_tar.json
+    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
     
-To clean up the repository state just delete the `launcher` directory.
-
-To generate the oak_mongo aggregate run the build and define the `fm.oak_mongo` property, e.g.
-
-    $ mvn clean package -Dfm.oak_mongo
-    
-The instruction to launch Sling then becomes
-
-     $ java -jar org.apache.sling.feature.launcher-*.jar -f target/slingfeature-tmp/feature-oak_mongo.json
-     
+Your own feature files can be added to the feature list.
