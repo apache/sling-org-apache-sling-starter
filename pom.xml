@@ -97,14 +97,6 @@
                             <title>Sling With Oak Segment NS Persistence</title>
                         </aggregate>
                         <aggregate>
-                            <classifier>oak_tar_fds</classifier>
-                            <filesInclude>*.json</filesInclude>
-                            <filesInclude>oak/*.json</filesInclude>
-                            <filesInclude>oak/persistence/oak_persistence_sns_fds.json</filesInclude>
-                            <filesInclude>app/*.json</filesInclude>
-                            <title>Sling with Oak Segment NodeStore (sns) and File Datastore (fds)</title>
-                        </aggregate>
-                        <aggregate>
                             <classifier>oak_mongo</classifier>
                             <filesInclude>*.json</filesInclude>
                             <filesInclude>oak/*.json</filesInclude>
@@ -207,4 +199,3 @@
         </dependency>
     </dependencies>
 </project>
-
