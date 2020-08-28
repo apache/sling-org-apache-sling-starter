@@ -31,9 +31,9 @@ This example uses the aggregate `oak_tar_far` as defined in the pom.xml
         java -jar org.apache.sling.feature.launcher.jar -f org.apache.sling.starter-12-SNAPSHOT-oak_tar_far.far 
 	 
 Example 2: Start an instance using the launcher specifying an aggregate feature file. 
-This example uses the aggregate `feature-oak_tar_fds.json` as defined in the pom.xml
+This example uses the aggregate `feature-oak_tar.json` as defined in the pom.xml
 
-        java -jar org.apache.sling.feature.launcher.jar -f feature-oak_tar_fds.json
+        java -jar org.apache.sling.feature.launcher.jar -f feature-oak_tar.json
 
 Example 3: Start an instance using the launcher specifying a set feature files.
  
