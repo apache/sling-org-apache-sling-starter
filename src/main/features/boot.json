@@ -1,5 +1,8 @@
 
 {
+    "variables": {
+        "sling.home": null
+    },
     "bundles":[
         {
             "id":"org.apache.aries:org.apache.aries.util:1.1.3",
