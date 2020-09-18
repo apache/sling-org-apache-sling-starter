@@ -60,6 +60,14 @@
         {
             "id":"org.apache.sling:org.apache.sling.scripting.sightly:1.4.2-1.4.0",
             "start-order":"20"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.scripting.freemarker:1.0.2",
+            "start-order":"20"
+        },
+        {
+            "id": "org.freemarker:freemarker:2.3.30",
+            "start-order": "20"
         }
     ],
     "configurations":{
