@@ -69,6 +69,10 @@
             "start-order":"1"
         },
         {
+            "id":"org.apache.felix:org.apache.felix.log:1.2.4",
+            "start-order":"1"
+        },
+        {
             "id":"org.apache.sling:org.apache.sling.commons.osgi:2.4.0",
             "start-order":"1"
         },
