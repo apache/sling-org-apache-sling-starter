@@ -102,23 +102,10 @@
         },
         "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~scripting":{
             "user.mapping":[
-                "org.apache.sling.scripting.core=sling-scripting",
-                "org.apache.sling.scripting.sightly.js.provider=sling-scripting",
-                "org.apache.sling.scripting.thymeleaf=sling-scripting"
+                "org.apache.sling.scripting.core=[sling-search-path-reader]",
+                "org.apache.sling.scripting.sightly.js.provider=[sling-search-path-reader]",
+                "org.apache.sling.scripting.thymeleaf=[sling-search-path-reader]"
             ]
         }
-    },
-    "repoinit:TEXT|true":[
-        "#<<< SLING-5848 - Define service user and ACLs for Scripting",
-        "create service user sling-scripting",
-        "",
-        "create path (sling:Folder) /libs",
-        "create path (sling:Folder) /apps",
-        "",
-        "set ACL for sling-scripting",
-        "deny    jcr:all     on /",
-        "allow   jcr:read    on /libs,/apps",
-        "end",
-        "# SLING-5848 - Define service user and ACLs for Scripting >>>"
-    ]
+    }
 }
