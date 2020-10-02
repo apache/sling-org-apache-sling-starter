@@ -38,7 +38,7 @@
 
     <properties>
         <sling.java.version>8</sling.java.version>
-        <IT.expected.bundles.count>126</IT.expected.bundles.count>
+        <starter.min.bundles.count>126</starter.min.bundles.count>
 
         <!-- versions to be replaced in the feature files -->
         <jackrabbit.version>2.20.0</jackrabbit.version>
@@ -245,8 +245,8 @@
                </executions>
                <configuration>
                    <systemPropertyVariables>
-                       <launchpad.http.port>${http.port}</launchpad.http.port>
-                       <IT.expected.bundles.count>${IT.expected.bundles.count}</IT.expected.bundles.count>
+                       <starter.http.port>${http.port}</starter.http.port>
+                       <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
                    </systemPropertyVariables>
                </configuration>
             </plugin>
