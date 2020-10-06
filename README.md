@@ -43,7 +43,7 @@ This expects a MongoDB server to be running, search for `mongodb://` in the feat
 
 ## Extending the Sling Starter
 
-If you wish the extend the Sling Starter but would like to keep various application-level features out, you ca
+If you wish the extend the Sling Starter but would like to keep various application-level features out, you can
 start with the `nosample_base` aggregate, which contains:
 
 - all the base features
