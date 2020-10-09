@@ -62,7 +62,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.freemarker:1.0.2",
+            "id":"org.apache.sling:org.apache.sling.scripting.freemarker:1.0.4",
             "start-order":"20"
         },
         {
