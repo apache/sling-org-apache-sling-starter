@@ -21,7 +21,5 @@
             ]
         }
     },
-    "repoinit:TEXT|true":[
-        "create path (sling:Folder) /conf"
-    ]
+    "repoinit:TEXT|true": "@file"
 }

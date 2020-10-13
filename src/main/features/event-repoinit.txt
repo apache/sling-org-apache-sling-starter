@@ -1,0 +1,8 @@
+create service user sling-event with path system/sling
+
+create path (sling:Folder) /var
+create path (sling:Folder) /var/eventing
+
+set principal ACL for sling-event
+    allow   jcr:read,rep:write    on /var/eventing
+end
