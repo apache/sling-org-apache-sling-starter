@@ -327,6 +327,11 @@
             "user.mapping":[
                 "org.apache.sling.xss=[sling-xss]"
             ]
+        },
+        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~jcr-usermanager":{
+            "user.mapping":[
+                "org.apache.sling.jcr.jackrabbit.usermanager=[sling-jcr-usermanager]"
+            ]
         }
     },
     "repoinit:TEXT|true":"@file"
