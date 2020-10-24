@@ -118,7 +118,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.oak.server:1.2.8",
+            "id":"org.apache.sling:org.apache.sling.jcr.oak.server:1.2.10",
             "start-order":"16"
         },
         {
