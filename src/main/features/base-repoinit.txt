@@ -68,7 +68,7 @@ end
 # SLING-5848 - Define service user and ACLs for Scripting >>>
 #<<< SLING-9809 - Define service user and ACLs for jcr.usermanager
 create service user sling-jcr-usermanager with path system/sling
-set ACL for sling-jcr-usermanager
+set principal ACL for sling-jcr-usermanager
     allow jcr:read,jcr:readAccessControl,jcr:modifyAccessControl,rep:write,rep:userManagement on /home
 end
 # SLING-9809 - Define service user and ACLs for jcr.usermanager >>>
