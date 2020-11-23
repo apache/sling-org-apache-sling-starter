@@ -44,7 +44,7 @@
         <jackrabbit.version>2.20.0</jackrabbit.version>
         <oak.version>1.32.0</oak.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <composum.nodes.version>1.12.0</composum.nodes.version>
+        <composum.nodes.version>2.1.1</composum.nodes.version>
         <jackson.version>2.11.1</jackson.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
