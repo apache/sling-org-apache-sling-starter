@@ -66,6 +66,12 @@ set principal ACL for sling-search-path-reader
     allow   jcr:read    on /libs,/apps
 end
 # SLING-5848 - Define service user and ACLs for Scripting >>>
+#<<< SLING-9735 - Define service user and ACLs for jcr.contentloader
+create service user sling-jcr-content-loader with path system/sling
+set principal ACL for sling-jcr-content-loader
+    allow jcr:all on /
+end
+# SLING-9735 - Define service user and ACLs for jcr.contentloader >>>
 #<<< SLING-9809 - Define service user and ACLs for jcr.usermanager
 create service user sling-jcr-usermanager with path system/sling
 set principal ACL for sling-jcr-usermanager

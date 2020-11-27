@@ -332,6 +332,11 @@
             "user.mapping":[
                 "org.apache.sling.jcr.jackrabbit.usermanager=[sling-jcr-usermanager]"
             ]
+        },
+        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~jcr-contentloader":{
+            "user.mapping":[
+                "org.apache.sling.jcr.contentloader=[sling-jcr-content-loader]"
+            ]
         }
     },
     "repoinit:TEXT|true":"@file"
