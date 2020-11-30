@@ -41,11 +41,13 @@
         <starter.min.bundles.count>126</starter.min.bundles.count>
 
         <!-- versions to be replaced in the feature files -->
+        <asm.version>9.0</asm.version>
         <jackrabbit.version>2.20.0</jackrabbit.version>
         <oak.version>1.32.0</oak.version>
         <slf4j.version>1.7.25</slf4j.version>
         <composum.nodes.version>2.1.1</composum.nodes.version>
         <jackson.version>2.11.1</jackson.version>
+        <groovy.version>3.0.6</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
     </properties>
@@ -84,7 +86,7 @@
                 <version>1.4.2</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <replacePropertyVariables>jackrabbit.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
+                    <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
                     <framework>
                         <groupId>org.apache.felix</groupId>
                         <artifactId>org.apache.felix.framework</artifactId>
@@ -307,4 +309,3 @@
         </profile>
     </profiles>
 </project>
-
