@@ -118,7 +118,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.xss:2.2.6",
+            "id":"org.apache.sling:org.apache.sling.xss:2.2.8",
             "start-order":"20"
         },
         {
@@ -226,7 +226,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.24",
+            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.26",
             "start-order":"20"
         }
     ],
@@ -326,6 +326,16 @@
         "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~xss":{
             "user.mapping":[
                 "org.apache.sling.xss=[sling-xss]"
+            ]
+        },
+        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~jcr-usermanager":{
+            "user.mapping":[
+                "org.apache.sling.jcr.jackrabbit.usermanager=[sling-jcr-usermanager]"
+            ]
+        },
+        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~jcr-contentloader":{
+            "user.mapping":[
+                "org.apache.sling.jcr.contentloader=[sling-jcr-content-loader]"
             ]
         }
     },
