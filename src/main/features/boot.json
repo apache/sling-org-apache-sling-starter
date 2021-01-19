@@ -81,7 +81,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.factory.configuration:1.3.2",
+            "id":"org.apache.sling:org.apache.sling.installer.factory.configuration:1.3.4",
             "start-order":"1"
         },
         {
