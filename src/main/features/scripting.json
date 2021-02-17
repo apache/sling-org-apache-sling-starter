@@ -2,11 +2,11 @@
 {
     "bundles":[
         {
-            "id":"org.antlr:antlr4-runtime:4.7.2",
+            "id":"org.antlr:antlr4-runtime:4.9.1",
             "start-order":"20"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.rhino:1.7.10_1",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.rhino:1.7.13_1",
             "start-order":"20"
         },
         {
@@ -18,7 +18,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.el-api:1.0.2",
+            "id":"org.apache.sling:org.apache.sling.scripting.el-api:1.0.4",
             "start-order":"20"
         },
         {
@@ -42,7 +42,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly.compiler:1.2.8-1.4.0",
+            "id":"org.apache.sling:org.apache.sling.scripting.sightly.compiler:1.2.12-1.4.0",
             "start-order":"20"
         },
         {
@@ -58,7 +58,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly:1.4.4-1.4.0",
+            "id":"org.apache.sling:org.apache.sling.scripting.sightly:1.4.6-1.4.0",
             "start-order":"20"
         },
         {
@@ -74,7 +74,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.thymeleaf:3.0.11.RELEASE_1",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.thymeleaf:3.0.12.RELEASE_1",
             "start-order":"20"
         },
         {
@@ -86,7 +86,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.ognl:3.2.1_1",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.ognl:3.2.18_1",
             "start-order":"20"
         },
         {
