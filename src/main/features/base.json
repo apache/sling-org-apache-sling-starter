@@ -2,7 +2,7 @@
 {
     "bundles":[
         {
-            "id":"commons-codec:commons-codec:1.14",
+            "id":"commons-codec:commons-codec:1.15",
             "start-order":"5"
         },
         {
@@ -26,11 +26,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.httpcomponents:httpclient-osgi:4.5.10",
+            "id":"org.apache.httpcomponents:httpclient-osgi:4.5.13",
             "start-order":"15"
         },
         {
-            "id":"org.apache.httpcomponents:httpcore-osgi:4.4.12",
+            "id":"org.apache.httpcomponents:httpcore-osgi:4.4.14",
             "start-order":"15"
         },
         {
@@ -62,7 +62,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.scheduler:2.7.6",
+            "id":"org.apache.sling:org.apache.sling.commons.scheduler:2.7.12",
             "start-order":"20"
         },
         {
@@ -94,7 +94,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.impl:1.4.12",
+            "id":"org.apache.sling:org.apache.sling.models.impl:1.4.16",
             "start-order":"20"
         },
         {
@@ -102,7 +102,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.serviceusermapper:1.4.4",
+            "id":"org.apache.sling:org.apache.sling.serviceusermapper:1.5.2",
             "start-order":"15"
         },
         {
@@ -114,7 +114,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.7.10",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.7.12",
             "start-order":"20"
         },
         {
@@ -122,7 +122,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.metatype:1.2.2",
+            "id":"org.apache.felix:org.apache.felix.metatype:1.2.4",
             "start-order":"4"
         },
         {
@@ -130,7 +130,7 @@
             "start-order":"5"
         },
         {
-            "id":"commons-io:commons-io:2.6",
+            "id":"commons-io:commons-io:2.8.0",
             "start-order":"5"
         },
         {
@@ -150,7 +150,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.0.18",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.4",
             "start-order":"5"
         },
         {
@@ -186,7 +186,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:2.0.17",
+            "id":"org.apache.pdfbox:fontbox:2.0.22",
             "start-order":"10"
         },
         {
@@ -194,7 +194,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:2.0.17",
+            "id":"org.apache.pdfbox:pdfbox:2.0.22",
             "start-order":"10"
         },
         {
