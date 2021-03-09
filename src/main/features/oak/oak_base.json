@@ -130,7 +130,7 @@
             "start-order":"20"
         },    
         {
-            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:3.4.8",
+            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:3.4.10",
             "start-order":"20"
         },
         {
