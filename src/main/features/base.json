@@ -78,7 +78,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.i18n:2.5.14",
+            "id":"org.apache.sling:org.apache.sling.i18n:2.5.16",
             "start-order":"20"
         },
         {
