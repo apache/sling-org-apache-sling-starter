@@ -42,7 +42,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.bundleresource.impl:2.3.2",
+            "id":"org.apache.sling:org.apache.sling.bundleresource.impl:2.3.4",
             "start-order":"20"
         },
         {
