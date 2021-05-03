@@ -45,7 +45,7 @@
         <jackrabbit.version>2.20.2</jackrabbit.version>
         <oak.version>1.38.0</oak.version>
         <slf4j.version>1.7.30</slf4j.version>
-        <composum.nodes.version>2.3.0</composum.nodes.version>
+        <composum.nodes.version>2.6.1</composum.nodes.version>
         <jackson.version>2.12.1</jackson.version>
         <groovy.version>3.0.7</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
@@ -287,7 +287,7 @@
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.utils</artifactId>
-            <version>1.11.6</version>
+            <version>1.11.8</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
