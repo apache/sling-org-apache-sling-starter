@@ -70,7 +70,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.engine:2.7.2",
+            "id":"org.apache.sling:org.apache.sling.engine:2.7.4",
             "start-order":"20"
         },
         {
@@ -98,7 +98,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.7.2",
+            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.7.4",
             "start-order":"20"
         },
         {
@@ -118,7 +118,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.xss:2.2.8",
+            "id":"org.apache.sling:org.apache.sling.xss:2.2.12",
             "start-order":"20"
         },
         {
@@ -150,7 +150,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.4",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.6",
             "start-order":"5"
         },
         {
@@ -174,11 +174,19 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.auth.core:1.5.0",
+            "id":"org.apache.sling:org.apache.sling.auth.core:1.5.2",
             "start-order":"5"
         },
         {
             "id":"org.apache.sling:org.apache.sling.extensions.threaddump:0.2.2",
+            "start-order":"5"
+        },
+        {
+            "id":"io.dropwizard.metrics:metrics-core:3.2.6",
+            "start-order":"5"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.commons.metrics:1.2.8",
             "start-order":"5"
         },
         {
@@ -206,14 +214,6 @@
             "start-order":"10"
         },
         {
-            "id":"io.dropwizard.metrics:metrics-core:3.2.6",
-            "start-order":"15"
-        },
-        {
-            "id":"org.apache.sling:org.apache.sling.commons.metrics:1.2.8",
-            "start-order":"15"
-        },
-        {
             "id":"org.apache.sling:org.apache.sling.resource.filter:1.0.0",
             "start-order":"15"
         },
@@ -222,7 +222,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.6.6",
+            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.6.8",
             "start-order":"20"
         },
         {
