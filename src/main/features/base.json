@@ -102,7 +102,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.serviceusermapper:1.5.2",
+            "id":"org.apache.sling:org.apache.sling.serviceusermapper:1.5.4",
             "start-order":"15"
         },
         {
@@ -150,7 +150,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.6",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.8",
             "start-order":"5"
         },
         {
@@ -170,7 +170,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.api:2.23.0",
+            "id":"org.apache.sling:org.apache.sling.api:2.23.4",
             "start-order":"5"
         },
         {

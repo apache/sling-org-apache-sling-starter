@@ -13,7 +13,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.configadmin:1.9.20",
+            "id":"org.apache.felix:org.apache.felix.configadmin:1.9.22",
             "start-order":"1"
         },
         {
