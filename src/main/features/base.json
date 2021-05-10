@@ -269,6 +269,17 @@
             "org.apache.sling.commons.log.level":"info",
             "org.apache.sling.commons.log.file":"logs/request.log"
         },
+        "org.apache.jackrabbit.vault.packaging.impl.PackagingImpl":{
+            "authIdsForRootInstallation":[
+                "sling-package-install"
+            ],
+            "packageRoots":[
+                "/etc/packages"
+            ],
+            "authIdsForHookExecution":[
+                "sling-package-install"
+            ]
+        },
         "org.apache.sling.jcr.base.internal.LoginAdminWhitelist.fragment~sling":{
             "whitelist.bundles":[
                 "org.apache.sling.discovery.commons",
@@ -289,7 +300,7 @@
                 "org.apache.sling.i18n=[sling-readall]"
             ]
         },
-        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~installer-factories":{
+        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~installer-packages":{
             "user.mapping":[
                 "org.apache.sling.installer.factory.packages=[sling-package-install]"
             ]
