@@ -114,7 +114,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.7.12",
+            "id":"org.apache.sling:org.apache.sling.scripting.spi:1.0.2",
+            "start-order":"20"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.7.14",
             "start-order":"20"
         },
         {
