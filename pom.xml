@@ -199,9 +199,70 @@
                             </portNames>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>reserve-network-port-mongo</id>
+                        <goals>
+                            <goal>reserve-network-port</goal>
+                        </goals>
+                        <phase>pre-integration-test</phase>
+                        <configuration>
+                            <portNames>
+                                <portName>http.port.mongo</portName>
+                            </portNames>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
-            <!-- launch the oak_tar aggregate for the integration tests -->
+            <!--
+                Start a MongoDB container for the corresponding tests.
+                Must be declared before the feature-launcher-maven-plugin
+                so that the container is up before the corresponding Sling
+                instance starts.
+            -->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.19.1</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>mongo</alias>
+                            <name>mongo:4.4.6</name>
+                            <run>
+                                <ports>
+                                    <!--
+                                        TODO the local port should by dynamic for tests, but
+                                        currently the oak feature file hardcodes the default port
+                                    -->
+                                    <port>27017:27017</port>
+                                </ports>
+                                <wait>
+                                    <log>CONTROL</log>
+                                    <time>60000</time>
+                                </wait>
+                            </run>
+                        </image>
+                    </images>
+                    <stopMode>kill</stopMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>start-mongo</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stop-mongo</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- launch the Sling instances to test -->
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>feature-launcher-maven-plugin</artifactId>
@@ -220,6 +281,21 @@
                             <launcherArguments>
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
+                                </frameworkProperties>
+                            </launcherArguments>
+                        </launch>
+                        <launch>
+                            <id>sling-12-oak-mongo</id>
+                            <feature>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>${project.artifactId}</artifactId>
+                                <version>${project.version}</version>
+                                <classifier>oak_mongo</classifier>
+                                <type>slingosgifeature</type>
+                            </feature>
+                            <launcherArguments>
+                                <frameworkProperties>
+                                    <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
                                 </frameworkProperties>
                             </launcherArguments>
                         </launch>
@@ -248,6 +324,7 @@
                <configuration>
                    <systemPropertyVariables>
                        <starter.http.port>${http.port}</starter.http.port>
+                       <starter.http.port.mongo>${http.port.mongo}</starter.http.port.mongo>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
                    </systemPropertyVariables>
                </configuration>
