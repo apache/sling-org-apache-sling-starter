@@ -51,8 +51,6 @@
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
 
-        <!-- TODO remove this to get a dynamic mongo.port -->
-        <mongo.port>27017</mongo.port>
     </properties>
 
     <build>
@@ -255,7 +253,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>feature-launcher-maven-plugin</artifactId>
-                <version>0.1.0</version>
+                <version>0.1.1-SNAPSHOT</version>
                 <configuration>
                     <launches>
                         <launch>
@@ -285,9 +283,10 @@
                             <launcherArguments>
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
-                                    <!-- TODO this does not seem to work, for now mongo.port must be 27017 -->
-                                    <mongo.port>${mongo.port}</mongo.port>
                                 </frameworkProperties>
+                                <variables>
+                                    <mongo.port>${mongo.port}</mongo.port>
+                                </variables>
                             </launcherArguments>
                         </launch>
                     </launches>
