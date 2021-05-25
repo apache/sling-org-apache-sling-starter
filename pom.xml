@@ -50,6 +50,9 @@
         <groovy.version>3.0.7</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
+
+        <!-- TODO remove this to get a dynamic mongo.port -->
+        <mongo.port>27017</mongo.port>
     </properties>
 
     <build>
@@ -182,7 +185,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- reserve a network port for the integration tests -->
+            <!-- reserve network ports for the integration tests -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -196,18 +199,8 @@
                         <configuration>
                             <portNames>
                                 <portName>http.port</portName>
-                            </portNames>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>reserve-network-port-mongo</id>
-                        <goals>
-                            <goal>reserve-network-port</goal>
-                        </goals>
-                        <phase>pre-integration-test</phase>
-                        <configuration>
-                            <portNames>
                                 <portName>http.port.mongo</portName>
+                                <portName>mongo.port</portName>
                             </portNames>
                         </configuration>
                     </execution>
@@ -230,11 +223,7 @@
                             <name>mongo:4.4.6</name>
                             <run>
                                 <ports>
-                                    <!--
-                                        TODO the local port should by dynamic for tests, but
-                                        currently the oak feature file hardcodes the default port
-                                    -->
-                                    <port>27017:27017</port>
+                                    <port>${mongo.port}:27017</port>
                                 </ports>
                                 <wait>
                                     <log>CONTROL</log>
@@ -296,6 +285,8 @@
                             <launcherArguments>
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
+                                    <!-- TODO this does not seem to work, for now mongo.port must be 27017 -->
+                                    <mongo.port>${mongo.port}</mongo.port>
                                 </frameworkProperties>
                             </launcherArguments>
                         </launch>
