@@ -14,6 +14,10 @@
             "start-order":"20"
         },
         {
+            "id":"org.apache.sling:org.apache.sling.scripting.spi:1.0.2",
+            "start-order":"20"
+        },
+        {
             "id":"org.apache.sling:org.apache.sling.scripting.core:2.3.6",
             "start-order":"20"
         },
