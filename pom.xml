@@ -50,6 +50,7 @@
         <groovy.version>3.0.7</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
+
     </properties>
 
     <build>
@@ -182,7 +183,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- reserve a network port for the integration tests -->
+            <!-- reserve network ports for the integration tests -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -196,16 +197,63 @@
                         <configuration>
                             <portNames>
                                 <portName>http.port</portName>
+                                <portName>http.port.mongo</portName>
+                                <portName>mongo.port</portName>
                             </portNames>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            <!-- launch the oak_tar aggregate for the integration tests -->
+            <!--
+                Start a MongoDB container for the corresponding tests.
+                Must be declared before the feature-launcher-maven-plugin
+                so that the container is up before the corresponding Sling
+                instance starts.
+            -->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.19.1</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>mongo</alias>
+                            <name>mongo:4.4.6</name>
+                            <run>
+                                <ports>
+                                    <port>${mongo.port}:27017</port>
+                                </ports>
+                                <wait>
+                                    <log>CONTROL</log>
+                                    <time>60000</time>
+                                </wait>
+                            </run>
+                        </image>
+                    </images>
+                    <stopMode>kill</stopMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>start-mongo</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stop-mongo</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- launch the Sling instances to test -->
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>feature-launcher-maven-plugin</artifactId>
-                <version>0.1.0</version>
+                <version>0.1.1-SNAPSHOT</version>
                 <configuration>
                     <launches>
                         <launch>
@@ -221,6 +269,24 @@
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
                                 </frameworkProperties>
+                            </launcherArguments>
+                        </launch>
+                        <launch>
+                            <id>sling-12-oak-mongo</id>
+                            <feature>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>${project.artifactId}</artifactId>
+                                <version>${project.version}</version>
+                                <classifier>oak_mongo</classifier>
+                                <type>slingosgifeature</type>
+                            </feature>
+                            <launcherArguments>
+                                <frameworkProperties>
+                                    <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
+                                </frameworkProperties>
+                                <variables>
+                                    <mongo.port>${mongo.port}</mongo.port>
+                                </variables>
                             </launcherArguments>
                         </launch>
                     </launches>
@@ -248,6 +314,7 @@
                <configuration>
                    <systemPropertyVariables>
                        <starter.http.port>${http.port}</starter.http.port>
+                       <starter.http.port.mongo>${http.port.mongo}</starter.http.port.mongo>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
                    </systemPropertyVariables>
                </configuration>

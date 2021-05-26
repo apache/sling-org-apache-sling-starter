@@ -21,6 +21,8 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -44,31 +46,48 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
+@RunWith(Parameterized.class)
 public class SmokeIT {
 
-    private static final int STARTER_HTTP_PORT = Integer.getInteger("starter.http.port", 8080);
+    private final int slingHttpPort;
     private static final int STARTER_MIN_BUNDLES_COUNT = Integer.getInteger("starter.min.bundles.count", Integer.MAX_VALUE);
 
-    @ClassRule
-    public static StarterReadyRule LAUNCHPAD = new StarterReadyRule(STARTER_HTTP_PORT);
+    @Rule
+    public final StarterReadyRule launchpadRule;
     private HttpClientContext httpClientContext;
+
+    @Parameterized.Parameters(name = "{0}")
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] {
+            {"starter.http.port", 8080},
+            {"starter.http.port.mongo", 8081}
+        });
+    }
+
+    public SmokeIT(String propName, int defaultPort) {
+        slingHttpPort = Integer.getInteger(propName, defaultPort);
+        launchpadRule = new StarterReadyRule(slingHttpPort);
+    }
 
     @Before
     public void prepareHttpContext() {
 
         CredentialsProvider credsProvider = new BasicCredentialsProvider();
         UsernamePasswordCredentials creds = new UsernamePasswordCredentials("admin", "admin");
-        credsProvider.setCredentials(new AuthScope("localhost", STARTER_HTTP_PORT), creds);
+        credsProvider.setCredentials(new AuthScope("localhost", slingHttpPort), creds);
 
         BasicAuthCache authCache = new BasicAuthCache();
         BasicScheme basicAuth = new BasicScheme();
-        authCache.put(new HttpHost("localhost", STARTER_HTTP_PORT, "http"), basicAuth);
+        authCache.put(new HttpHost("localhost", slingHttpPort, "http"), basicAuth);
 
         httpClientContext = HttpClientContext.create();
         httpClientContext.setCredentialsProvider(credsProvider);
@@ -87,7 +106,7 @@ public class SmokeIT {
 
         try ( CloseableHttpClient client = newClient() ) {
 
-            HttpGet get = new HttpGet("http://localhost:" + STARTER_HTTP_PORT + "/system/console/bundles.json");
+            HttpGet get = new HttpGet("http://localhost:" + slingHttpPort + "/system/console/bundles.json");
 
             // pass the context to ensure preemptive basic auth is used
             // https://hc.apache.org/httpcomponents-client-ga/tutorial/html/authentication.html
@@ -148,7 +167,7 @@ public class SmokeIT {
     public void ensureRepositoryIsStarted() throws Exception {
         try ( CloseableHttpClient client = newClient() ) {
 
-            HttpGet get = new HttpGet("http://localhost:" + STARTER_HTTP_PORT + "/server/default/jcr:root/content");
+            HttpGet get = new HttpGet("http://localhost:" + slingHttpPort + "/server/default/jcr:root/content");
 
             try ( CloseableHttpResponse response = client.execute(get) ) {
 
