@@ -45,7 +45,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
-import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -67,10 +66,18 @@ public class SmokeIT {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][] {
-            {"starter.http.port", 8080},
-            {"starter.http.port.mongo", 8081}
-        });
+        if (Boolean.getBoolean("mongo.skip")) {
+            // the mongo launcher was skipped so we
+            //  should not try to test it
+            return Arrays.asList(new Object[][] {
+                {"starter.http.port", 8080}
+            });
+        }  else {
+            return Arrays.asList(new Object[][] {
+                {"starter.http.port", 8080},
+                {"starter.http.port.mongo", 8081}
+            });
+        }
     }
 
     public SmokeIT(String propName, int defaultPort) {

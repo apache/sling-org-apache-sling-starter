@@ -51,6 +51,8 @@
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
 
+        <!-- use to skip launching and testing sling-NN-oak-mongo if docker is not installed -->
+        <docker.skip>true</docker.skip>
     </properties>
 
     <build>
@@ -215,6 +217,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.19.1</version>
                 <configuration>
+                    <skip>${docker.skip}</skip>
                     <images>
                         <image>
                             <alias>mongo</alias>
@@ -273,6 +276,7 @@
                         </launch>
                         <launch>
                             <id>sling-12-oak-mongo</id>
+                            <skip>${docker.skip}</skip>
                             <feature>
                                 <groupId>${project.groupId}</groupId>
                                 <artifactId>${project.artifactId}</artifactId>
@@ -316,6 +320,7 @@
                        <starter.http.port>${http.port}</starter.http.port>
                        <starter.http.port.mongo>${http.port.mongo}</starter.http.port.mongo>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
+                       <mongo.skip>${docker.skip}</mongo.skip>
                    </systemPropertyVariables>
                </configuration>
             </plugin>
@@ -373,6 +378,18 @@
             <properties>
                <bnd.index.generation.skip>false</bnd.index.generation.skip>
             </properties>
+        </profile>
+        <profile>
+            <id>enableDocker-linux</id>
+            <properties>
+                <docker.skip>false</docker.skip>
+            </properties>
+            <activation>
+                <!-- Activate on Linux systems. Assume presence of docker.pid file indicates Docker is available -->
+                <file>
+                    <exists>/var/run/docker.pid</exists>
+                </file>
+            </activation>
         </profile>
     </profiles>
 </project>
