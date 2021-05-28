@@ -51,6 +51,7 @@
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
         <docker.skip>true</docker.skip>
+        <mongo.container.image>mongo:4.4.6</mongo.container.image>
     </properties>
 
     <build>
@@ -235,7 +236,7 @@
                     <images>
                         <image>
                             <alias>mongo</alias>
-                            <name>mongo:4.4.6</name>
+                            <name>${mongo.container.image}</name>
                             <run>
                                 <ports>
                                     <port>${mongo.port}:27017</port>
