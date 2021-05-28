@@ -21,10 +21,11 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -45,7 +46,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
-import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -67,14 +67,22 @@ public class SmokeIT {
 
     @Parameterized.Parameters(name = "{0}")
     public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][] {
-            {"starter.http.port", 8080},
-            {"starter.http.port.mongo", 8081}
+        // This is a string of Sling instance port numbers to test, like
+        //     false:80,true:1234
+        // meaning: do not skip testing on port 80 but skip testing port 1234
+        final Stream<String> portDefs = Stream.of(System.getProperty("starter.http.test.ports").split(","));
+        final List<Object[]> result = new ArrayList<>();
+        portDefs.forEach(def -> {
+            final String [] parts = def.split(":");
+            if("false".equals(parts[0])) {
+                result.add(new Object[]{Integer.valueOf(parts[1].trim())});
+            }
         });
+        return result;
     }
 
-    public SmokeIT(String propName, int defaultPort) {
-        slingHttpPort = Integer.getInteger(propName, defaultPort);
+    public SmokeIT(int slingHttpPort) {
+        this.slingHttpPort = slingHttpPort;
         launchpadRule = new StarterReadyRule(slingHttpPort);
     }
 

@@ -50,11 +50,27 @@
         <groovy.version>3.0.7</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
-
+        <docker.skip>true</docker.skip>
     </properties>
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target if="${docker.skip}">
+                                <echo>WARNING: docker.skip is ${docker.skip}, Docker-based tests will not be executed.</echo>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>ianal-maven-plugin</artifactId>
@@ -215,6 +231,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.19.1</version>
                 <configuration>
+                    <skip>${docker.skip}</skip>
                     <images>
                         <image>
                             <alias>mongo</alias>
@@ -273,6 +290,7 @@
                         </launch>
                         <launch>
                             <id>sling-12-oak-mongo</id>
+                            <skip>${docker.skip}</skip>
                             <feature>
                                 <groupId>${project.groupId}</groupId>
                                 <artifactId>${project.artifactId}</artifactId>
@@ -313,8 +331,7 @@
                </executions>
                <configuration>
                    <systemPropertyVariables>
-                       <starter.http.port>${http.port}</starter.http.port>
-                       <starter.http.port.mongo>${http.port.mongo}</starter.http.port.mongo>
+                       <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
                    </systemPropertyVariables>
                </configuration>
@@ -372,6 +389,7 @@
             <id>ci</id>
             <properties>
                <bnd.index.generation.skip>false</bnd.index.generation.skip>
+               <docker.skip>false</docker.skip>
             </properties>
         </profile>
     </profiles>
