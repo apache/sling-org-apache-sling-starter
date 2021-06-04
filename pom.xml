@@ -43,7 +43,7 @@
         <!-- versions to be replaced in the feature files -->
         <asm.version>9.1</asm.version>
         <jackrabbit.version>2.20.2</jackrabbit.version>
-        <oak.version>1.38.0</oak.version>
+        <oak.version>1.40.0</oak.version>
         <slf4j.version>1.7.30</slf4j.version>
         <composum.nodes.version>2.6.1</composum.nodes.version>
         <jackson.version>2.12.1</jackson.version>

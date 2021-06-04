@@ -18,9 +18,10 @@ package org.apache.sling.launchpad;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -197,6 +198,24 @@ public class SmokeIT {
                 Node nameAttr = attrs.getNamedItemNS("http://www.jcp.org/jcr/sv/1.0", "name");
                 assertThat("no 'name' attribute found", nameAttr, notNullValue());
                 assertThat("Invalid name attribute value", nameAttr.getNodeValue(), equalTo("content"));
+            }
+        }
+    }
+
+    /**
+     * For testing the SLING-10402 scenario
+     */
+    @Test
+    public void verifyReadableImage() throws Exception {
+        try ( CloseableHttpClient client = newClient() ) {
+            HttpGet get = new HttpGet("http://localhost:" + slingHttpPort + "/content/slingshot/users/slingshot1/travel/home/images/home.jpg");
+            try (CloseableHttpResponse response = client.execute(get, httpClientContext)) {
+                if ( response.getStatusLine().getStatusCode() != 200 ) {
+                    fail("Unexpected status line " + response.getStatusLine());
+                }
+                ByteArrayOutputStream bout = new ByteArrayOutputStream();
+                response.getEntity().writeTo(bout);
+                assertThat("Expected 1170194 bytes for image, but got " + bout.size(), bout.size(), equalTo(1170194));
             }
         }
     }
