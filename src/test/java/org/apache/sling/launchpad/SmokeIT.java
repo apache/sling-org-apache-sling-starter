@@ -21,7 +21,6 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -58,6 +57,8 @@ import org.w3c.dom.Node;
 
 @RunWith(Parameterized.class)
 public class SmokeIT {
+    private static final String READABLE_PROP_PREFIX = "starter.readable.";
+    private static final int MAX_READABLE_INDEX = 50;
 
     private final int slingHttpPort;
     private static final int STARTER_MIN_BUNDLES_COUNT = Integer.getInteger("starter.min.bundles.count", Integer.MAX_VALUE);
@@ -66,7 +67,7 @@ public class SmokeIT {
     public final StarterReadyRule launchpadRule;
     private HttpClientContext httpClientContext;
 
-    @Parameterized.Parameters(name = "{0}")
+    @Parameterized.Parameters(name = "Port: {0,number,#}")
     public static Collection<Object[]> data() {
         // This is a string of Sling instance port numbers to test, like
         //     false:80,true:1234
@@ -206,16 +207,19 @@ public class SmokeIT {
      * For testing the SLING-10402 scenario
      */
     @Test
-    public void verifyReadableImage() throws Exception {
+    public void verifyReadableUrls() throws Exception {
         try ( CloseableHttpClient client = newClient() ) {
-            HttpGet get = new HttpGet("http://localhost:" + slingHttpPort + "/content/slingshot/users/slingshot1/travel/home/images/home.jpg");
-            try (CloseableHttpResponse response = client.execute(get, httpClientContext)) {
-                if ( response.getStatusLine().getStatusCode() != 200 ) {
-                    fail("Unexpected status line " + response.getStatusLine());
+            for (int i = 0; i <= MAX_READABLE_INDEX ; i++) {
+                final String propName = READABLE_PROP_PREFIX + i;
+                final String readable = System.getProperty(propName, "");
+                if (!readable.isEmpty()) {
+                    HttpGet get = new HttpGet(String.format("http://localhost:%d%s", slingHttpPort, readable));
+                    try (CloseableHttpResponse response = client.execute(get, httpClientContext)) {
+                        if ( response.getStatusLine().getStatusCode() != 200 ) {
+                            fail(String.format("Unexpected status line \"%s\" for %s", response.getStatusLine(), readable));
+                        }
+                    }
                 }
-                ByteArrayOutputStream bout = new ByteArrayOutputStream();
-                response.getEntity().writeTo(bout);
-                assertThat("Expected 1170194 bytes for image, but got " + bout.size(), bout.size(), equalTo(1170194));
             }
         }
     }
