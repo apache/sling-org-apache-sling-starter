@@ -6,15 +6,15 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.discovery.base:2.0.8",
+            "id":"org.apache.sling:org.apache.sling.discovery.base:2.0.10",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.discovery.commons:1.0.20",
+            "id":"org.apache.sling:org.apache.sling.discovery.commons:1.0.24",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.discovery.oak:1.2.30",
+            "id":"org.apache.sling:org.apache.sling.discovery.oak:1.2.34",
             "start-order":"20"
         },
         {
