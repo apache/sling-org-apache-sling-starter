@@ -43,7 +43,7 @@
         <!-- versions to be replaced in the feature files -->
         <asm.version>9.1</asm.version>
         <jackrabbit.version>2.20.2</jackrabbit.version>
-        <oak.version>1.38.0</oak.version>
+        <oak.version>1.40.0</oak.version>
         <slf4j.version>1.7.30</slf4j.version>
         <composum.nodes.version>2.6.1</composum.nodes.version>
         <jackson.version>2.12.1</jackson.version>
@@ -318,7 +318,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>                
+            </plugin>
             <!-- run the ITs -->
             <plugin>
                <artifactId>maven-failsafe-plugin</artifactId>
@@ -334,6 +334,9 @@
                    <systemPropertyVariables>
                        <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
+                       <!-- Specify any number of starter.readable.N props for relative paths to check for a successful get request. -->
+                       <!-- Check the affected path for SLING-10402 regression checking -->
+                       <starter.readable.1>/slingshot/users/slingshot1/travel/home/images/home.jpg</starter.readable.1>
                    </systemPropertyVariables>
                </configuration>
             </plugin>
