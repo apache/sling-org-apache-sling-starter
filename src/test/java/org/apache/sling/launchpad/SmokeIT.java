@@ -19,12 +19,15 @@ package org.apache.sling.launchpad;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -57,7 +60,7 @@ import org.w3c.dom.Node;
 
 @RunWith(Parameterized.class)
 public class SmokeIT {
-    private static final String READABLE_PROP_PREFIX = "starter.readable.";
+    private static final String CHECK_PATHS_PROPERTY = "starter.check.paths";
     private static final int MAX_READABLE_INDEX = 50;
 
     private final int slingHttpPort;
@@ -208,20 +211,26 @@ public class SmokeIT {
      */
     @Test
     public void verifyReadableUrls() throws Exception {
+        final AtomicInteger checkedPaths = new AtomicInteger();
         try ( CloseableHttpClient client = newClient() ) {
-            for (int i = 0; i <= MAX_READABLE_INDEX ; i++) {
-                final String propName = READABLE_PROP_PREFIX + i;
-                final String readable = System.getProperty(propName, "");
-                if (!readable.isEmpty()) {
-                    HttpGet get = new HttpGet(String.format("http://localhost:%d%s", slingHttpPort, readable));
+            Stream.of(System.getProperty(CHECK_PATHS_PROPERTY).split(","))
+                .map(path -> path.trim())
+                .filter(path -> !path.isEmpty())
+                .forEach(path -> {
+                    HttpGet get = new HttpGet(String.format("http://localhost:%d%s", slingHttpPort, path));
                     try (CloseableHttpResponse response = client.execute(get, httpClientContext)) {
+                        checkedPaths.incrementAndGet();
                         if ( response.getStatusLine().getStatusCode() != 200 ) {
-                            fail(String.format("Unexpected status line \"%s\" for %s", response.getStatusLine(), readable));
+                            fail(String.format("Unexpected status line \"%s\" for %s", response.getStatusLine(), path));
                         }
+                    } catch(Exception ex) {
+                        throw new RuntimeException(ex);
                     }
-                }
-            }
+            });
         }
+
+        final int minTests = 6;
+        assertTrue(String.format("Expecting at least %d tests, got %d", minTests, checkedPaths.get()), checkedPaths.get() >= minTests);
     }
 
     static class BundleStatus {

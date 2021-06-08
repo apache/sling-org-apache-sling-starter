@@ -334,9 +334,15 @@
                    <systemPropertyVariables>
                        <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
-                       <!-- Specify any number of starter.readable.N props for relative paths to check for a successful get request. -->
-                       <!-- Check the affected path for SLING-10402 regression checking -->
-                       <starter.readable.1>/slingshot/users/slingshot1/travel/home/images/home.jpg</starter.readable.1>
+                       <!-- Comma-separated list of paths to check for 200 status (added for SLING-10402) -->
+                       <starter.check.paths>
+                            /slingshot/users/slingshot1/travel/home/images/home.jpg,
+                            /slingshot/resources/images/background.jpg,
+                            /slingshot/users/slingshot2/places/landing/images/landing.jpg,
+                            /starter.html,
+                            /bin/browser.html,
+                            /system/console/bundles,
+                        </starter.check.paths>
                    </systemPropertyVariables>
                </configuration>
             </plugin>
