@@ -38,7 +38,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.auth.form:1.0.20",
+            "id":"org.apache.sling:org.apache.sling.auth.form:1.0.24",
             "start-order":"20"
         },
         {
