@@ -395,8 +395,13 @@
             </properties>
         </profile>
         <profile>
-            <!-- enabled during ci builds -->
             <id>ci</id>
+            <!-- enabled during ci builds -->
+            <activation>
+                <property>
+                    <name>ci</name>
+                </property>
+            </activation>
             <properties>
                <bnd.index.generation.skip>false</bnd.index.generation.skip>
                <docker.skip>false</docker.skip>
