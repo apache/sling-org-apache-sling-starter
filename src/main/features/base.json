@@ -174,7 +174,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.auth.core:1.5.4",
+            "id":"org.apache.sling:org.apache.sling.auth.core:1.5.6",
             "start-order":"5"
         },
         {
