@@ -18,104 +18,64 @@ package org.apache.sling.launchpad;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.ConnectException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.junit.rules.ExternalResource;
 
 public class StarterReadyRule extends ExternalResource {
 
-    private static final int TRIES = 60;
-    private static final int WAIT_BETWEEN_TRIES_MILLIS = 1000;
-
-    private final List<Check> checks = new ArrayList<>();
+    private final List<UrlCheck> checks = new ArrayList<>();
+    private final int launchpadPort;
+    private static final Map<Integer, Throwable> previousFailures = new HashMap<>();
 
     public StarterReadyRule(int launchpadPort) {
-
-        checks.add(new Check("http://localhost:" + launchpadPort + "/server/default/jcr:root/content"));
-        checks.add(new Check("http://localhost:" + launchpadPort + "/content/starter.html") {
+        this.launchpadPort = launchpadPort;
+        final String baseURL = String.format("http://localhost:%d", launchpadPort);
+        checks.add(new UrlCheck(baseURL, "/server/default/jcr:root/content"));
+        checks.add(new UrlCheck(baseURL, "/content/starter.html") {
+            final String READY_MARKER = "Do not remove this comment, used for Starter integration tests";
             @Override
-            public String runCheck(HttpResponse response) throws Exception {
+            public String run(HttpResponse response) throws Exception {
                 try (InputStreamReader isr = new InputStreamReader(response.getEntity().getContent());
                         BufferedReader reader = new BufferedReader(isr)) {
 
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        if (line.contains("Do not remove this comment, used for Starter integration tests")) {
+                        if (line.contains(READY_MARKER)) {
                             return null;
                         }
                     }
                 }
 
-                return "Did not find 'ready' marker in the response body";
+                return String.format("Did not find 'ready' marker [%s] in the response body", READY_MARKER);
             }
         });
     }
 
     @Override
     protected void before() throws Throwable {
-
+        final Throwable previous = previousFailures.get(launchpadPort);
+        if(previous != null) {
+            throw new RuntimeException(
+                String.format("%s failed previously on port %d, refusing to run more tests", getClass().getSimpleName(), launchpadPort),
+                previous
+            );
+        }
+        final int TRIES = 60;
+        final int WAIT_BETWEEN_TRIES_MILLIS = 1000;
         try (CloseableHttpClient client = HttpClients.createDefault()) {
-            for (Check check : checks) {
-                runCheck(client, check);
+            try {
+                UrlCheck.runAll(client, TRIES, WAIT_BETWEEN_TRIES_MILLIS, checks);
+            } catch(Throwable t) {
+                previousFailures.put(launchpadPort, t);
+                throw t;
             }
         }
     }
-
-    private void runCheck(CloseableHttpClient client, Check check) throws Exception {
-
-        String lastFailure = null;
-        HttpGet get = new HttpGet(check.getUrl());
-        
-        for (int i = 0; i < TRIES; i++) {
-            try (CloseableHttpResponse response = client.execute(get)) {
-
-                if (response.getStatusLine().getStatusCode() != 200) {
-                    lastFailure = "Status code is " + response.getStatusLine();
-                    Thread.sleep(WAIT_BETWEEN_TRIES_MILLIS);
-                    continue;
-                }
-
-                lastFailure = check.runCheck(response);
-                if (lastFailure == null) {
-                    return;
-                }
-            } catch ( ConnectException e ) {
-                lastFailure = e.getClass().getName() + " : " + e.getMessage();
-            }
-
-            Thread.sleep(WAIT_BETWEEN_TRIES_MILLIS);
-        }
-        
-        throw new RuntimeException(String.format("Starter not ready. Failed check for URL %s with message '%s'",
-                check.getUrl(), lastFailure));
-    }
-
-    static class Check {
-        private String url;
-
-        public Check(String url) {
-            this.url = url;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-
-        /**
-         * @param response the HttpResponse
-         * @return null if check check was successful, an error description otherwise
-         * @throws Exception
-         */
-        public String runCheck(HttpResponse response) throws Exception {
-            return null;
-        }
-    }
-
 }

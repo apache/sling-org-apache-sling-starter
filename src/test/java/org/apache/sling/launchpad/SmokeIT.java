@@ -22,12 +22,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -61,7 +59,6 @@ import org.w3c.dom.Node;
 @RunWith(Parameterized.class)
 public class SmokeIT {
     private static final String CHECK_PATHS_PROPERTY = "starter.check.paths";
-    private static final int MAX_READABLE_INDEX = 50;
 
     private final int slingHttpPort;
     private static final int STARTER_MIN_BUNDLES_COUNT = Integer.getInteger("starter.min.bundles.count", Integer.MAX_VALUE);
@@ -210,27 +207,27 @@ public class SmokeIT {
      * For testing the SLING-10402 scenario
      */
     @Test
-    public void verifyReadableUrls() throws Exception {
-        final AtomicInteger checkedPaths = new AtomicInteger();
+    public void checkReadableUrls() throws Exception {
+        final int minTests = 6;
+        final int TRIES = 10;
+        final int WAIT_BETWEEN_TRIES_MILLIS = 1000;
+
+        final String baseURL = String.format("http://localhost:%d", slingHttpPort);
+        final List<UrlCheck> checks = new ArrayList<>();
+        Stream.of(System.getProperty(CHECK_PATHS_PROPERTY).split(","))
+            .map(path -> path.trim())
+            .filter(path -> !path.isEmpty())
+            .forEach(path -> checks.add(new UrlCheck(baseURL, path))
+        );
+
         try ( CloseableHttpClient client = newClient() ) {
-            Stream.of(System.getProperty(CHECK_PATHS_PROPERTY).split(","))
-                .map(path -> path.trim())
-                .filter(path -> !path.isEmpty())
-                .forEach(path -> {
-                    HttpGet get = new HttpGet(String.format("http://localhost:%d%s", slingHttpPort, path));
-                    try (CloseableHttpResponse response = client.execute(get, httpClientContext)) {
-                        checkedPaths.incrementAndGet();
-                        if ( response.getStatusLine().getStatusCode() != 200 ) {
-                            fail(String.format("Unexpected status line \"%s\" for %s", response.getStatusLine(), path));
-                        }
-                    } catch(Exception ex) {
-                        throw new RuntimeException(ex);
-                    }
-            });
+            UrlCheck.runAll(client, TRIES, WAIT_BETWEEN_TRIES_MILLIS, checks);
         }
 
-        final int minTests = 6;
-        assertTrue(String.format("Expecting at least %d tests, got %d", minTests, checkedPaths.get()), checkedPaths.get() >= minTests);
+        assertTrue(
+            String.format("Expecting at least %d tests, got %d", minTests, checks.size()), 
+            checks.size() >= minTests
+        );
     }
 
     static class BundleStatus {
