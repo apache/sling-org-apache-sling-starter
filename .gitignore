@@ -19,3 +19,4 @@ atlassian-ide-plugin.xml
 /sling/
 /launcher/
 /org.apache.sling.feature.launcher-*.jar
+.vscode/
