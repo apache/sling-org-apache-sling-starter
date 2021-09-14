@@ -55,3 +55,7 @@ For instance, launching an empty Sling Starter with segment persistence can be a
     java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
     
 Your own feature files can be added to the feature list.
+
+## Helper scripts
+
+The `scripts` directory contains helper scripts that will aid with local development by simplifying the use of tools external to the Sling Starter.
