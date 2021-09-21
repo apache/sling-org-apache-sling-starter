@@ -41,7 +41,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-impl:2.2.11_1",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-runtime:2.3.2_2",
             "start-order":"1"
         },
         {
@@ -49,7 +49,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.servicemix.specs:org.apache.servicemix.specs.jaxb-api-2.2:2.9.0",
+            "id":"org.apache.servicemix.specs:org.apache.servicemix.specs.jaxb-api-2.3:2.3_3",
             "start-order":"1"
         },
         {
