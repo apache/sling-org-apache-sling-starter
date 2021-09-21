@@ -105,11 +105,6 @@
                 <extensions>true</extensions>
                 <configuration>
                     <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
-                    <framework>
-                        <groupId>org.apache.felix</groupId>
-                        <artifactId>org.apache.felix.framework</artifactId>
-                        <version>6.0.3</version>
-                    </framework>
                     <aggregates>
                         <aggregate>
                             <classifier>oak_tar</classifier>

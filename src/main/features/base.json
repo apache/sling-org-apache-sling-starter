@@ -1,5 +1,10 @@
 
 {
+    "execution-environment:JSON|false":{
+        "framework":{
+            "id":"org.apache.felix:org.apache.felix.framework:7.0.1"
+        }
+    },
     "bundles":[
         {
             "id":"commons-codec:commons-codec:1.15",
