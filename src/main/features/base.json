@@ -71,7 +71,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.threads:3.2.20",
+            "id":"org.apache.sling:org.apache.sling.commons.threads:3.2.22",
             "start-order":"15"
         },
         {
