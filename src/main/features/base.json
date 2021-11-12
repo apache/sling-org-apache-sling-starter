@@ -39,7 +39,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.adapter:2.1.10",
+            "id":"org.apache.sling:org.apache.sling.adapter:2.2.0",
             "start-order":"20"
         },
         {
@@ -75,7 +75,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.engine:2.7.4",
+            "id":"org.apache.sling:org.apache.sling.engine:2.8.0",
             "start-order":"20"
         },
         {
@@ -103,7 +103,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.7.8",
+            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.8.0",
             "start-order":"20"
         },
         {
@@ -115,11 +115,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.post:2.4.6",
+            "id":"org.apache.sling:org.apache.sling.servlets.post:2.5.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.8.0",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.9.0",
             "start-order":"20"
         },
         {
@@ -175,7 +175,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.api:2.23.6",
+            "id":"org.apache.sling:org.apache.sling.api:2.24.0",
             "start-order":"5"
         },
         {
