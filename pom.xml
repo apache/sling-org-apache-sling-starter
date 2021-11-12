@@ -60,22 +60,6 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target if="${docker.skip}">
-                                <echo>WARNING: docker.skip is ${docker.skip}, Docker-based tests will not be executed.</echo>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <configuration>
                     <filesets>
@@ -204,6 +188,22 @@
                                 <portName>http.port.mongo</portName>
                                 <portName>mongo.port</portName>
                             </portNames>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target if="${docker.skip}">
+                                <echo>WARNING: docker.skip is ${docker.skip}, Docker-based tests will not be executed.</echo>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
