@@ -56,6 +56,30 @@ For instance, launching an empty Sling Starter with segment persistence can be a
     
 Your own feature files can be added to the feature list.
 
+## Docker image
+
+This module can optionally build a Docker image. This is achieved by running a build with the `-Ddocker.skip=false` argument. By default, the image is built as `apache/sling:snapshot`. The tag can be overrriden using the `docker.label` Maven property.
+
+```
+$ mvn clean package -Ddocker.skip=false -Ddocker.label=local
+$ docker run --rm -p 8080 apache/sling:local
+```
+
+By default the iamge launches the `oak_tar` aggregate. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
+
+```
+$ docker run --rm -p 8080 apache/sling:snapshot oak_mongo
+```
+
+Currently only the `oak_tar` and `oak_mongo` aggregates are supported.
+
+For persisting the runtime data is is recommended to mount `/opt/sling/launcher` as a volume, for instance:
+
+```
+$ docker volume create sling-launcher
+$ docker run --rm -p 8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot
+```
+
 ## Helper scripts
 
 The `scripts` directory contains helper scripts that will aid with local development by simplifying the use of tools external to the Sling Starter.

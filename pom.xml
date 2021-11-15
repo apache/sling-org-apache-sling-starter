@@ -51,6 +51,7 @@
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
         <docker.skip>true</docker.skip>
+        <docker.label>snapshot</docker.label>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
@@ -121,7 +122,14 @@
                             <classifier>oak_mongo_far</classifier>
                             <includeClassifier>oak_mongo</includeClassifier>
                         </archive>
-                    </archives>                 
+                    </archives>
+                    <repositories>
+                        <repository>
+                            <includeClassifier>oak_tar</includeClassifier>
+                            <includeClassifier>oak_mongo</includeClassifier>
+                            <includeClassifier>docker</includeClassifier>
+                        </repository>
+                    </repositories>
                 </configuration>
                 <executions>
                     <execution>
@@ -132,6 +140,13 @@
                             <goal>analyse-features</goal>
                             <goal>attach-features</goal>
                             <goal>attach-featurearchives</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>create-repository</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>repository</goal>
                         </goals>
                     </execution>
                </executions>
@@ -234,6 +249,13 @@
                                 </wait>
                             </run>
                         </image>
+                        <image>
+                            <name>apache/sling:${docker.label}</name>
+                            <build>
+                                <dockerFile>Dockerfile</dockerFile>
+                                <contextDir>${project.basedir}</contextDir>
+                            </build>
+                        </image>
                     </images>
                     <stopMode>kill</stopMode>
                 </configuration>
@@ -252,6 +274,13 @@
                         <phase>verify</phase>
                         <goals>
                             <goal>stop</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>build-docker-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
                         </goals>
                     </execution>
                 </executions>
