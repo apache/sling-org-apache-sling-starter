@@ -8,7 +8,7 @@
              "start-order":"15"
         },
         {
-             "id":"org.mongodb:mongo-java-driver:3.12.8",
+             "id":"org.mongodb:mongo-java-driver:3.12.10",
              "start-order":"15"
          }
     ],
