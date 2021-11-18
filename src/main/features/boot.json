@@ -41,7 +41,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-runtime:2.3.2_2",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-runtime:2.3.2_3",
             "start-order":"1"
         },
         {
