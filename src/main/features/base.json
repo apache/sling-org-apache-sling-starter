@@ -199,7 +199,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:2.0.22",
+            "id":"org.apache.pdfbox:fontbox:2.0.24",
             "start-order":"10"
         },
         {
@@ -207,7 +207,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:2.0.22",
+            "id":"org.apache.pdfbox:pdfbox:2.0.24",
             "start-order":"10"
         },
         {
