@@ -41,13 +41,13 @@
         <starter.min.bundles.count>126</starter.min.bundles.count>
 
         <!-- versions to be replaced in the feature files -->
-        <asm.version>9.1</asm.version>
+        <asm.version>9.2</asm.version>
         <jackrabbit.version>2.20.2</jackrabbit.version>
         <oak.version>1.40.0</oak.version>
         <slf4j.version>1.7.30</slf4j.version>
         <composum.nodes.version>2.6.1</composum.nodes.version>
         <jackson.version>2.12.1</jackson.version>
-        <groovy.version>3.0.7</groovy.version>
+        <groovy.version>3.0.9</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
         <docker.skip>true</docker.skip>
