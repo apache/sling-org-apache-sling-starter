@@ -155,11 +155,11 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.8",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.12",
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.servlet-api:1.1.2",
+            "id":"org.apache.felix:org.apache.felix.http.servlet-api:1.1.4",
             "start-order":"5"
         },
         {
@@ -167,7 +167,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.inventory:1.0.6",
+            "id":"org.apache.felix:org.apache.felix.inventory:1.1.0",
             "start-order":"5"
         },
         {
