@@ -17,7 +17,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.converter:1.0.14",
+            "id":"org.apache.felix:org.apache.felix.converter:1.0.18",
             "start-order":"1"
         },
         {
@@ -133,7 +133,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.scr:2.1.26",
+            "id":"org.apache.felix:org.apache.felix.scr:2.1.30",
             "start-order":"1"
         }
 
