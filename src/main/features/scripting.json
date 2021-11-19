@@ -62,7 +62,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly:1.4.12-1.4.0",
+            "id":"org.apache.sling:org.apache.sling.scripting.sightly:1.4.14-1.4.0",
             "start-order":"20"
         },
         {
