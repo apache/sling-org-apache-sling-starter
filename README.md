@@ -65,7 +65,7 @@ $ mvn clean package -Ddocker.skip=false -Ddocker.label=local
 $ docker run --rm -p 8080 apache/sling:local
 ```
 
-By default the iamge launches the `oak_tar` aggregate. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
+By default the image launches the `oak_tar` aggregate. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
 
 ```
 $ docker run --rm -p 8080 apache/sling:snapshot oak_mongo
@@ -79,6 +79,8 @@ For persisting the runtime data is is recommended to mount `/opt/sling/launcher`
 $ docker volume create sling-launcher
 $ docker run --rm -p 8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot
 ```
+
+The [docker/](docker/) directory contains sample files related to container-based development.
 
 ## Helper scripts
 
