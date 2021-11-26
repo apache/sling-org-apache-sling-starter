@@ -1,7 +1,4 @@
 {
-    "variables": {
-        "mongo.port":"27017"
-    },
     "bundles":[
          {
              "id":"com.h2database:h2-mvstore:1.4.200",
@@ -15,7 +12,7 @@
     "configurations":{
         "org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService":{
             "db":"sling",
-            "mongouri":"mongodb://localhost:${mongo.port}"
+            "mongouri":"mongodb://$[env:MONGODB_HOST;default=localhost]:$[env:MONGODB_PORT;type=Integer;default=27107]"
          }
     }
 }
