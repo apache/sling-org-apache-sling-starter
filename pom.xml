@@ -322,10 +322,10 @@
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
                                 </frameworkProperties>
-                                <variables>
-                                    <mongo.port>${mongo.port}</mongo.port>
-                                </variables>
                             </launcherArguments>
+                            <environmentVariables>
+                                <MONGODB_PORT>${mongo.port}</MONGODB_PORT>
+                            </environmentVariables>
                             <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
                         </launch>
                     </launches>
