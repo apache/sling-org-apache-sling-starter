@@ -54,10 +54,6 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly.repl:1.0.6",
-            "start-order":"20"
-        },
-        {
             "id":"org.apache.sling:org.apache.sling.scripting.sightly.runtime:1.2.6-1.4.0",
             "start-order":"20"
         },
