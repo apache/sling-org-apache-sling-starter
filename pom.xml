@@ -248,6 +248,7 @@
                 <executions>
                     <execution>
                         <id>start-mongo</id>
+                        <!-- must run prior feature-launcher-maven-plugin:start  -->
                         <phase>pre-integration-test</phase>
                         <goals>
                             <goal>start</goal>
@@ -255,7 +256,8 @@
                     </execution>
                     <execution>
                         <id>stop-mongo</id>
-                        <phase>post-integration-test</phase>
+                        <!-- must run after feature-launcher-maven-plugin:stop  -->
+                        <phase>verify</phase>
                         <goals>
                             <goal>stop</goal>
                         </goals>
