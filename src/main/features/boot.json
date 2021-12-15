@@ -73,7 +73,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.log:1.2.4",
+            "id":"org.apache.felix:org.apache.felix.log:1.2.6",
             "start-order":"1"
         },
         {
