@@ -6,7 +6,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.caconfig.impl:1.5.0",
+            "id":"org.apache.sling:org.apache.sling.caconfig.impl:1.5.2",
             "start-order":"20"
         },
         {
