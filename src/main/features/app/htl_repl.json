@@ -1,7 +1,7 @@
 {
     "bundles": [
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly.repl:1.0.6",
+            "id":"org.apache.sling:org.apache.sling.scripting.sightly.repl:1.0.10",
             "start-order":"20"
         }
     ]
