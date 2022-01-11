@@ -52,6 +52,7 @@
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
         <docker.skip>true</docker.skip>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
+        <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
     </properties>
 
     <build>
@@ -285,6 +286,7 @@
                                     <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
                                 </frameworkProperties>
                             </launcherArguments>
+                            <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
                         </launch>
                         <launch>
                             <id>sling-12-oak-mongo</id>
@@ -304,6 +306,7 @@
                                     <mongo.port>${mongo.port}</mongo.port>
                                 </variables>
                             </launcherArguments>
+                            <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
                         </launch>
                     </launches>
                 </configuration>
