@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling</artifactId>
-        <version>39</version>
+        <version>47</version>
         <relativePath/>
     </parent>
 
@@ -53,6 +53,8 @@
         <docker.skip>true</docker.skip>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
+        <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
+        <project.build.outputTimestamp>20</project.build.outputTimestamp>
     </properties>
 
     <build>
@@ -70,17 +72,6 @@
                                 <echo>WARNING: docker.skip is ${docker.skip}, Docker-based tests will not be executed.</echo>
                             </target>
                         </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>ianal-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>verify-legal-files</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>
