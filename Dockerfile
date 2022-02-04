@@ -21,21 +21,22 @@ LABEL org.opencontainers.image.authors="dev@sling.apache.org"
 
 EXPOSE 8080
 
-RUN mkdir -p /opt/sling/artifacts
+RUN groupadd --system sling && \
+    useradd --no-log-init --system --gid sling sling && \
+    mkdir /opt/sling && \
+    mkdir /opt/sling/launcher && \
+    mkdir /opt/sling/artifacts && \
+    chown -R sling:sling /opt/sling/launcher
+
+VOLUME /opt/sling/launcher
+
 COPY src/main/container /opt/sling
 COPY target/dependency/org.apache.sling.feature.launcher.jar /opt/sling
 COPY target/artifacts/ /opt/sling/artifacts/
 
-RUN groupadd -r sling && \
-    useradd --no-log-init -r -g sling sling && \
-    mkdir /opt/sling/launcher && \
-    chown sling:sling /opt/sling/launcher
-
 # ensure all files are readable by the sling user
-# for some reason some jar files are 0600 and others are 0644
-RUN find /opt/sling/artifacts -type f | xargs chmod 0644
-
-VOLUME /opt/sling/launcher
+# for some reason some jar files are 0600 while most are 0644
+RUN find /opt/sling/artifacts -type f -perm 0600 | xargs --no-run-if-empty chmod 0644
 
 USER sling:sling
 
