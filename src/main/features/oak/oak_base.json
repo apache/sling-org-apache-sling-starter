@@ -142,7 +142,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.16",
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.18",
             "start-order":"20"
         }
     ],
@@ -207,6 +207,9 @@
                 "org.apache.jackrabbit.oak.security.user.UserAuthenticationFactoryImpl",
                 "org.apache.jackrabbit.oak.spi.security.authorization.principalbased.impl.PrincipalBasedAuthorizationConfiguration"
             ]
+         },
+        "org.apache.sling.jackrabbit.usermanager.impl.resource.AuthorizableResourceProvider":{
+            "resources.for.nested.properties":true
          }
     }
 }
