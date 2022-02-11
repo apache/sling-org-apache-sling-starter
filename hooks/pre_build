@@ -17,4 +17,9 @@
 # specific language governing permissions and limitations
 # under the License.
 
+# Since the top-level Dockerfile expects the project to be already be built, we hook
+# in the DockerHub build process and replicate the build using docker
+# 
+# see https://docs.docker.com/docker-hub/builds/advanced/
+
 docker run --rm -v "$(pwd)":/build -w /build maven:3.8-openjdk-11 mvn -B package
