@@ -41,31 +41,22 @@ For MongoDB support replace the launch command with
 This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
 (currently `mongodb://localhost:27017`).
 
-## Extending the Sling Starter
+## How to run the Sling Starter Docker image
 
-If you wish the extend the Sling Starter but would like to keep various application-level features out, you can
-start with the `nosample_base` aggregate, which contains:
+The following tags are supported
 
-- all the base features
-- Oak base features, without the NodeStore setup
-- No applications ( Composum, Slingshot, etc )
+* `11, latest` - Apache Sling Starter 11 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/11/Dockerfile), [Release notes](https://sling.apache.org/news/sling-11-released.html) )
+* `10` - Apache Sling Starter 10 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/10/Dockerfile), [Release notes](https://sling.apache.org/news/sling-10-released.html) )
+* `9`- Apache Sling Launchpad 9 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/9/Dockerfile), [Release notes](https://sling.apache.org/news/sling-launchpad-9-released.html) )
+* `snapshots` - developments builds based on the latest version on the master branch - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile) )
 
-For instance, launching an empty Sling Starter with segment persistence can be achieved by running
-
-    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
-    
-Your own feature files can be added to the feature list.
-
-## Docker image
-
-This module can optionally build a Docker image. This is achieved by running a build with the `-Ddocker.skip=false` argument. By default, the image is built as `apache/sling:snapshot`. The tag can be overrriden using the `docker.label` Maven property.
+The Docker image only needs the port 8080 to be exposed
 
 ```
-$ mvn clean package -Ddocker.skip=false -Ddocker.label=local
-$ docker run --rm -p 8080 apache/sling:local
+$ docker run --rm -p 8080 apache/sling:snapshot
 ```
 
-By default the image launches the `oak_tar` aggregate. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
+By default the image launches the `oak_tar` aggregate, which uses local persistence. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
 
 ```
 $ docker run --rm -p 8080 apache/sling:snapshot oak_mongo
@@ -81,6 +72,31 @@ $ docker run --rm -p 8080 -v sling-launcher:/opt/sling/launcher apache/sling:sna
 ```
 
 The [docker/](docker/) directory contains sample files related to container-based development.
+
+## Building the Docker image
+
+This module can optionally build a Docker image. This is achieved by running a build with the `-Ddocker.skip=false` argument. By default, the image is built as `apache/sling:snapshot`. The tag can be overrriden using the `docker.label` Maven property.
+
+```
+$ mvn clean package -Ddocker.skip=false -Ddocker.label=local
+$ docker run --rm -p 8080 apache/sling:local
+```
+
+## Extending the Sling Starter
+
+If you wish the extend the Sling Starter but would like to keep various application-level features out, you can
+start with the `nosample_base` aggregate, which contains:
+
+- all the base features
+- Oak base features, without the NodeStore setup
+- No applications ( Composum, Slingshot, etc )
+
+For instance, launching an empty Sling Starter with segment persistence can be achieved by running
+
+    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
+    
+Your own feature files can be added to the feature list.
+
 
 ## Helper scripts
 
