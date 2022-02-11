@@ -17,6 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
+# This script makes sure that when a tag is build, it is also pushed
+# to the 'latest' tag, so that 'docker run apache/sling' always uses
+# the latest release
+#
+# see https://docs.docker.com/docker-hub/builds/advanced/
+
+
 if [[ ${DOCKER_TAG} =~ ^[0-9]+$ ]] ; then
     echo "Detected tag build, pushing to 'latest' tag"
     docker tag ${IMAGE_NAME} ${DOCKER_REPO}:latest
