@@ -48,7 +48,7 @@ The following tags are supported
 * `11, latest` - Apache Sling Starter 11 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/11/Dockerfile), [Release notes](https://sling.apache.org/news/sling-11-released.html) )
 * `10` - Apache Sling Starter 10 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/10/Dockerfile), [Release notes](https://sling.apache.org/news/sling-10-released.html) )
 * `9`- Apache Sling Launchpad 9 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/9/Dockerfile), [Release notes](https://sling.apache.org/news/sling-launchpad-9-released.html) )
-* `snapshots` - developments builds based on the latest version on the master branch - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile) )
+* `snapshot` - developments builds based on the latest version on the master branch - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile) )
 
 The Docker image only needs the port 8080 to be exposed
 
