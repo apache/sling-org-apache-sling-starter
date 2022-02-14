@@ -33,7 +33,10 @@ echo "[INFO] Automatically appended ${docker_feature}"
 
 feature="${feature},${docker_feature}"
 
-exec java -jar org.apache.sling.feature.launcher.jar \
+# remove add-opens after SLING-10831 is fixed
+exec java \
+    --add-opens java.base/java.lang=ALL-UNNAMED \
+    -jar org.apache.sling.feature.launcher.jar \
     -c artifacts \
     -CC "org.apache.sling.commons.log.LogManager=MERGE_LATEST" \
     -f ${feature}
