@@ -2,7 +2,7 @@
 {
     "bundles":[
         {
-            "id":"org.apache.sling:org.apache.sling.models.validation-impl:1.0.0",
+            "id":"org.apache.sling:org.apache.sling.models.validation-impl:1.1.0",
             "start-order":"20"
         },
         {

@@ -35,7 +35,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.httpcomponents:httpcore-osgi:4.4.14",
+            "id":"org.apache.httpcomponents:httpcore-osgi:4.4.15",
             "start-order":"15"
         },
         {
@@ -79,11 +79,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.fsresource:2.1.16",
+            "id":"org.apache.sling:org.apache.sling.fsresource:2.2.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.i18n:2.5.16",
+            "id":"org.apache.sling:org.apache.sling.i18n:2.5.18",
             "start-order":"20"
         },
         {
@@ -103,7 +103,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.8.0",
+            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.8.4",
             "start-order":"20"
         },
         {
@@ -111,7 +111,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.get:2.1.40",
+            "id":"org.apache.sling:org.apache.sling.servlets.get:2.1.44",
             "start-order":"20"
         },
         {
@@ -119,7 +119,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.9.0",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.9.2",
             "start-order":"20"
         },
         {
@@ -155,7 +155,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.12",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.14",
             "start-order":"5"
         },
         {
@@ -191,7 +191,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.metrics:1.2.8",
+            "id":"org.apache.sling:org.apache.sling.commons.metrics:1.2.10",
             "start-order":"5"
         },
         {
@@ -199,7 +199,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:2.0.24",
+            "id":"org.apache.pdfbox:fontbox:2.0.25",
             "start-order":"10"
         },
         {
@@ -207,15 +207,15 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:2.0.24",
+            "id":"org.apache.pdfbox:pdfbox:2.0.25",
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-core:1.27",
+            "id":"org.apache.tika:tika-core:1.28.1",
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-parsers:1.27",
+            "id":"org.apache.tika:tika-parsers:1.28.1",
             "start-order":"10"
         },
         {
@@ -227,7 +227,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.6.10",
+            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.6.12",
             "start-order":"20"
         },
         {

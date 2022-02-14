@@ -6,7 +6,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.healthcheck.core:2.0.10",
+            "id":"org.apache.felix:org.apache.felix.healthcheck.core:2.0.12",
             "start-order":"5"
         },
         {
@@ -94,7 +94,7 @@
         },
         "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~hc-support":{
             "user.mapping":[
-                "org.apache.sling.hc.support=sling-readall"
+                "org.apache.sling.hc.support=[sling-readall]"
             ]
         }
     }
