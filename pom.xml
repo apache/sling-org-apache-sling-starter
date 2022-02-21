@@ -162,7 +162,8 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.1.6</artifact>
+                            <!-- 1.1.28 and newer versions don't work out-of-the-box due to SLING-10956 -->
+                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.1.26</artifact>
                             <stripVersion>true</stripVersion>
                         </configuration>
                     </execution>
