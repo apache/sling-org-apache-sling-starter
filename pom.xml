@@ -162,7 +162,7 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.2.0</artifact>
+                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.1.6</artifact>
                             <stripVersion>true</stripVersion>
                         </configuration>
                     </execution>
