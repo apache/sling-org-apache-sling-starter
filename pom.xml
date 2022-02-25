@@ -10,19 +10,18 @@
     either express or implied. See the License for the specific language governing permissions
     and limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling</artifactId>
         <version>47</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <artifactId>org.apache.sling.starter</artifactId>
-    <version>12-SNAPSHOT</version>
+    <version>12</version>
 
     <name>Apache Sling Starter Application</name>
     <description>
@@ -33,7 +32,7 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</developerConnection>
         <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-starter.git</url>
-        <tag>HEAD</tag>
+        <tag>org.apache.sling.starter-12</tag>
     </scm>
 
     <properties>
@@ -55,7 +54,7 @@
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
-        <project.build.outputTimestamp>20</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1645804430</project.build.outputTimestamp>
     </properties>
 
     <build>
