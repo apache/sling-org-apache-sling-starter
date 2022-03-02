@@ -53,13 +53,13 @@ The following tags are supported
 The Docker image only needs the port 8080 to be exposed
 
 ```
-$ docker run --rm -p 8080 apache/sling:snapshot
+$ docker run --rm -p 8080:8080 apache/sling:snapshot
 ```
 
 By default the image launches the `oak_tar` aggregate, which uses local persistence. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
 
 ```
-$ docker run --rm -p 8080 apache/sling:snapshot oak_mongo
+$ docker run --rm -p 8080:8080 apache/sling:snapshot oak_mongo
 ```
 
 Currently only the `oak_tar` and `oak_mongo` aggregates are supported.
@@ -68,7 +68,7 @@ For persisting the runtime data is is recommended to mount `/opt/sling/launcher`
 
 ```
 $ docker volume create sling-launcher
-$ docker run --rm -p 8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot
+$ docker run --rm -p 8080:8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot
 ```
 
 The [docker/](docker/) directory contains sample files related to container-based development.
@@ -79,7 +79,7 @@ This module can optionally build a Docker image. This is achieved by running a b
 
 ```
 $ mvn clean package -Ddocker.skip=false -Ddocker.label=local
-$ docker run --rm -p 8080 apache/sling:local
+$ docker run --rm -p 8080:8080 apache/sling:local
 ```
 
 ## Extending the Sling Starter
