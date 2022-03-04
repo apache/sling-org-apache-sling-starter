@@ -67,7 +67,8 @@
                 "org.apache.sling.engine.auth.Authenticator",
                 "org.apache.sling.api.resource.ResourceResolverFactory",
                 "org.apache.sling.api.servlets.ServletResolver",
-                "javax.script.ScriptEngineManager"
+                "javax.script.ScriptEngineManager",
+                "com.composum.sling.nodes.service.ServletRegistry"
             ]
         },
         "org.apache.felix.hc.generalchecks.ThreadUsageCheck":{
