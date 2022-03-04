@@ -300,6 +300,11 @@
             ],
             "whitelist.name":"sling"
         },
+        "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~auth-core":{
+            "user.mapping":[
+                "org.apache.sling.auth.core=[sling-readall]"
+            ]
+        },
         "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~i18n":{
             "user.mapping":[
                 "org.apache.sling.i18n=[sling-readall]"
