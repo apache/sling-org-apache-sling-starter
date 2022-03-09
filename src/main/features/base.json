@@ -358,6 +358,10 @@
             "user.mapping":[
                 "org.apache.sling.jcr.contentloader=[sling-jcr-content-loader]"
             ]
+        },
+        "org.apache.sling.jcr.contentloader.internal.ContentReaderWhiteboard": {
+            // SLING-11168 - ensure all four ootb readers are started
+            "contentReader.cardinality.minimum": 4
         }
     },
     "repoinit:TEXT|true":"@file"
