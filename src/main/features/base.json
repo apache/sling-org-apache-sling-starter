@@ -276,7 +276,8 @@
         },
         "org.apache.sling.commons.scheduler.impl.QuartzScheduler":{
             "allowedPoolNames":[
-                "oak"
+                "oak",
+                "org-apache-sling-event"
             ]
         },
         "org.apache.jackrabbit.vault.packaging.impl.PackagingImpl":{
