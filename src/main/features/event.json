@@ -6,7 +6,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.event:4.2.24",
+            "id":"org.apache.sling:org.apache.sling.event:4.3.0",
             "start-order":"20"
         }
     ],
@@ -16,6 +16,11 @@
                 "org.apache.sling.event=[sling-event]",
                 "org.apache.sling.event.dea=[sling-event]"
             ]
+        },
+        "org.apache.sling.commons.threads.impl.DefaultThreadPool.factory~sling-event":{
+            "name":"org-apache-sling-event",
+            "maxPoolSize:Integer":"1",
+            "minPoolSize:Integer":"5"
         }
     },
     "repoinit:TEXT|true": "@file"
