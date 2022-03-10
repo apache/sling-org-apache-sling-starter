@@ -274,6 +274,11 @@
             "org.apache.sling.commons.log.level":"info",
             "org.apache.sling.commons.log.file":"logs/request.log"
         },
+        "org.apache.sling.commons.scheduler.impl.QuartzScheduler":{
+            "allowedPoolNames":[
+                "oak"
+            ]
+        },
         "org.apache.jackrabbit.vault.packaging.impl.PackagingImpl":{
             "authIdsForRootInstallation":[
                 "sling-package-install"
