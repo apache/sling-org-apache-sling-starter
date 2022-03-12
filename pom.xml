@@ -156,14 +156,11 @@
                     <execution>
                         <id>prepare-feature-launcher</id>
                         <goals>
-                            <goal>get</goal>
-                            <goal>copy</goal>
+                            <goal>unpack</goal>
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <!-- 1.1.28 and newer versions don't work out-of-the-box due to SLING-10956 -->
-                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.1.26</artifact>
-                            <stripVersion>true</stripVersion>
+                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.2.0:tar.gz</artifact>
                         </configuration>
                     </execution>
                 </executions>

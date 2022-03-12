@@ -30,15 +30,15 @@ Hint: You can defer stopping the instance after running the ITs with argument `-
 
 2) Start Sling backed by an Oak SegmentStore with
 
-    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_tar.json
-	
+    target/dependency/org.apache.sling.feature.launcher-1.2.0/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
+
 3) Browse Sling in:
 
         http://localhost:8080
 
 For MongoDB support replace the launch command with
 
-    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_mongo.json
+    target/dependency/org.apache.sling.feature.launcher-1.2.0/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
 
 This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
 (currently `mongodb://localhost:27017`).
