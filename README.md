@@ -95,7 +95,7 @@ start with the `nosample_base` aggregate, which contains:
 
 For instance, launching an empty Sling Starter with segment persistence can be achieved by running
 
-    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
+    target/dependency/org.apache.sling.feature.launcher-1.2.0/bin/launcher -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
     
 Your own feature files can be added to the feature list.
 
