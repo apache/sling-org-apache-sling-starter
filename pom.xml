@@ -21,7 +21,7 @@
     </parent>
 
     <artifactId>org.apache.sling.starter</artifactId>
-    <version>12</version>
+    <version>13-SNAPSHOT</version>
 
     <name>Apache Sling Starter Application</name>
     <description>
@@ -54,7 +54,7 @@
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
-        <project.build.outputTimestamp>1647263058</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1647263109</project.build.outputTimestamp>
     </properties>
 
     <build>
