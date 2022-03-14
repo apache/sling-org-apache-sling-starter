@@ -21,7 +21,7 @@
     </parent>
 
     <artifactId>org.apache.sling.starter</artifactId>
-    <version>13-SNAPSHOT</version>
+    <version>12</version>
 
     <name>Apache Sling Starter Application</name>
     <description>
@@ -32,7 +32,7 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</developerConnection>
         <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-starter.git</url>
-        <tag>HEAD</tag>
+        <tag>org.apache.sling.starter-12</tag>
     </scm>
 
     <properties>
@@ -54,7 +54,7 @@
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
-        <project.build.outputTimestamp>1645804465</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1647263058</project.build.outputTimestamp>
     </properties>
 
     <build>
