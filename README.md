@@ -30,7 +30,7 @@ Hint: You can defer stopping the instance after running the ITs with argument `-
 
 2) Start Sling backed by an Oak SegmentStore with
 
-    target/dependency/org.apache.sling.feature.launcher-1.2.0/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
+    target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
 
 3) Browse Sling in:
 
@@ -38,7 +38,7 @@ Hint: You can defer stopping the instance after running the ITs with argument `-
 
 For MongoDB support replace the launch command with
 
-    target/dependency/org.apache.sling.feature.launcher-1.2.0/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
+    target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
 
 This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
 (currently `mongodb://localhost:27017`).
@@ -95,7 +95,7 @@ start with the `nosample_base` aggregate, which contains:
 
 For instance, launching an empty Sling Starter with segment persistence can be achieved by running
 
-    target/dependency/org.apache.sling.feature.launcher-1.2.0/bin/launcher -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
+    target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-nosample_base.json,target/slingfeature-tmp/feature-oak_persistence_sns.json
     
 Your own feature files can be added to the feature list.
 

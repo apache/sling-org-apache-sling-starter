@@ -38,6 +38,7 @@
     <properties>
         <sling.java.version>8</sling.java.version>
         <starter.min.bundles.count>126</starter.min.bundles.count>
+        <sling.feature.launcher.version>1.2.0</sling.feature.launcher.version>
 
         <!-- versions to be replaced in the feature files -->
         <asm.version>9.2</asm.version>
@@ -160,7 +161,21 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.2.0:tar.gz</artifact>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.sling</groupId>
+                                    <artifactId>org.apache.sling.feature.launcher</artifactId>
+                                    <version>${sling.feature.launcher.version}</version>
+                                    <type>tar.gz</type>
+                                    <!-- remove the version number from the unpacked folder -->
+                                    <fileMappers>
+                                        <org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
+                                            <pattern>\Qorg.apache.sling.feature.launcher-${sling.feature.launcher.version}\E</pattern>
+                                            <replacement>org.apache.sling.feature.launcher</replacement>
+                                        </org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
+                                    </fileMappers>
+                                </artifactItem>
+                            </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
