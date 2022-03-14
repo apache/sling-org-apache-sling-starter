@@ -23,7 +23,7 @@
     <artifactId>org.apache.sling.starter</artifactId>
     <version>13-SNAPSHOT</version>
 
-    <name>Apache Sling Starter Application</name>
+    <name>Apache Sling Starter</name>
     <description>
         The Sling Starter demo application.
     </description>
