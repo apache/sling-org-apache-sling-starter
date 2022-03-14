@@ -32,7 +32,7 @@ RUN groupadd --system sling && \
 VOLUME /opt/sling/launcher
 
 COPY src/main/container /opt/sling
-COPY target/dependency/org.apache.sling.feature.launcher-* /opt/sling/org.apache.sling.feature.launcher
+COPY target/dependency/org.apache.sling.feature.launcher /opt/sling/org.apache.sling.feature.launcher
 COPY target/artifacts/ /opt/sling/artifacts/
 
 # ensure all files are readable by the sling user
