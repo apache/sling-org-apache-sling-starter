@@ -76,6 +76,17 @@ $ docker run --rm -p 8080:8080 -v sling-launcher:/opt/sling/launcher apache/slin
 
 The [docker/](docker/) directory contains sample files related to container-based development.
 
+## Testing
+
+The Sling Starter will execute two suites of tests using the `maven-surefire-plugin`:
+
+1. A small set of smoke tests, embedded in the project, that verify the basic functionality of the Starter
+1. An extensive set of end-to-end tests that verify the overall functionality of the Starter and the bundles that are embedded into it
+
+By default, these are both executed when building the project against an Oak SegmentNodeStore backend.
+
+Additionally, when the `ci` profile is enabled the smoke tests are also executed in against an Oak DocumentNodeStore backend. For technical resons, the full end-to-end tests are not executed.
+
 ## Building the Docker image
 
 This module can optionally build a Docker image. This is achieved by running a build with the `-Ddocker.skip=false` argument. By default, the image is built as `apache/sling:snapshot`. The tag can be overrriden using the `docker.label` Maven property.
