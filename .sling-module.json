@@ -1,5 +1,12 @@
 {
     "jenkins": {
-        "emailRecipients": ["dev@sling.apache.org"]
+        "emailRecipients": ["dev@sling.apache.org"],
+        "sonarQubeEnabled": false,
+        "rebuildFrequency": "@daily",
+        "jdks": [8, 11, 17],
+        "additionalMavenParams": "-Dit.startTimeoutSeconds=120",
+        "archivePatterns": [
+            "**/logs/*.log"
+        ]
     }
 }
