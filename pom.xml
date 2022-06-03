@@ -303,7 +303,7 @@
                 <configuration>
                     <launches>
                         <launch>
-                            <id>sling-12-oak-tar</id>
+                            <id>sling-starter-oak-tar</id>
                             <feature>
                                 <groupId>${project.groupId}</groupId>
                                 <artifactId>${project.artifactId}</artifactId>
@@ -319,7 +319,7 @@
                             <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
                         </launch>
                         <launch>
-                            <id>sling-12-oak-mongo</id>
+                            <id>sling-starter-oak-mongo</id>
                             <skip>${docker.skip}</skip>
                             <feature>
                                 <groupId>${project.groupId}</groupId>
