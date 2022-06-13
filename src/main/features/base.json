@@ -175,7 +175,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.api:2.25.0",
+            "id":"org.apache.sling:org.apache.sling.api:2.25.4",
             "start-order":"5"
         },
         {
