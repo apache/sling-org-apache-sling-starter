@@ -73,7 +73,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.log:5.4.0",
+            "id":"org.apache.sling:org.apache.sling.commons.log:5.4.2",
             "start-order":"1"
         },
         {
