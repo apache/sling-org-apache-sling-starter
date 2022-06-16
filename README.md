@@ -4,6 +4,8 @@
 
 # Apache Sling Starter
 
+Test for SLING-11397.
+
 This module is part of the [Apache Sling](https://sling.apache.org) project.
 
 The starter project produces feature artifacts that can be launched using the
