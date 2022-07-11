@@ -10,7 +10,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.healthcheck.generalchecks:3.0.2",
+            "id":"org.apache.felix:org.apache.felix.healthcheck.generalchecks:3.0.4",
             "start-order":"5"
         },
         {

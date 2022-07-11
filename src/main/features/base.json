@@ -227,11 +227,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.6.12",
+            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.7.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.36",
+            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.40",
             "start-order":"20"
         }
     ],
