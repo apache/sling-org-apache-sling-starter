@@ -12,7 +12,7 @@
     "configurations":{
         "org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService":{
             "db":"sling",
-            "mongouri":"mongodb://$[env:MONGODB_HOST;default=localhost]:$[env:MONGODB_PORT;type=Integer;default=27107]"
+            "mongouri":"mongodb://$[env:MONGODB_HOST;default=localhost]:$[env:MONGODB_PORT;type=Integer;default=27017]"
          }
     }
 }
