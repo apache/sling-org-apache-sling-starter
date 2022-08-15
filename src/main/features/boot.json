@@ -17,11 +17,11 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.configadmin:1.9.22",
+            "id":"org.apache.felix:org.apache.felix.configadmin:1.9.24",
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.2",
+            "id":"org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.4",
             "start-order":"1"
         },
         {
@@ -29,7 +29,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.eventadmin:1.6.2",
+            "id":"org.apache.felix:org.apache.felix.eventadmin:1.6.4",
             "start-order":"1"
         },
         {
@@ -113,6 +113,10 @@
             "start-order":"1"
         },
         {
+            "id":"org.osgi:org.osgi.service.component:1.5.0",
+            "start-order":"1"
+        },
+        {
             "id":"org.osgi:org.osgi.service.log:1.5.0",
             "start-order":"1"
         },
@@ -141,7 +145,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.scr:2.2.0",
+            "id":"org.apache.felix:org.apache.felix.scr:2.2.2",
             "start-order":"1"
         }
 
