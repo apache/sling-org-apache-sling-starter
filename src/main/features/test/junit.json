@@ -2,7 +2,7 @@
   "id":"${project.groupId}:${project.artifactId}:slingosgifeature:junit:${project.version}",  
   "bundles":[
     {
-      "id": "org.apache.sling:org.apache.sling.junit.core:1.0.26",
+      "id": "org.apache.sling:org.apache.sling.junit.core:1.1.6",
       "start-order": "25"
     },
     {

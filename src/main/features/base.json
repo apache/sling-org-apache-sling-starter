@@ -2,7 +2,7 @@
 {
     "execution-environment:JSON|false":{
         "framework":{
-            "id":"org.apache.felix:org.apache.felix.framework:7.0.3"
+            "id":"org.apache.felix:org.apache.felix.framework:7.0.5"
         }
     },
     "bundles":[
@@ -91,7 +91,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.hc:2.0.2",
+            "id":"org.apache.sling:org.apache.sling.installer.hc:2.1.0",
             "start-order":"20"
         },
         {
@@ -199,7 +199,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:2.0.25",
+            "id":"org.apache.pdfbox:fontbox:2.0.26",
             "start-order":"10"
         },
         {
@@ -207,15 +207,15 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:2.0.25",
+            "id":"org.apache.pdfbox:pdfbox:2.0.26",
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-core:1.28.1",
+            "id":"org.apache.tika:tika-core:1.28.4",
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-parsers:1.28.1",
+            "id":"org.apache.tika:tika-parsers:1.28.4",
             "start-order":"10"
         },
         {
