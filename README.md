@@ -22,16 +22,16 @@ See [Releasing a new version of the Sling starter](https://cwiki.apache.org/conf
 
 1) Build the Sling Starter using 
 
-	mvn clean install
-	
+        mvn clean install
+
 in the current directory.
 
 Hint: You can defer stopping the instance after running the ITs with argument `-Dfeature-launcher.waitForInput=true` to do some manual checks.
 
 2) Start Sling backed by an Oak SegmentStore with
 
-    java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_tar.json
-	
+        java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-oak_tar.json
+
 3) Browse Sling in:
 
         http://localhost:8080
