@@ -122,7 +122,7 @@
             "start-order":"16"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.resource:3.2.0",
+            "id":"org.apache.sling:org.apache.sling.jcr.resource:3.2.4",
             "start-order":"20"
         },
         {
