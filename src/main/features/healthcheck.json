@@ -6,11 +6,11 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.healthcheck.core:2.0.12",
+            "id":"org.apache.felix:org.apache.felix.healthcheck.core:2.0.14",
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.healthcheck.generalchecks:2.0.14",
+            "id":"org.apache.felix:org.apache.felix.healthcheck.generalchecks:3.0.4",
             "start-order":"5"
         },
         {
@@ -18,7 +18,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.hc.support:1.0.6",
+            "id":"org.apache.sling:org.apache.sling.hc.support:1.0.8",
             "start-order":"20"
         }
     ],
@@ -26,6 +26,12 @@
         "org.apache.felix.hc.generalchecks.BundlesStartedCheck":{
             "hc.tags":[
                 "bundles"
+            ]
+        },
+        "org.apache.sling.jcr.contentloader.hc.BundleContentLoadedCheck":{
+            "hc.tags":[
+                "bundles",
+                "content-loading"
             ]
         },
         "org.apache.felix.hc.generalchecks.CpuCheck":{

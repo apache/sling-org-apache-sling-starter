@@ -22,15 +22,15 @@ See [Releasing a new version of the Sling starter](https://cwiki.apache.org/conf
 
 1) Build the Sling Starter using 
 
-	mvn clean install
-	
+        mvn clean install
+
 in the current directory.
 
 Hint: You can defer stopping the instance after running the ITs with argument `-Dfeature-launcher.waitForInput=true` to do some manual checks.
 
 2) Start Sling backed by an Oak SegmentStore with
 
-    target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
+        target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
 
 3) Browse Sling in:
 
@@ -47,7 +47,8 @@ This expects a MongoDB server to be running, search for `mongodb://` in the feat
 
 The following tags are supported
 
-* `11, latest` - Apache Sling Starter 11 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/11/Dockerfile), [Release notes](https://sling.apache.org/news/sling-11-released.html) )
+* `12, latest` - Apache Sling Starter 12 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/org.apache.sling.starter-12/Dockerfile), [Release notes](https://sling.apache.org/news/sling-12-released.html) )
+* `11` - Apache Sling Starter 11 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/11/Dockerfile), [Release notes](https://sling.apache.org/news/sling-11-released.html) )
 * `10` - Apache Sling Starter 10 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/10/Dockerfile), [Release notes](https://sling.apache.org/news/sling-10-released.html) )
 * `9`- Apache Sling Launchpad 9 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/9/Dockerfile), [Release notes](https://sling.apache.org/news/sling-launchpad-9-released.html) )
 * `snapshot` - developments builds based on the latest version on the master branch - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile) )
@@ -74,6 +75,17 @@ $ docker run --rm -p 8080:8080 -v sling-launcher:/opt/sling/launcher apache/slin
 ```
 
 The [docker/](docker/) directory contains sample files related to container-based development.
+
+## Testing
+
+The Sling Starter will execute two suites of tests using the `maven-surefire-plugin`:
+
+1. A small set of smoke tests, embedded in the project, that verify the basic functionality of the Starter
+1. An extensive set of end-to-end tests that verify the overall functionality of the Starter and the bundles that are embedded into it
+
+By default, these are both executed when building the project against an Oak SegmentNodeStore backend.
+
+Additionally, when the `ci` profile is enabled the smoke tests are also executed in against an Oak DocumentNodeStore backend. For technical resons, the full end-to-end tests are not executed.
 
 ## Building the Docker image
 

@@ -23,7 +23,7 @@
     <artifactId>org.apache.sling.starter</artifactId>
     <version>13-SNAPSHOT</version>
 
-    <name>Apache Sling Starter Application</name>
+    <name>Apache Sling Starter</name>
     <description>
         The Sling Starter demo application.
     </description>
@@ -41,13 +41,13 @@
         <sling.feature.launcher.version>1.2.0</sling.feature.launcher.version>
 
         <!-- versions to be replaced in the feature files -->
-        <asm.version>9.2</asm.version>
-        <jackrabbit.version>2.20.4</jackrabbit.version>
-        <oak.version>1.42.0</oak.version>
+        <asm.version>9.3</asm.version>
+        <jackrabbit.version>2.20.6</jackrabbit.version>
+        <oak.version>1.44.0</oak.version>
         <slf4j.version>1.7.36</slf4j.version>
-        <composum.nodes.version>4.0.1</composum.nodes.version>
-        <jackson.version>2.13.1</jackson.version>
-        <groovy.version>3.0.9</groovy.version>
+        <composum.nodes.version>4.1.2</composum.nodes.version>
+        <jackson.version>2.13.3</jackson.version>
+        <groovy.version>3.0.12</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
         <docker.skip>true</docker.skip>
@@ -55,7 +55,7 @@
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
-        <project.build.outputTimestamp>1645804465</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1647263109</project.build.outputTimestamp>
     </properties>
 
     <build>
@@ -78,7 +78,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingfeature-maven-plugin</artifactId>
-                <version>1.5.16</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
@@ -105,10 +105,20 @@
                             <filesInclude>oak/*.json</filesInclude>
                             <title>Sling With No Samples and No Persistence</title>
                         </aggregate>
+                        <aggregate>
+                            <classifier>oak_tar_test</classifier>
+                            <filesInclude>*.json</filesInclude>
+                            <filesInclude>oak/*.json</filesInclude>
+                            <filesInclude>oak/persistence/oak_persistence_sns.json</filesInclude>
+                            <filesInclude>app/*.json</filesInclude>
+                            <filesInclude>test/*.json</filesInclude>
+                            <title>Sling with Oak Segment NS persistence and test content</title>
+                        </aggregate>
                     </aggregates>
                     <scans>
                         <scan>
                             <includeClassifier>oak_tar</includeClassifier>
+                            <includeClassifier>oak_tar_test</includeClassifier>
                             <includeClassifier>oak_mongo</includeClassifier>
                             <includeClassifier>nosample_base</includeClassifier>
                         </scan>
@@ -305,12 +315,12 @@
                 <configuration>
                     <launches>
                         <launch>
-                            <id>sling-12-oak-tar</id>
+                            <id>sling-starter-oak-tar</id>
                             <feature>
                                 <groupId>${project.groupId}</groupId>
                                 <artifactId>${project.artifactId}</artifactId>
                                 <version>${project.version}</version>
-                                <classifier>oak_tar</classifier>
+                                <classifier>oak_tar_test</classifier>
                                 <type>slingosgifeature</type>
                             </feature>
                             <launcherArguments>
@@ -321,7 +331,7 @@
                             <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
                         </launch>
                         <launch>
-                            <id>sling-12-oak-mongo</id>
+                            <id>sling-starter-oak-mongo</id>
                             <skip>${docker.skip}</skip>
                             <feature>
                                 <groupId>${project.groupId}</groupId>
@@ -363,7 +373,20 @@
                    </execution>
                </executions>
                <configuration>
+                   <dependenciesToScan>
+                       <dependency>org.apache.sling:org.apache.sling.launchpad.integration-tests</dependency>
+                   </dependenciesToScan>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*IT.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>${failsafe.exclude}</exclude>
+                        <!-- Don't run provisioning model ITs in the feature model context -->
+                        <exclude>org/apache/sling/launchpad/webapp/integrationtest/provisioning/**.java</exclude>
+                    </excludes>
                    <systemPropertyVariables>
+                       <launchpad.http.server.url>http://localhost:${http.port}/</launchpad.http.server.url>
                        <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
                        <!-- Comma-separated list of paths to check for 200 status (added for SLING-10402) -->
@@ -394,6 +417,37 @@
                         </excludes>
                     </configuration>
                 </plugin>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.apache.maven.plugins
+                                        </groupId>
+                                        <artifactId>
+                                            maven-antrun-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [3.0.0,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>run</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -414,6 +468,19 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.utils</artifactId>
             <version>1.11.8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.launchpad.integration-tests</artifactId>
+             <version>${project.version}</version>
+             <scope>test</scope>
+        </dependency>
+        <!-- provided-scope dependency of the commons.johnzon bundle -->
+        <dependency>
+            <groupId>org.apache.johnzon</groupId>
+            <artifactId>johnzon-core</artifactId>
+            <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -438,6 +505,20 @@
                <bnd.index.generation.skip>false</bnd.index.generation.skip>
                <docker.skip>false</docker.skip>
             </properties>
+            <!-- workaround for https://github.com/bndtools/bnd/issues/5247 -->
+            <repositories>
+                <repository>
+                    <id>Nexus</id>
+                    <name>Nexus</name>
+                    <url>https://repository.apache.org/snapshots/</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </repository>
+            </repositories>
         </profile>
     </profiles>
 </project>

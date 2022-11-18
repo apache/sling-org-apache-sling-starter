@@ -1,0 +1,27 @@
+{
+  "id":"${project.groupId}:${project.artifactId}:slingosgifeature:junit:${project.version}",  
+  "bundles":[
+    {
+      "id": "org.apache.sling:org.apache.sling.junit.core:1.1.6",
+      "start-order": "25"
+    },
+    {
+      "id": "org.apache.sling:org.apache.sling.junit.remote:1.0.12",
+      "start-order": "25"
+    },
+    {
+      "id": "org.apache.sling:org.apache.sling.junit.scriptable:1.0.14",
+      "start-order": "25"
+    }
+  ],
+  "configurations": {
+    "org.apache.sling.jcr.base.internal.LoginAdminWhitelist.fragment~junit": {
+      "whitelist.bundles": [
+        "org.apache.sling.junit.core",
+        "org.apache.sling.junit.remote",
+        "org.apache.sling.junit.scriptable"
+      ],
+      "whitelist.name" :"junit"
+    }
+  }
+}
