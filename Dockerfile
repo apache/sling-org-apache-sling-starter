@@ -24,6 +24,7 @@ EXPOSE 8080
 RUN groupadd --system sling && \
     useradd --no-log-init --system --gid sling sling && \
     mkdir /opt/sling && \
+    mkdir /opt/sling/org.apache.sling.feature.launcher && \
     mkdir /opt/sling/launcher && \
     mkdir /opt/sling/artifacts && \
     chown -R sling:sling /opt/sling/launcher
@@ -31,7 +32,7 @@ RUN groupadd --system sling && \
 VOLUME /opt/sling/launcher
 
 COPY src/main/container /opt/sling
-COPY target/dependency/org.apache.sling.feature.launcher.jar /opt/sling
+COPY target/dependency/org.apache.sling.feature.launcher /opt/sling/org.apache.sling.feature.launcher
 COPY target/artifacts/ /opt/sling/artifacts/
 
 # ensure all files are readable by the sling user
