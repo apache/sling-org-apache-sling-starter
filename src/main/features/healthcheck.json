@@ -18,7 +18,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.hc.support:1.0.8",
+            "id":"org.apache.sling:org.apache.sling.hc.support:1.0.10",
             "start-order":"20"
         }
     ],
