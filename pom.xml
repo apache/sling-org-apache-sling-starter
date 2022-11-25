@@ -57,8 +57,12 @@
         <groovy.version>3.0.12</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
+        <!-- check docker.skip in https://dmp.fabric8.io/ -->
         <docker.skip>true</docker.skip>
-        <docker.label>snapshot</docker.label>
+        <!-- check docker.skip.push in https://dmp.fabric8.io/ -->
+        <docker.skip.push>true</docker.skip.push>
+        <docker.image.name>apache/sling</docker.image.name>
+        <docker.image.tag>snapshot</docker.image.tag>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
@@ -261,25 +265,10 @@
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.39.0</version>
+                <version>0.40.3</version>
                 <configuration>
                     <skip>${docker.skip}</skip>
                     <containerNamePattern>%e</containerNamePattern>
-                    <images>
-                        <image>
-                            <alias>mongo</alias>
-                            <name>${mongo.container.image}</name>
-                            <run>
-                                <ports>
-                                    <port>${mongo.port}:27017</port>
-                                </ports>
-                                <wait>
-                                    <log>CONTROL</log>
-                                    <time>60000</time>
-                                </wait>
-                            </run>
-                        </image>
-                    </images>
                     <stopMode>kill</stopMode>
                 </configuration>
                 <executions>
@@ -290,6 +279,23 @@
                         <goals>
                             <goal>start</goal>
                         </goals>
+                        <configuration>
+                            <images>
+                                <image>
+                                    <alias>mongo</alias>
+                                    <name>${mongo.container.image}</name>
+                                    <run>
+                                        <ports>
+                                            <port>${mongo.port}:27017</port>
+                                        </ports>
+                                        <wait>
+                                            <log>CONTROL</log>
+                                            <time>60000</time>
+                                        </wait>
+                                    </run>
+                                </image>
+                            </images>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>stop-mongo</id>
@@ -298,19 +304,44 @@
                         <goals>
                             <goal>stop</goal>
                         </goals>
+                        <configuration>
+                            <images>
+                                <image>
+                                    <alias>mongo</alias>
+                                    <name>${mongo.container.image}</name>
+                                    <run>
+                                        <ports>
+                                            <port>${mongo.port}:27017</port>
+                                        </ports>
+                                        <wait>
+                                            <log>CONTROL</log>
+                                            <time>60000</time>
+                                        </wait>
+                                    </run>
+                                </image>
+                            </images>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>build-docker-image</id>
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
+                            <!-- -D docker.skip.push=false -->
+                            <goal>push</goal>
                         </goals>
                         <configuration>
                             <!-- Configure the sling image only for build, we don't want to run it  -->
                             <images>
                                 <image>
-                                    <name>apache/sling:${docker.label}</name>
+                                    <name>${docker.image.name}:${docker.image.tag}</name>
                                     <build>
+                                        <buildx>
+                                            <platforms>
+                                                <platform>linux/amd64</platform>
+                                                <platform>linux/arm64</platform>
+                                            </platforms>
+                                        </buildx>
                                         <dockerFile>Dockerfile</dockerFile>
                                         <contextDir>${project.basedir}</contextDir>
                                     </build>

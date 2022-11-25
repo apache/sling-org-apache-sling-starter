@@ -47,11 +47,13 @@ This expects a MongoDB server to be running, search for `mongodb://` in the feat
 
 The following tags are supported
 
-* `12, latest` - Apache Sling Starter 12 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/org.apache.sling.starter-12/Dockerfile), [Release notes](https://sling.apache.org/news/sling-12-released.html) )
-* `11` - Apache Sling Starter 11 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/11/Dockerfile), [Release notes](https://sling.apache.org/news/sling-11-released.html) )
-* `10` - Apache Sling Starter 10 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/10/Dockerfile), [Release notes](https://sling.apache.org/news/sling-10-released.html) )
-* `9`- Apache Sling Launchpad 9 - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/9/Dockerfile), [Release notes](https://sling.apache.org/news/sling-launchpad-9-released.html) )
-* `snapshot` - developments builds based on the latest version on the master branch - ( [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile) )
+| Tag name       | Supported platforms | Links                                                                                                                                                                                     |
+|----------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `12`, `latest` | `amd64`             | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/org.apache.sling.starter-12/Dockerfile), [Release notes](https://sling.apache.org/news/sling-12-released.html) |
+| `11`           | `amd64`             | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/11/Dockerfile), [Release notes](https://sling.apache.org/news/sling-11-released.html)                   |
+| `10`           | `amd64`             | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/10/Dockerfile), [Release notes](https://sling.apache.org/news/sling-10-released.html)                   |
+| `9`            | `amd64`             | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/9/Dockerfile), [Release notes](https://sling.apache.org/news/sling-launchpad-9-released.html)           |
+| `snapshot`     | `amd64`, `arm64`    | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile)                                                                                             |
 
 The Docker image only needs the port 8080 to be exposed
 
@@ -89,10 +91,10 @@ Additionally, when the `ci` profile is enabled the smoke tests are also executed
 
 ## Building the Docker image
 
-This module can optionally build a Docker image. This is achieved by running a build with the `-Ddocker.skip=false` argument. By default, the image is built as `apache/sling:snapshot`. The tag can be overrriden using the `docker.label` Maven property.
+This module can optionally build a Docker image. This is achieved by running a build with the `-Ddocker.skip=false` argument. By default, the image is built as `apache/sling:snapshot`. The tag can be overrriden using the `docker.image.tag` Maven property.
 
 ```
-$ mvn clean package -Ddocker.skip=false -Ddocker.label=local
+$ mvn clean package -Ddocker.skip=false -Ddocker.image.tag=local
 $ docker run --rm -p 8080:8080 apache/sling:local
 ```
 
