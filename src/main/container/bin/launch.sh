@@ -33,8 +33,14 @@ echo "[INFO] Automatically appended ${docker_feature}"
 
 feature="${feature},${docker_feature}"
 
+if [ ! -z "${JAVA_DEBUG_PORT}" ]; then
+    JAVA_DEBUG_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:${JAVA_DEBUG_PORT}"
+fi
 # remove add-opens after SLING-10831 is fixed
-export JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED"
+export JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED ${JAVA_DEBUG_OPTS} ${EXTRA_JAVA_OPTS}"
+
+echo "[INFO] JAVA_OPTS=${JAVA_OPTS}"
+
 exec org.apache.sling.feature.launcher/bin/launcher \
     -c artifacts \
     -CC "org.apache.sling.commons.log.LogManager=MERGE_LATEST" \

@@ -15,33 +15,31 @@ See [Releasing a new version of the Sling starter](https://cwiki.apache.org/conf
 
 ## How to run the Sling Starter module in Standalone mode
 
+> **Note**
+> This is a note "mvn clean" deletes the "launcher" work directory in the project base
+> directory. It is advisable to use a work directory outside of the project directory.
 
-  NOTE: "mvn clean" deletes the "launcher" work directory in the project base
-        directory. It is advisable to use a work directory outside of the
-        project directory.
+1. Build the Sling Starter using
+   ```bash
+   mvn clean install
+   ```
+   in the current directory.
 
-1) Build the Sling Starter using 
+   > **Hint** 
+   > You can defer stopping the instance after running the ITs with argument `-Dfeature-launcher.waitForInput=true` to do some manual checks.
 
-        mvn clean install
+2. Start Sling backed by 
+   - Oak SegmentStore with
+     ```bash
+     target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
+     ```
+   - Oak MongoDB DocumentStore with
+     ```bash
+     target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
+     ```
+     This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL (currently `mongodb://localhost:27017`).
 
-in the current directory.
-
-Hint: You can defer stopping the instance after running the ITs with argument `-Dfeature-launcher.waitForInput=true` to do some manual checks.
-
-2) Start Sling backed by an Oak SegmentStore with
-
-        target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
-
-3) Browse Sling in:
-
-        http://localhost:8080
-
-For MongoDB support replace the launch command with
-
-    target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
-
-This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL
-(currently `mongodb://localhost:27017`).
+3. Browse Sling in [localhost:8080](http://localhost:8080)
 
 ## How to run the Sling Starter Docker image
 
@@ -55,26 +53,18 @@ The following tags are supported
 | `9`            | `amd64`             | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter-docker/blob/9/Dockerfile), [Release notes](https://sling.apache.org/news/sling-launchpad-9-released.html)           |
 | `snapshot`     | `amd64`, `arm64`    | [Dockerfile](https://github.com/apache/sling-org-apache-sling-starter/blob/master/Dockerfile)                                                                                             |
 
-The Docker image only needs the port 8080 to be exposed
-
-```
-$ docker run --rm -p 8080:8080 apache/sling:snapshot
-```
-
-By default the image launches the `oak_tar` aggregate, which uses local persistence. The aggregate to launch can be selected by passing an additional argument to the image, e.g.:
-
-```
-$ docker run --rm -p 8080:8080 apache/sling:snapshot oak_mongo
-```
-
-Currently only the `oak_tar` and `oak_mongo` aggregates are supported.
-
-For persisting the runtime data is is recommended to mount `/opt/sling/launcher` as a volume, for instance:
-
-```
-$ docker volume create sling-launcher
-$ docker run --rm -p 8080:8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot
-```
+1. Start Sling Docker image backed by 
+   - Oak SegmentStore with
+     ```bash
+     docker volume create sling-launcher
+     docker run --rm -p 8080:8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot
+     ```
+   - Oak MongoDB DocumentStore with
+     ```bash
+     docker volume create sling-launcher
+     docker run --rm -p 27017:27017 mongo:4.4.6
+     docker run --rm -p 8081:8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot oak_mongo
+     ```
 
 The [docker/](docker/) directory contains sample files related to container-based development.
 
@@ -83,11 +73,33 @@ The [docker/](docker/) directory contains sample files related to container-base
 The Sling Starter will execute two suites of tests using the `maven-surefire-plugin`:
 
 1. A small set of smoke tests, embedded in the project, that verify the basic functionality of the Starter
-1. An extensive set of end-to-end tests that verify the overall functionality of the Starter and the bundles that are embedded into it
+2. An extensive set of end-to-end tests that verify the overall functionality of the Starter and the bundles that are embedded into it
 
 By default, these are both executed when building the project against an Oak SegmentNodeStore backend.
 
 Additionally, when the `ci` profile is enabled the smoke tests are also executed in against an Oak DocumentNodeStore backend. For technical resons, the full end-to-end tests are not executed.
+
+
+## Docker
+
+> The Sling Starter Docker image is only for testing/learning purposes. For your custom applications, 
+> please configure your [Feature model](https://github.com/apache/sling-org-apache-sling-feature) and 
+> build your image with all dependencies and configurations built in.
+
+Our example Docker image uses `/opt/sling/bin/launch.sh` script as the `entrypoint`. It supports the 
+following environment variables:
+
+| Environment variable | Description                            | Example              |
+|----------------------|----------------------------------------|----------------------|
+| `JAVA_DEBUG_PORT`    | Run Sling Starter in Java debug mode   | `5005`               |
+| `EXTRA_JAVA_OPTS`    | Extra java options e.g `Xmx` or `Xms`. | `-Xms256m -Xmx2048m` |
+
+> **Example**
+> running Sling Starter in debug mode with custom memory settings
+
+```bash
+docker run -p 8080:8080 -p 5005:5005 -e JAVA_DEBUG_PORT=5005 -e EXTRA_JAVA_OPTS='-Xms256m -Xmx2048m' apache/sling:snapshot
+```
 
 ## Building the Docker image
 

@@ -15,12 +15,15 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# note that the project needs to be built once with `mvn clean install`
+# note that the project needs to be built once with `mvn clean install -Ddocker.skip=false`
 services:
     sling:
         image: apache/sling:snapshot
         ports:
-            - "8080"
+            - "8080:8080"
+            - "5005:5005"
+        environment:
+            - SLING_DEBUG=false
         volumes:
             - sling-repository:/opt/sling/launcher
 volumes:
