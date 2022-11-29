@@ -272,13 +272,6 @@
                                 </wait>
                             </run>
                         </image>
-                        <image>
-                            <name>apache/sling:${docker.label}</name>
-                            <build>
-                                <dockerFile>Dockerfile</dockerFile>
-                                <contextDir>${project.basedir}</contextDir>
-                            </build>
-                        </image>
                     </images>
                     <stopMode>kill</stopMode>
                 </configuration>
@@ -305,6 +298,18 @@
                         <goals>
                             <goal>build</goal>
                         </goals>
+                        <configuration>
+                            <!-- Configure the sling image only for build, we don't want to run it  -->
+                            <images>
+                                <image>
+                                    <name>apache/sling:${docker.label}</name>
+                                    <build>
+                                        <dockerFile>Dockerfile</dockerFile>
+                                        <contextDir>${project.basedir}</contextDir>
+                                    </build>
+                                </image>
+                            </images>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
