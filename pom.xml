@@ -257,6 +257,7 @@
                 <version>0.39.0</version>
                 <configuration>
                     <skip>${docker.skip}</skip>
+                    <containerNamePattern>%e</containerNamePattern>
                     <images>
                         <image>
                             <alias>mongo</alias>
