@@ -332,6 +332,7 @@
                             <launcherArguments>
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
+                                    <org.apache.felix.http.jetty.responseBufferSize>5000000</org.apache.felix.http.jetty.responseBufferSize>
                                 </frameworkProperties>
                             </launcherArguments>
                             <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
@@ -349,6 +350,7 @@
                             <launcherArguments>
                                 <frameworkProperties>
                                     <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
+                                    <org.apache.felix.http.jetty.responseBufferSize>5000000</org.apache.felix.http.jetty.responseBufferSize>
                                 </frameworkProperties>
                             </launcherArguments>
                             <environmentVariables>
