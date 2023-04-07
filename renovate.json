@@ -9,6 +9,10 @@
        "groupName": "Apache Tika"
      },
      {
+       "matchPackagePrefixes": [ "org.apache.httpcomponents:" ],
+       "groupName": "Apache HTTPComponents"
+     },
+     {
        "matchManagers": ["maven"],
        "matchDepTypes": ["provided"],
        "enabled": false
