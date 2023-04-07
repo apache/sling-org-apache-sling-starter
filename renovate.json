@@ -17,6 +17,10 @@
        "groupName": "Apache PDFBox"
      },
      {
+       "matchPackagePrefixes": [ "org.apache.sling:org.apache.sling.models" ],
+       "groupName": "Apache Sling Models"
+     },
+     {
        "matchManagers": ["maven"],
        "matchDepTypes": ["provided"],
        "enabled": false
