@@ -7,6 +7,11 @@
      {
        "matchPackagePatterns": ["org.apache.tika"],
        "groupName": "Apache Tika"
+     },
+     {
+       "matchManagers": ["maven"],
+       "matchDepTypes": ["provided"],
+       "enabled": false
      }
   ]
 }
