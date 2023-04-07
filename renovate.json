@@ -21,6 +21,11 @@
        "groupName": "Apache Sling Models"
      },
      {
+       "matchPackagePrefixes": [ "org.apache.jackrabbit:" ],
+       "groupName": "Apache Jackrabbit and Jackrabbit Oak",
+       "allowedVersions": "/^[0-9]+\\.[02468]+\\.[0-9]+$/"
+     },
+     {
        "matchPackagePatterns": [ "guava" ],
         "enabled": false
      },
@@ -28,7 +33,16 @@
        "matchManagers": ["maven"],
        "matchDepTypes": ["provided"],
        "enabled": false
-     }
+     },
+     {
+        "enabled": false,
+        "matchDatasources": [
+          "docker"
+        ],
+        "matchUpdateTypes": [
+          "major"
+        ]
+      }
   ],
   "regexManagers": [
     {
