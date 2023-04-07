@@ -29,5 +29,14 @@
        "matchDepTypes": ["provided"],
        "enabled": false
      }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^pom\\.xml$"],
+      "matchStrings" : [
+        "depName=(?<depName>.*?)\\s+-->\\s+<.*?\\.version>(?<currentValue>.*?)<\\/.*?\\.version>"
+      ],
+      "datasourceTemplate": "maven"
+    }
   ]
 }
