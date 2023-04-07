@@ -21,6 +21,10 @@
        "groupName": "Apache Sling Models"
      },
      {
+       "matchPackagePatterns": [ "guava" ],
+        "enabled": false
+     },
+     {
        "matchManagers": ["maven"],
        "matchDepTypes": ["provided"],
        "enabled": false
