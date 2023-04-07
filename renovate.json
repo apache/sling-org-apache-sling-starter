@@ -5,7 +5,7 @@
   ],
   "packageRules" : [
      {
-       "matchPackagePatterns": ["org.apache.tika"],
+       "matchPackagePrefixes": [ "org.apache.tika" ],
        "groupName": "Apache Tika"
      },
      {
