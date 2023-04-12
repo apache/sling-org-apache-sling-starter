@@ -63,6 +63,8 @@
         <docker.skip.push>true</docker.skip.push>
         <docker.image.name>apache/sling</docker.image.name>
         <docker.image.tag>snapshot</docker.image.tag>
+        <!-- pass a list of platforms to enable multi-arch builds: linux/amd64,linux/arm64 -->
+        <docker.platforms></docker.platforms>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
@@ -265,7 +267,7 @@
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.40.3</version>
+                <version>0.42.1</version>
                 <configuration>
                     <skip>${docker.skip}</skip>
                     <containerNamePattern>%e</containerNamePattern>
@@ -338,8 +340,7 @@
                                     <build>
                                         <buildx>
                                             <platforms>
-                                                <platform>linux/amd64</platform>
-                                                <platform>linux/arm64</platform>
+                                                <platform>${docker.platforms}</platform>
                                             </platforms>
                                         </buildx>
                                         <dockerFile>Dockerfile</dockerFile>

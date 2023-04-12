@@ -18,14 +18,9 @@
 name: Push Sling Starter Docker images
 
 on:
-  workflow_dispatch:
-    inputs:
-      git_tag:
-        description: 'Git tag name'
-        required: true
-      image_tag:
-        description: 'Docker image tag name'
-        required: true
+  push:
+    branches:
+      - master
 
 jobs:
   sling-starter-push-image:
@@ -47,14 +42,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Checkout latest tag
-        run: |
-          git fetch --all
-          git fetch --tags
-          git checkout tags/${{ github.event.inputs.git_tag }}
       - name: Set up QEMU # https://github.com/docker/buildx/issues/499
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Push Docker image
-        run: mvn --batch-mode clean install -Ddocker.image.tag=${{ github.event.inputs.image_tag }} -Dmaven.test.skip=true -Ddocker.skip=false -Ddocker.skip.push=false
+        run: mvn --batch-mode clean install -Ddocker.platforms=linux/amd64,linux/arm64 -Dmaven.test.skip=true -Ddocker.skip=false -Ddocker.skip.push=false
