@@ -95,11 +95,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.api:1.4.2",
+            "id":"org.apache.sling:org.apache.sling.models.api:1.5.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.impl:1.5.2",
+            "id":"org.apache.sling:org.apache.sling.models.impl:1.6.0",
             "start-order":"20"
         },
         {
