@@ -155,7 +155,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.1.14",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:4.2.10",
             "start-order":"5"
         },
         {
