@@ -211,11 +211,11 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-core:1.28.4",
+            "id":"org.apache.tika:tika-core:1.28.5",
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-parsers:1.28.4",
+            "id":"org.apache.tika:tika-parsers:1.28.5",
             "start-order":"10"
         },
         {
