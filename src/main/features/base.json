@@ -231,7 +231,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.42",
+            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.44",
             "start-order":"20"
         }
     ],
