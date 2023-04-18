@@ -31,11 +31,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.httpcomponents:httpclient-osgi:4.5.13",
+            "id":"org.apache.httpcomponents:httpclient-osgi:4.5.14",
             "start-order":"15"
         },
         {
-            "id":"org.apache.httpcomponents:httpcore-osgi:4.4.15",
+            "id":"org.apache.httpcomponents:httpcore-osgi:4.4.16",
             "start-order":"15"
         },
         {
