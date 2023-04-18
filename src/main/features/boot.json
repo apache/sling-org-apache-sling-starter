@@ -129,7 +129,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.osgi:org.osgi.util.pushstream:1.0.2",
+            "id":"org.osgi:org.osgi.util.pushstream:1.1.0",
             "start-order":"1"
         },
         {
