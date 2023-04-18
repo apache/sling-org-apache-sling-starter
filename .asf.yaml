@@ -11,3 +11,6 @@ github:
     issues: true
 notifications:
   jira_options: "link"
+jenkins:
+  github_whitelist:
+    - "renovate-bot[bot]"
