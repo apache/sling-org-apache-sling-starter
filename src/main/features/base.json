@@ -199,15 +199,15 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:2.0.26",
+            "id":"org.apache.pdfbox:fontbox:2.0.28",
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:jempbox:1.8.16",
+            "id":"org.apache.pdfbox:jempbox:1.8.17",
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:2.0.26",
+            "id":"org.apache.pdfbox:pdfbox:2.0.28",
             "start-order":"10"
         },
         {
