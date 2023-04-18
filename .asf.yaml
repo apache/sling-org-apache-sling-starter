@@ -7,5 +7,7 @@ github:
   - "INFRA"
   - "FELIX"
   - "MNG"
+  features:
+    issues: true
 notifications:
   jira_options: "link"
