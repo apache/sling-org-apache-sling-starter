@@ -227,7 +227,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.8.0",
+            "id":"org.apache.sling:org.apache.sling.repoinit.parser:1.9.0",
             "start-order":"20"
         },
         {
