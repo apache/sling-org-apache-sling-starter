@@ -86,7 +86,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.ognl:3.3.3_1",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.ognl:3.3.4_1",
             "start-order":"20"
         },
         {
