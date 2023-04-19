@@ -21,6 +21,14 @@
        "groupName": "Apache Sling Models"
      },
      {
+       "matchPackagePrefixes": [ "org.apache.felix:org.apache.felix.http" ],
+       "groupName": "Apache Felix HTTP"
+     },
+     {
+       "matchPackageNames": [ "org.apache.sling:org.apache.sling.jcr.repoinit", "org.apache.sling:org.apache.sling.repoinit.parser" ],
+       "groupName": "Apache Sling Repoinit"
+     },
+     {
        "matchPackagePrefixes": [ "org.apache.jackrabbit:" ],
        "groupName": "Apache Jackrabbit and Jackrabbit Oak",
        "allowedVersions": "/^[0-9]+\\.[02468]+\\.[0-9]+$/"
