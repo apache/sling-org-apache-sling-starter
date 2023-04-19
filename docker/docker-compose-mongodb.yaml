@@ -15,17 +15,19 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# note that the project needs to be built once with `mvn clean install`
+# note that the project needs to be built once with `mvn clean install -Ddocker.skip=false`
 services:
     sling:
         image: apache/sling:snapshot
         ports:
-            - "8080"
+            - "8080:8080"
+            - "5005:5005"
         links:
             - mongo
         environment:
             - MONGODB_HOST=mongo
             - MONGODB_PORT=27017
+            - SLING_DEBUG=false
         command: "oak_mongo"
     mongo:
         image: mongo:3.7
