@@ -33,7 +33,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.cm.json:1.0.8",
+            "id":"org.apache.felix:org.apache.felix.cm.json:2.0.0",
             "start-order":"1"
         },
         {
