@@ -38,7 +38,7 @@
     <properties>
         <sling.java.version>8</sling.java.version>
         <starter.min.bundles.count>126</starter.min.bundles.count>
-        <sling.feature.launcher.version>1.2.4</sling.feature.launcher.version>
+        <sling.feature.launcher.version>1.3.0</sling.feature.launcher.version>
 
         <!-- versions to be replaced in the feature files -->
         <!-- renovate: depName=org.ow2.asm:asm -->
