@@ -25,91 +25,91 @@
             "start-order": "15"
         },
         {
-            "id": "org.codehaus.groovy:groovy:${groovy.version}",
+            "id": "org.apache.groovy:groovy:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-ant:${groovy.version}",
+            "id": "org.apache.groovy:groovy-ant:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-astbuilder:${groovy.version}",
+            "id": "org.apache.groovy:groovy-astbuilder:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-cli-picocli:${groovy.version}",
+            "id": "org.apache.groovy:groovy-cli-picocli:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-console:${groovy.version}",
+            "id": "org.apache.groovy:groovy-console:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-datetime:${groovy.version}",
+            "id": "org.apache.groovy:groovy-datetime:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-docgenerator:${groovy.version}",
+            "id": "org.apache.groovy:groovy-docgenerator:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-groovydoc:${groovy.version}",
+            "id": "org.apache.groovy:groovy-groovydoc:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-groovysh:${groovy.version}",
+            "id": "org.apache.groovy:groovy-groovysh:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-jmx:${groovy.version}",
+            "id": "org.apache.groovy:groovy-jmx:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-json:${groovy.version}",
+            "id": "org.apache.groovy:groovy-json:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-jsr223:${groovy.version}",
+            "id": "org.apache.groovy:groovy-jsr223:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-macro:${groovy.version}",
+            "id": "org.apache.groovy:groovy-macro:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-nio:${groovy.version}",
+            "id": "org.apache.groovy:groovy-nio:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-servlet:${groovy.version}",
+            "id": "org.apache.groovy:groovy-servlet:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-sql:${groovy.version}",
+            "id": "org.apache.groovy:groovy-sql:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-swing:${groovy.version}",
+            "id": "org.apache.groovy:groovy-swing:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-templates:${groovy.version}",
+            "id": "org.apache.groovy:groovy-templates:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-test:${groovy.version}",
+            "id": "org.apache.groovy:groovy-test:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-test-junit5:${groovy.version}",
+            "id": "org.apache.groovy:groovy-test-junit5:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-testng:${groovy.version}",
+            "id": "org.apache.groovy:groovy-testng:${groovy.version}",
             "start-order": "20"
         },
         {
-            "id": "org.codehaus.groovy:groovy-xml:${groovy.version}",
+            "id": "org.apache.groovy:groovy-xml:${groovy.version}",
             "start-order": "20"
         }
     ]
