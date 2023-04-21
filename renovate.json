@@ -31,7 +31,7 @@
      {
        "matchPackagePrefixes": [ "org.apache.jackrabbit:" ],
        "groupName": "Apache Jackrabbit and Jackrabbit Oak",
-       "allowedVersions": "/^[0-9]+\\.[02468]+\\.[0-9]+$/"
+       "allowedVersions": "/^[0-9]+\\.[0-9]*[02468]+\\.[0-9]+$/"
      },
      {
        "matchPackagePatterns": [ "guava" ],
