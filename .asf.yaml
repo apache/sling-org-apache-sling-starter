@@ -1,0 +1,13 @@
+github:
+  autolink_jira:
+  - "SLING"
+  - "OAK"
+  - "JCR"
+  - "JCRVLT"
+  - "INFRA"
+  - "FELIX"
+  - "MNG"
+  features:
+    issues: true
+notifications:
+  jira_options: "link"

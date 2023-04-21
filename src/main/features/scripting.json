@@ -66,7 +66,7 @@
             "start-order":"20"
         },
         {
-            "id": "org.freemarker:freemarker:2.3.31",
+            "id": "org.freemarker:freemarker:2.3.32",
             "start-order": "20"
         },
         {
@@ -78,7 +78,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.attoparser:attoparser:2.0.5.RELEASE",
+            "id":"org.attoparser:attoparser:2.0.6.RELEASE",
             "start-order":"20"
         },
         {
@@ -86,11 +86,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.ognl:3.3.3_1",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.ognl:3.3.4_1",
             "start-order":"20"
         },
         {
-            "id":"org.javassist:javassist:3.29.1-GA",
+            "id":"org.javassist:javassist:3.29.2-GA",
             "start-order":"20"
         }
     ],

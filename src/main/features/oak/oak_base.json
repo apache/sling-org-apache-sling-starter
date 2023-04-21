@@ -98,7 +98,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.base:3.1.10",
+            "id":"org.apache.sling:org.apache.sling.jcr.base:3.1.14",
             "start-order":"15"
         },
         {
@@ -130,7 +130,7 @@
             "start-order":"20"
         },    
         {
-            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:3.6.0",
+            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:3.6.8",
             "start-order":"20"
         },
         {
