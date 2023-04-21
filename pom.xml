@@ -338,6 +338,9 @@
                                 <image>
                                     <name>${docker.image.name}:${docker.image.tag}</name>
                                     <build>
+                                        <tags>
+                                            <tag>${docker.image.extra.tag}</tag>
+                                        </tags>
                                         <buildx>
                                             <platforms>
                                                 <platform>${docker.platforms}</platform>
