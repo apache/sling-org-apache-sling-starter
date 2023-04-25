@@ -93,6 +93,10 @@
             "start-order":"1"
         },
         {
+          "id": "org.glassfish.hk2:osgi-resource-locator:2.5.0-b42",
+          "start-order": "1"
+        },
+        {
             "id":"org.apache.sling:org.apache.sling.commons.osgi:2.4.2",
             "start-order":"1"
         },
