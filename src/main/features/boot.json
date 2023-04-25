@@ -85,7 +85,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.eclipse.parsson:jakarta.json:1.1.1",
+            "id":"jakarta.json:jakarta.json-api:2.1.1",
             "start-order":"1"
         },
         {
