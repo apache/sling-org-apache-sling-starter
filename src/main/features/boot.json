@@ -85,6 +85,14 @@
             "start-order":"1"
         },
         {
+            "id":"jakarta.json:jakarta.json-api:2.1.1",
+            "start-order":"1"
+        },
+        {
+            "id":"org.eclipse.parsson:parsson:1.1.1",
+            "start-order":"1"
+        },
+        {
             "id":"org.apache.sling:org.apache.sling.commons.osgi:2.4.2",
             "start-order":"1"
         },
