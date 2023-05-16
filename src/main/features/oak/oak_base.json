@@ -74,6 +74,10 @@
             "start-order":"15"
         },
         {
+            "id":"org.apache.jackrabbit:oak-shaded-guava:${oak.version}",
+            "start-order":"15"
+        },
+        {
             "id":"org.apache.jackrabbit:oak-security-spi:${oak.version}",
             "start-order":"15"
         },
