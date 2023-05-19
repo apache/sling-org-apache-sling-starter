@@ -125,7 +125,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.factory.configuration:1.4.2",
+            "id":"org.apache.sling:org.apache.sling.installer.factory.configuration:1.4.4",
             "start-order":"1"
         },
         {
