@@ -125,7 +125,11 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.factory.configuration:1.4.2",
+            "id":"org.apache.felix:org.apache.felix.http.servlet-api:1.1.4",
+            "start-order":"1"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.installer.factory.configuration:1.4.4",
             "start-order":"1"
         },
         {
