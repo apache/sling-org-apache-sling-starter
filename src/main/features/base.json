@@ -99,7 +99,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.impl:1.6.0",
+            "id":"org.apache.sling:org.apache.sling.models.impl:1.6.4",
             "start-order":"20"
         },
         {
