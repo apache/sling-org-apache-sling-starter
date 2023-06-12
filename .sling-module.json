@@ -2,9 +2,6 @@
     "jenkins": {
         "emailRecipients": ["dev@sling.apache.org"],
         "sonarQubeEnabled": false,
-        "operatingSystems": [
-            "linux"
-        ],
         "rebuildFrequency": "@daily",
         "additionalMavenParams": "-Dit.startTimeoutSeconds=120",
         "archivePatterns": [
