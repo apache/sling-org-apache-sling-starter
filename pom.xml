@@ -52,7 +52,7 @@
         <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
         <composum.nodes.version>4.2.1</composum.nodes.version>
         <!-- renovate: depName=com.fasterxml.jackson.core:jackson-core -->
-        <jackson.version>2.15.1</jackson.version>
+        <jackson.version>2.15.2</jackson.version>
         <!-- renovate: depName=org.codehaus.groovy:groovy -->
         <groovy.version>4.0.10</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
