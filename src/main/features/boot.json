@@ -125,7 +125,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.servlet-api:1.1.4",
+            "id":"org.apache.felix:org.apache.felix.http.servlet-api:1.2.0",
             "start-order":"1"
         },
         {
