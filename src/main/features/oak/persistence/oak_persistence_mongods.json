@@ -5,7 +5,7 @@
              "start-order":"15"
         },
         {
-             "id":"org.mongodb:mongo-java-driver:3.12.13",
+             "id":"org.mongodb:mongo-java-driver:3.12.14",
              "start-order":"15"
          }
     ],
