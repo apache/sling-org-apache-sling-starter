@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-FROM docker.io/openjdk:17-slim
+FROM docker.io/eclipse-temurin:17
 
 LABEL org.opencontainers.image.authors="dev@sling.apache.org"
 
