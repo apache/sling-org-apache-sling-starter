@@ -7,7 +7,7 @@
     },
     "bundles":[
         {
-            "id":"commons-codec:commons-codec:1.15",
+            "id":"commons-codec:commons-codec:1.16.0",
             "start-order":"5"
         },
         {
