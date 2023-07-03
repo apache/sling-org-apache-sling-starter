@@ -127,7 +127,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.xss:2.2.20",
+            "id":"org.apache.sling:org.apache.sling.xss:2.3.8",
             "start-order":"20"
         },
         {
