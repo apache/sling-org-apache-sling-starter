@@ -149,6 +149,10 @@
             "start-order":"1"
         },
         {
+            "id":"org.codehaus.woodstox:stax2-api:4.2.1",
+            "start-order":"1"
+        },
+        {
             "id":"org.osgi:org.osgi.service.component:1.5.1",
             "start-order":"1"
         },

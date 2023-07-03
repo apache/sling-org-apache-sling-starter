@@ -23,6 +23,10 @@
             "start-order":"15"
         },
         {
+            "id":"com.fasterxml.woodstox:woodstox-core:6.5.1",
+            "start-order":"15"
+        },
+        {
             "id":"org.apache.commons:commons-math:2.2",
             "start-order":"20"
         },
@@ -123,7 +127,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.xss:2.2.20",
+            "id":"org.apache.sling:org.apache.sling.xss:2.3.8",
             "start-order":"20"
         },
         {
