@@ -44,9 +44,9 @@
         <!-- renovate: depName=org.ow2.asm:asm -->
         <asm.version>9.5</asm.version>
         <!-- renovate: depName=org.apache.jackrabbit:jackrabbit-jcr-commons -->
-        <jackrabbit.version>2.20.10</jackrabbit.version>
+        <jackrabbit.version>2.20.11</jackrabbit.version>
         <!-- renovate: depName=org.apache.jackrabbit:oak-api -->
-        <oak.version>1.52.0</oak.version>
+        <oak.version>1.54.0</oak.version>
         <!-- renovate: depName=org.slf4j:slf4j-api -->
         <slf4j.version>1.7.36</slf4j.version>
         <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
