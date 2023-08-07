@@ -7,6 +7,10 @@
     },
     "bundles":[
         {
+            "id":"org.owasp.encoder:encoder:1.2.3",
+            "start-order":"5"
+        },
+        {
             "id":"commons-codec:commons-codec:1.16.0",
             "start-order":"5"
         },
