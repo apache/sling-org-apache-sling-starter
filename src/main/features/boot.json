@@ -21,7 +21,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.6",
+            "id":"org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.8",
             "start-order":"1"
         },
         {
