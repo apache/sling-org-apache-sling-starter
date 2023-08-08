@@ -127,7 +127,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.9.12",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.9.14",
             "start-order":"20"
         },
         {
