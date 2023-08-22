@@ -115,7 +115,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.serviceusermapper:1.5.6",
+            "id":"org.apache.sling:org.apache.sling.serviceusermapper:1.5.8",
             "start-order":"15"
         },
         {
