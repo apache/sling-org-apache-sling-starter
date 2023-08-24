@@ -59,7 +59,7 @@
         <!-- skip index generation for all builds except for CI and release -->
         <bnd.index.generation.skip>true</bnd.index.generation.skip>
         <!-- check docker.skip in https://dmp.fabric8.io/ -->
-        <docker.skip>true</docker.skip>
+        <docker.skip>false</docker.skip>
         <!-- check docker.skip.push in https://dmp.fabric8.io/ -->
         <docker.skip.push>true</docker.skip.push>
         <docker.image.name>webarchives-oak</docker.image.name>
