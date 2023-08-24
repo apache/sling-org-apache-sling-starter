@@ -20,18 +20,19 @@
         <relativePath />
     </parent>
 
-    <artifactId>org.apache.sling.starter</artifactId>
+    <groupId>info.webarchives.oak</groupId>
+    <artifactId>webarchives-oak-starter</artifactId>
     <version>13-SNAPSHOT</version>
 
-    <name>Apache Sling Starter</name>
+    <name>WebArchives Oak Starter</name>
     <description>
-        The Sling Starter demo application.
+        The Oak Starter for WebArchives.
     </description>
 
     <scm>
-        <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</connection>
-        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</developerConnection>
-        <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-starter.git</url>
+        <connection>scm:git:https://github.com/WebArchives/webarchives-oak-starter.git</connection>
+        <developerConnection>scm:git:https://github.com/WebArchives/webarchives-oak-starter.git</developerConnection>
+        <url>https://github.com/WebArchives/webarchives-oak-starter</url>
         <tag>HEAD</tag>
     </scm>
 
