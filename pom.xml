@@ -205,7 +205,6 @@
                         <configuration>
                             <portNames>
                                 <portName>http.port</portName>
-                                <portName>http.port.mongo</portName>
                                 <portName>mongo.port</portName>
                             </portNames>
                         </configuration>
@@ -344,7 +343,7 @@
                             </feature>
                             <launcherArguments>
                                 <frameworkProperties>
-                                    <org.osgi.service.http.port>${http.port.mongo}</org.osgi.service.http.port>
+                                    <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
                                     <org.apache.felix.http.jetty.responseBufferSize>5000000</org.apache.felix.http.jetty.responseBufferSize>
                                 </frameworkProperties>
                             </launcherArguments>
@@ -376,11 +375,7 @@
                    </execution>
                </executions>
                <configuration>
-                   <dependenciesToScan>
-                       <dependency>org.apache.sling:org.apache.sling.launchpad.integration-tests</dependency>
-                   </dependenciesToScan>
                     <includes>
-                        <include>**/*Test.java</include>
                         <include>**/*IT.java</include>
                     </includes>
                     <excludes>
@@ -390,7 +385,7 @@
                     </excludes>
                    <systemPropertyVariables>
                        <launchpad.http.server.url>http://localhost:${http.port}/</launchpad.http.server.url>
-                       <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
+                       <starter.http.test.ports>false:${http.port}</starter.http.test.ports>
                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
                        <!-- Comma-separated list of paths to check for 200 status (added for SLING-10402) -->
                        <starter.check.paths>
