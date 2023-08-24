@@ -62,8 +62,8 @@
         <docker.skip>true</docker.skip>
         <!-- check docker.skip.push in https://dmp.fabric8.io/ -->
         <docker.skip.push>true</docker.skip.push>
-        <docker.image.name>apache/sling</docker.image.name>
-        <docker.image.tag>snapshot</docker.image.tag>
+        <docker.image.name>webarchives-oak</docker.image.name>
+        <docker.image.tag>latest</docker.image.tag>
         <!-- pass a list of platforms to enable multi-arch builds: linux/amd64,linux/arm64 -->
         <docker.platforms></docker.platforms>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
