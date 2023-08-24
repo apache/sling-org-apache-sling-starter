@@ -98,14 +98,6 @@
                     <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
                     <aggregates>
                         <aggregate>
-                            <classifier>oak_tar</classifier>
-                            <filesInclude>*.json</filesInclude>
-                            <filesInclude>oak/*.json</filesInclude>
-                            <filesInclude>oak/persistence/oak_persistence_sns.json</filesInclude>
-                            <filesInclude>app/*.json</filesInclude>
-                            <title>Sling With Oak Segment NS Persistence</title>
-                        </aggregate>
-                        <aggregate>
                             <classifier>oak_mongo</classifier>
                             <filesInclude>*.json</filesInclude>
                             <filesInclude>oak/*.json</filesInclude>
@@ -113,35 +105,13 @@
                             <filesInclude>app/*.json</filesInclude>
                             <title>Sling With Oak Document NS Mongo Persistence</title>
                         </aggregate>
-                        <aggregate>
-                            <classifier>nosample_base</classifier>
-                            <filesInclude>*.json</filesInclude>
-                            <filesInclude>oak/*.json</filesInclude>
-                            <title>Sling With No Samples and No Persistence</title>
-                        </aggregate>
-                        <aggregate>
-                            <classifier>oak_tar_test</classifier>
-                            <filesInclude>*.json</filesInclude>
-                            <filesInclude>oak/*.json</filesInclude>
-                            <filesInclude>oak/persistence/oak_persistence_sns.json</filesInclude>
-                            <filesInclude>app/*.json</filesInclude>
-                            <filesInclude>test/*.json</filesInclude>
-                            <title>Sling with Oak Segment NS persistence and test content</title>
-                        </aggregate>
                     </aggregates>
                     <scans>
                         <scan>
-                            <includeClassifier>oak_tar</includeClassifier>
-                            <includeClassifier>oak_tar_test</includeClassifier>
                             <includeClassifier>oak_mongo</includeClassifier>
-                            <includeClassifier>nosample_base</includeClassifier>
                         </scan>
                     </scans>
                     <archives>
-                        <archive>
-                            <classifier>oak_tar_far</classifier>
-                            <includeClassifier>oak_tar</includeClassifier>
-                        </archive>
                         <archive>
                             <classifier>oak_mongo_far</classifier>
                             <includeClassifier>oak_mongo</includeClassifier>
@@ -149,7 +119,6 @@
                     </archives>
                     <repositories>
                         <repository>
-                            <includeClassifier>oak_tar</includeClassifier>
                             <includeClassifier>oak_mongo</includeClassifier>
                             <includeClassifier>docker</includeClassifier>
                         </repository>
@@ -363,23 +332,6 @@
                 <version>0.1.6</version>
                 <configuration>
                     <launches>
-                        <launch>
-                            <id>sling-starter-oak-tar</id>
-                            <feature>
-                                <groupId>${project.groupId}</groupId>
-                                <artifactId>${project.artifactId}</artifactId>
-                                <version>${project.version}</version>
-                                <classifier>oak_tar_test</classifier>
-                                <type>slingosgifeature</type>
-                            </feature>
-                            <launcherArguments>
-                                <frameworkProperties>
-                                    <org.osgi.service.http.port>${http.port}</org.osgi.service.http.port>
-                                    <org.apache.felix.http.jetty.responseBufferSize>5000000</org.apache.felix.http.jetty.responseBufferSize>
-                                </frameworkProperties>
-                            </launcherArguments>
-                            <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
-                        </launch>
                         <launch>
                             <id>sling-starter-oak-mongo</id>
                             <skip>${docker.skip}</skip>
