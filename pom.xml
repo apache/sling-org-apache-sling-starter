@@ -544,32 +544,5 @@
                <bnd.index.generation.skip>false</bnd.index.generation.skip>
             </properties>
         </profile>
-        <profile>
-            <id>ci</id>
-            <!-- enabled during ci builds -->
-            <activation>
-                <property>
-                    <name>ci</name>
-                </property>
-            </activation>
-            <properties>
-               <bnd.index.generation.skip>false</bnd.index.generation.skip>
-               <docker.skip>false</docker.skip>
-            </properties>
-            <!-- workaround for https://github.com/bndtools/bnd/issues/5247 -->
-            <repositories>
-                <repository>
-                    <id>Nexus</id>
-                    <name>Nexus</name>
-                    <url>https://repository.apache.org/snapshots/</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                </repository>
-            </repositories>
-        </profile>
     </profiles>
 </project>
