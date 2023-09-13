@@ -525,6 +525,12 @@
              <artifactId>org.apache.sling.launchpad.integration-tests</artifactId>
              <version>${project.version}</version>
              <scope>test</scope>
+             <exclusions>
+                 <exclusion>
+                     <groupId>xerces</groupId>
+                     <artifactId>xmlParserAPIs</artifactId>
+                 </exclusion>
+             </exclusions>
         </dependency>
         <!-- provided-scope dependency of the commons.johnzon bundle -->
         <dependency>
