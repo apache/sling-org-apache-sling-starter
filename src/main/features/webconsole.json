@@ -9,7 +9,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.webconsole.plugins.event:1.1.8",
+            "id":"org.apache.felix:org.apache.felix.webconsole.plugins.event:1.2.0",
             "start-order":"5"
         },
         {
