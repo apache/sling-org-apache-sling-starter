@@ -13,7 +13,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.webconsole.plugins.memoryusage:1.0.10",
+            "id":"org.apache.felix:org.apache.felix.webconsole.plugins.memoryusage:1.1.0",
             "start-order":"5"
         },
         {
