@@ -211,6 +211,10 @@
             "start-order":"10"
         },
         {
+            "id":"org.apache.pdfbox:pdfbox-io:3.0.0",
+            "start-order":"10"
+        },
+        {
             "id":"org.apache.pdfbox:pdfbox:3.0.0",
             "start-order":"10"
         },
