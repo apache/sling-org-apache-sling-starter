@@ -102,7 +102,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.base:3.1.14",
+            "id":"org.apache.sling:org.apache.sling.jcr.base:3.2.0",
             "start-order":"15"
         },
         {
