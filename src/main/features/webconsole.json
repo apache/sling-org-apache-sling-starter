@@ -1,7 +1,7 @@
 {
     "bundles": [
         {
-            "id":"org.apache.felix:org.apache.felix.webconsole:4.9.4",
+            "id":"org.apache.felix:org.apache.felix.webconsole:4.9.6",
             "start-order":"5"
         },    
         {
