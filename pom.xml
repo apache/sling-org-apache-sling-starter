@@ -203,7 +203,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- generate bnd OSGi index (https://github.com/bndtools/bnd/tree/master/maven/bnd-indexer-maven-plugin) -->
+            <!-- generate bnd OSGi index (https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-indexer-maven-plugin) -->
             <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-indexer-maven-plugin</artifactId>
