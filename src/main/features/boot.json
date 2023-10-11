@@ -149,7 +149,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.codehaus.woodstox:stax2-api:4.2.1",
+            "id":"org.codehaus.woodstox:stax2-api:4.2.2",
             "start-order":"1"
         },
         {
