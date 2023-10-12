@@ -96,7 +96,8 @@
             "responseTextFor503":"classpath:org.apache.sling.starter.content:startup/index.html"
         },
         "org.apache.felix.hc.core.impl.servlet.HealthCheckExecutorServlet~default":{
-            "servletPath":"/system/health"
+            "servletPath":"/system/health",
+	    "servletContextName":"org.osgi.service.http"
         },
         "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~hc-support":{
             "user.mapping":[
