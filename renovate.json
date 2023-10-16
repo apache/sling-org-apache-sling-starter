@@ -5,11 +5,7 @@
     "regexManagers:mavenPropertyVersions"
   ],
   "packageRules" : [
-     {
-       "matchPackagePrefixes": [ "org.apache.tika" ],
-       "groupName": "Apache Tika"
-     },
-     {
+    {
        "matchPackagePrefixes": [ "org.apache.httpcomponents:" ],
        "groupName": "Apache HTTPComponents"
      },
