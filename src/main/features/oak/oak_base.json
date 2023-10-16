@@ -6,10 +6,6 @@
             "start-order":"10"
         },
         {
-            "id":"com.google.guava:guava:15.0",
-            "start-order":"15"
-        },
-        {
             "id":"org.apache.jackrabbit:jackrabbit-data:${jackrabbit.version}",
             "start-order":"15"
         },
