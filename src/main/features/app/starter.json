@@ -4,5 +4,19 @@
             "id":"org.apache.sling:org.apache.sling.starter.content:1.0.12",
             "start-order":"20"
         }
-    ]
+    ],
+    "configurations": {
+        "org.apache.felix.hc.core.impl.filter.ServiceUnavailableFilter~startupandshutdown":{
+            "osgi.http.whiteboard.filter.regex":"(?!/system/).*",
+            "avoid404DuringStartup":true,
+            "service.ranking:Integer":"2147483647",
+            "includeExecutionResult":false,
+            "osgi.http.whiteboard.context.select":"(osgi.http.whiteboard.context.name=*)",
+            "tags":[
+                "systemalive"
+            ],
+            "autoDisableFilter":true,
+            "responseTextFor503":"classpath:org.apache.sling.starter.content:startup/index.html"
+        }
+    }
 }
