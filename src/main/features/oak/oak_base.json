@@ -138,11 +138,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:3.1.0",
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:4.0.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.26",
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.28",
             "start-order":"20"
         }
     ],
