@@ -30,4 +30,4 @@ services:
             - SLING_DEBUG=false
         command: "oak_mongo"
     mongo:
-        image: mongo:3.7
+        image: mongo:7.0.3

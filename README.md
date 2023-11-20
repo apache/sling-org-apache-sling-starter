@@ -37,7 +37,7 @@ See [Releasing a new version of the Sling starter](https://cwiki.apache.org/conf
      ```bash
      target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
      ```
-     This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL (currently `mongodb://localhost:27017`).
+     This expects a MongoDB 7.x server to be running, search for `mongodb://` in the feature files for the expected URL (currently `mongodb://localhost:27017`).
 
 3. Browse Sling in [localhost:8080](http://localhost:8080)
 
@@ -62,7 +62,7 @@ The following tags are supported
    - Oak MongoDB DocumentStore with
      ```bash
      docker volume create sling-launcher
-     docker run --rm -p 27017:27017 mongo:4.4.6
+     docker run --rm -p 27017:27017 mongo:7.0.3
      docker run --rm -p 8081:8080 -v sling-launcher:/opt/sling/launcher apache/sling:snapshot oak_mongo
      ```
 

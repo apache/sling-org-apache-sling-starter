@@ -65,7 +65,7 @@
         <docker.image.tag>snapshot</docker.image.tag>
         <!-- pass a list of platforms to enable multi-arch builds: linux/amd64,linux/arm64 -->
         <docker.platforms></docker.platforms>
-        <mongo.container.image>mongo:4.4.6</mongo.container.image>
+        <mongo.container.image>mongo:7.0.3</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
         <project.build.outputTimestamp>1647263109</project.build.outputTimestamp>
