@@ -71,7 +71,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.mime:2.2.2",
+            "id":"org.apache.sling:org.apache.sling.commons.mime:2.2.4",
             "start-order":"15"
         },
         {
@@ -83,7 +83,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.engine:2.15.6",
+            "id":"org.apache.sling:org.apache.sling.engine:2.15.8",
             "start-order":"20"
         },
         {
@@ -111,7 +111,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.10.0",
+            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.11.4",
             "start-order":"20"
         },
         {
@@ -119,19 +119,19 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.get:2.1.44",
+            "id":"org.apache.sling:org.apache.sling.servlets.get:2.2.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.post:2.5.0",
+            "id":"org.apache.sling:org.apache.sling.servlets.post:2.6.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.9.14",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:2.10.0",
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.xss:2.3.8",
+            "id":"org.apache.sling:org.apache.sling.xss:2.4.0",
             "start-order":"20"
         },
         {
@@ -143,7 +143,7 @@
             "start-order":"5"
         },
         {
-            "id":"commons-io:commons-io:2.13.0",
+            "id":"commons-io:commons-io:2.15.0",
             "start-order":"5"
         },
         {
@@ -163,7 +163,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty:4.2.14",
+            "id":"org.apache.felix:org.apache.felix.http.jetty:5.1.4",
             "start-order":"5"
         },
         {
@@ -171,7 +171,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.inventory:1.1.0",
+            "id":"org.apache.felix:org.apache.felix.inventory:2.0.0",
             "start-order":"5"
         },
         {
@@ -183,7 +183,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.auth.core:1.6.2",
+            "id":"org.apache.sling:org.apache.sling.auth.core:1.7.0",
             "start-order":"5"
         },
         {
@@ -199,7 +199,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.sslfilter:1.2.6",
+            "id":"org.apache.felix:org.apache.felix.http.sslfilter:2.0.2",
             "start-order":"10"
         },
         {
@@ -239,7 +239,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.44",
+            "id":"org.apache.sling:org.apache.sling.jcr.repoinit:1.1.46",
             "start-order":"20"
         }
     ],

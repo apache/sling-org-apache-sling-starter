@@ -31,7 +31,7 @@
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</developerConnection>
-        <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-starter.git</url>
+        <url>https://github.com/apache/sling-org-apache-sling-starter.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -42,17 +42,17 @@
 
         <!-- versions to be replaced in the feature files -->
         <!-- renovate: depName=org.ow2.asm:asm -->
-        <asm.version>9.5</asm.version>
+        <asm.version>9.6</asm.version>
         <!-- renovate: depName=org.apache.jackrabbit:jackrabbit-jcr-commons -->
-        <jackrabbit.version>2.20.11</jackrabbit.version>
+        <jackrabbit.version>2.20.13</jackrabbit.version>
         <!-- renovate: depName=org.apache.jackrabbit:oak-api -->
-        <oak.version>1.54.0</oak.version>
+        <oak.version>1.58.0</oak.version>
         <!-- renovate: depName=org.slf4j:slf4j-api -->
         <slf4j.version>1.7.36</slf4j.version>
         <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
-        <composum.nodes.version>4.2.1</composum.nodes.version>
+        <composum.nodes.version>4.2.3</composum.nodes.version>
         <!-- renovate: depName=com.fasterxml.jackson.core:jackson-core -->
-        <jackson.version>2.15.2</jackson.version>
+        <jackson.version>2.16.0</jackson.version>
         <!-- renovate: depName=org.codehaus.groovy:groovy -->
         <groovy.version>4.0.10</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingfeature-maven-plugin</artifactId>
-                <version>1.7.2</version>
+                <version>1.8.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
@@ -203,7 +203,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- generate bnd OSGi index (https://github.com/bndtools/bnd/tree/master/maven/bnd-indexer-maven-plugin) -->
+            <!-- generate bnd OSGi index (https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-indexer-maven-plugin) -->
             <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-indexer-maven-plugin</artifactId>

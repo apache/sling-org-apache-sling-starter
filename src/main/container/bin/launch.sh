@@ -37,8 +37,15 @@ if [ ! -z "${JAVA_DEBUG_PORT}" ]; then
     JAVA_DEBUG_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:${JAVA_DEBUG_PORT}"
 fi
 # remove add-opens after SLING-10831 is fixed
-export JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED ${JAVA_DEBUG_OPTS} ${EXTRA_JAVA_OPTS}"
+JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED ${JAVA_DEBUG_OPTS} ${EXTRA_JAVA_OPTS}"
 
+agents=$(find agents -name "*.jar")
+for agent in ${agents}; do
+    echo "[INFO] Discovered agent ${agent}"
+    JAVA_OPTS="-javaagent:${agent} ${JAVA_OPTS}"
+done
+
+export JAVA_OPTS
 echo "[INFO] JAVA_OPTS=${JAVA_OPTS}"
 
 exec org.apache.sling.feature.launcher/bin/launcher \
