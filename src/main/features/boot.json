@@ -174,8 +174,6 @@
         "felix.systempackages.substitution":"true",
         "sling.fileinstall.dir":"${sling.home}/install",
         "sling.fileinstall.dir.autocreate":"true",
-        "felix.cm.config.plugins": "org.apache.felix.configadmin.plugin.interpolation",
-        "org.apache.aries.spifly.auto.consumers":"jakarta.json-api",
-        "org.apache.aries.spifly.auto.providers": "org.eclipse.parsson"
+        "felix.cm.config.plugins": "org.apache.felix.configadmin.plugin.interpolation"
     }
 }
