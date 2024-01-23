@@ -111,7 +111,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.11.4",
+            "id":"org.apache.sling:org.apache.sling.resourceresolver:1.11.6",
             "start-order":"20"
         },
         {
