@@ -27,7 +27,7 @@
             "start-order":"15"
         },
         {
-            "id":"com.fasterxml.woodstox:woodstox-core:6.5.1",
+            "id":"com.fasterxml.woodstox:woodstox-core:6.6.0",
             "start-order":"15"
         },
         {
