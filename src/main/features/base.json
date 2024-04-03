@@ -203,7 +203,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:2.0.30",
+            "id":"org.apache.pdfbox:fontbox:2.0.31",
             "start-order":"10"
         },
         {
@@ -211,7 +211,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:2.0.30",
+            "id":"org.apache.pdfbox:pdfbox:2.0.31",
             "start-order":"10"
         },
         {
