@@ -6,7 +6,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.rhino:1.7.14_2",
+            "id":"org.apache.servicemix.bundles:org.apache.servicemix.bundles.rhino:1.7.15_1",
             "start-order":"20"
         },
         {
