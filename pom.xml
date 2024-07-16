@@ -50,7 +50,7 @@
         <!-- renovate: depName=org.slf4j:slf4j-api -->
         <slf4j.version>1.7.36</slf4j.version>
         <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
-        <composum.nodes.version>4.3.3</composum.nodes.version>
+        <composum.nodes.version>4.3.4</composum.nodes.version>
         <!-- renovate: depName=com.fasterxml.jackson.core:jackson-core -->
         <jackson.version>2.17.2</jackson.version>
         <!-- renovate: depName=org.codehaus.groovy:groovy -->
