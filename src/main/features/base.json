@@ -179,7 +179,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.api:2.27.2",
+            "id":"org.apache.sling:org.apache.sling.api:2.27.6",
             "start-order":"5"
         },
         {
