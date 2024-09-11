@@ -79,7 +79,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.threads:3.2.22",
+            "id":"org.apache.sling:org.apache.sling.commons.threads:3.3.0",
             "start-order":"15"
         },
         {
