@@ -73,10 +73,6 @@
             "start-order": "20"
         },
         {
-            "id": "org.apache.groovy:groovy-macro:${groovy.version}",
-            "start-order": "20"
-        },
-        {
             "id": "org.apache.groovy:groovy-nio:${groovy.version}",
             "start-order": "20"
         },
