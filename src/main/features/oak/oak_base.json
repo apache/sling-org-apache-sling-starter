@@ -14,10 +14,6 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.jackrabbit:jackrabbit-jcr-rmi:${jackrabbit.version}",
-            "start-order":"15"
-        },
-        {
             "id":"org.apache.jackrabbit:jackrabbit-spi-commons:${jackrabbit.version}",
             "start-order":"15"
         },
