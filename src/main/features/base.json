@@ -195,7 +195,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.metrics:1.2.12",
+            "id":"org.apache.sling:org.apache.sling.commons.metrics:1.2.14",
             "start-order":"5"
         },
         {
