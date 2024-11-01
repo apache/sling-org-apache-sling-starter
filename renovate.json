@@ -1,52 +1,71 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "regexManagers:mavenPropertyVersions"
+    "config:recommended",
+    "customManagers:mavenPropertyVersions"
   ],
-  "packageRules" : [
-     {
-       "matchPackagePrefixes": [ "org.apache.tika" ],
-       "groupName": "Apache Tika"
-     },
-     {
-       "matchPackagePrefixes": [ "org.apache.httpcomponents:" ],
-       "groupName": "Apache HTTPComponents"
-     },
-     {
-       "matchPackagePrefixes": [ "org.apache.pdfbox:" ],
-       "groupName": "Apache PDFBox"
-     },
-     {
-       "matchPackagePrefixes": [ "org.apache.sling:org.apache.sling.models" ],
-       "groupName": "Apache Sling Models"
-     },
-     {
-       "matchPackagePrefixes": [ "org.apache.felix:org.apache.felix.http" ],
-       "groupName": "Apache Felix HTTP"
-     },
-     {
-       "matchPackageNames": [ "org.apache.sling:org.apache.sling.jcr.repoinit", "org.apache.sling:org.apache.sling.repoinit.parser" ],
-       "groupName": "Apache Sling Repoinit"
-     },
-     {
-       "matchPackagePrefixes": [ "org.apache.jackrabbit:" ],
-       "groupName": "Apache Jackrabbit and Jackrabbit Oak",
-       "allowedVersions": "/^[0-9]+\\.[0-9]*[02468]+\\.[0-9]+$/"
-     },
-     {
-       "matchManagers": ["maven"],
-       "matchDepTypes": ["provided"],
-       "enabled": false
-     },
-     {
-        "enabled": false,
-        "matchDatasources": [
-          "docker"
-        ],
-        "matchUpdateTypes": [
-          "major"
-        ]
-      }
+  "packageRules": [
+    {
+      "groupName": "Apache Tika",
+      "matchPackageNames": [
+        "org.apache.tika{/,}**"
+      ]
+    },
+    {
+      "groupName": "Apache HTTPComponents",
+      "matchPackageNames": [
+        "org.apache.httpcomponents:{/,}**"
+      ]
+    },
+    {
+      "groupName": "Apache PDFBox",
+      "matchPackageNames": [
+        "org.apache.pdfbox:{/,}**"
+      ]
+    },
+    {
+      "groupName": "Apache Sling Models",
+      "matchPackageNames": [
+        "org.apache.sling:org.apache.sling.models{/,}**"
+      ]
+    },
+    {
+      "groupName": "Apache Felix HTTP",
+      "matchPackageNames": [
+        "org.apache.felix:org.apache.felix.http{/,}**"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "org.apache.sling:org.apache.sling.jcr.repoinit",
+        "org.apache.sling:org.apache.sling.repoinit.parser"
+      ],
+      "groupName": "Apache Sling Repoinit"
+    },
+    {
+      "groupName": "Apache Jackrabbit and Jackrabbit Oak",
+      "allowedVersions": "/^[0-9]+\\.[0-9]*[02468]+\\.[0-9]+$/",
+      "matchPackageNames": [
+        "org.apache.jackrabbit:{/,}**"
+      ]
+    },
+    {
+      "matchManagers": [
+        "maven"
+      ],
+      "matchDepTypes": [
+        "provided"
+      ],
+      "enabled": false
+    },
+    {
+      "enabled": false,
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    }
   ]
 }
