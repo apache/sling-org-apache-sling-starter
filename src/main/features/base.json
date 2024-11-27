@@ -83,7 +83,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.engine:2.15.18",
+            "id":"org.apache.sling:org.apache.sling.engine:2.16.0",
             "start-order":"20"
         },
         {
