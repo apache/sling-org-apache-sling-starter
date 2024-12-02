@@ -6,9 +6,6 @@
           17,
           21
         ],
-        "operatingSystems": [
-            "linux"
-        ],
         "rebuildFrequency": "@daily",
         "additionalMavenParams": "-Dit.startTimeoutSeconds=120",
         "archivePatterns": [
