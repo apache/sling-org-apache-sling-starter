@@ -528,6 +528,13 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <!-- don't use oddeven release policy for Sling Starter -->
+                    <projectVersionPolicyId>default</projectVersionPolicyId>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
