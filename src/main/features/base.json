@@ -67,7 +67,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.fsclassloader:1.0.14",
+            "id":"org.apache.sling:org.apache.sling.commons.fsclassloader:1.0.16",
             "start-order":"20"
         },
         {
