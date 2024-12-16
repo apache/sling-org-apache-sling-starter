@@ -73,7 +73,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.logservice:1.1.0",
+            "id":"org.apache.sling:org.apache.sling.commons.logservice:1.1.2",
             "start-order":"1"
         },
         {
