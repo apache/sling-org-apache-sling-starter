@@ -75,7 +75,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.scheduler:2.7.12",
+            "id":"org.apache.sling:org.apache.sling.commons.scheduler:2.7.14",
             "start-order":"20"
         },
         {
