@@ -2,7 +2,7 @@
 {
     "bundles":[
         {
-            "id":"org.apache.sling:org.apache.sling.event.dea:1.1.4",
+            "id":"org.apache.sling:org.apache.sling.event.dea:1.1.6",
             "start-order":"20"
         },
         {
