@@ -14,7 +14,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.discovery.oak:1.2.44",
+            "id":"org.apache.sling:org.apache.sling.discovery.oak:1.2.46",
             "start-order":"20"
         },
         {
