@@ -34,7 +34,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.jsp.taglib:2.4.0",
+            "id":"org.apache.sling:org.apache.sling.scripting.jsp.taglib:2.4.2",
             "start-order":"20"
         },
         {
