@@ -27,6 +27,7 @@ RUN groupadd --system sling && \
     mkdir /opt/sling/org.apache.sling.feature.launcher && \
     mkdir /opt/sling/launcher && \
     mkdir /opt/sling/artifacts && \
+    mkdir /opt/sling/agents && \
     chown -R sling:sling /opt/sling/launcher
 
 VOLUME /opt/sling/launcher

@@ -14,7 +14,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.jacksonexporter:1.1.2",
+            "id":"com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jackson.version}",
+            "start-order":"20"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.models.jacksonexporter:1.1.4",
             "start-order":"20"
         }
     ]
