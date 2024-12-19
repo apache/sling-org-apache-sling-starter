@@ -573,5 +573,20 @@
                 </repository>
             </repositories>
         </profile>
+        <profile>
+            <id>ci-windows</id>
+            <!-- Additional CI profile for Windows, see SLING-11905-->
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+                <property>
+                    <name>ci</name>
+                </property>
+            </activation>
+            <properties>
+                <docker.skip>true</docker.skip>
+            </properties>
+        </profile>
     </profiles>
 </project>
