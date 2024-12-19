@@ -577,12 +577,12 @@
             <id>ci-windows</id>
             <!-- Additional CI profile for Windows, see SLING-11905-->
             <activation>
-                <property>
-                    <name>ci</name>
-                </property>
                 <os>
                     <family>Windows</family>
                 </os>
+                <property>
+                    <name>ci</name>
+                </property>
             </activation>
             <properties>
                 <docker.skip>true</docker.skip>
