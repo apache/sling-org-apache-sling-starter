@@ -107,7 +107,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.impl:1.7.6",
+            "id":"org.apache.sling:org.apache.sling.models.impl:1.7.8",
             "start-order":"20"
         },
         {
