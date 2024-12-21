@@ -90,7 +90,7 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.launchpad.integration-tests</artifactId>
-            <version>${project.version}</version>
+            <version>13</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
