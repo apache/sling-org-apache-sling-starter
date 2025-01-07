@@ -586,6 +586,7 @@
             </activation>
             <properties>
                 <docker.skip>true</docker.skip>
+                <failsafe.exclude>**/NodetypeRenderingTest.java</failsafe.exclude>
             </properties>
         </profile>
     </profiles>
