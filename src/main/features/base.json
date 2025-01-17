@@ -191,7 +191,7 @@
             "start-order":"5"
         },
         {
-            "id":"io.dropwizard.metrics:metrics-core:3.2.6",
+            "id":"io.dropwizard.metrics:metrics-core:4.2.30",
             "start-order":"5"
         },
         {
