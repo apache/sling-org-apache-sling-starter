@@ -2,7 +2,7 @@
   "id":"${project.groupId}:${project.artifactId}:slingosgifeature:test-content:${project.version}",  
   "bundles":[
     {
-      "id": "org.apache.sling:org.apache.sling.launchpad.test-services:13",
+      "id": "org.apache.sling:org.apache.sling.launchpad.test-services:14-SNAPSHOT",
       "start-order": "25"
     }
   ],
