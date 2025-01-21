@@ -147,6 +147,10 @@
             "start-order":"5"
         },
         {
+            "id": "org.apache.aries.jmx:org.apache.aries.jmx.mbeanserver-platform:0.0.1",
+            "start-order": "5"
+        },
+        {
             "id":"org.apache.aries.jmx:org.apache.aries.jmx.api:1.1.5",
             "start-order":"5"
         },
