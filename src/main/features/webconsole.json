@@ -37,7 +37,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.webconsoleplugin:1.2.0",
+            "id":"org.apache.felix:org.apache.felix.http.webconsoleplugin:1.2.2",
             "start-order":"5"
         },
         {
