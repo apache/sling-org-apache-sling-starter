@@ -55,7 +55,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.bundleresource.impl:2.3.4",
+            "id":"org.apache.sling:org.apache.sling.bundleresource.impl:2.4.0",
             "start-order":"20"
         },
         {
