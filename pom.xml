@@ -99,13 +99,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- provided-scope dependency of the commons.johnzon bundle -->
-        <dependency>
-            <groupId>org.apache.johnzon</groupId>
-            <artifactId>johnzon-core</artifactId>
-            <version>1.0.0</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
