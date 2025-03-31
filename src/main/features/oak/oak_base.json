@@ -126,7 +126,7 @@
             "start-order":"20"
         },    
         {
-            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:3.8.2",
+            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:3.8.4",
             "start-order":"20"
         },
         {
