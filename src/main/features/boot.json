@@ -93,7 +93,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.servlet-api:3.0.0",
+            "id":"org.apache.felix:org.apache.felix.http.servlet-api:6.1.0",
             "start-order":"1"
         },
         {
