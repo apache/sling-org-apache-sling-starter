@@ -46,7 +46,9 @@
         <!-- renovate: depName=org.apache.jackrabbit:oak-api -->
         <oak.version>1.78.0</oak.version>
         <!-- renovate: depName=org.slf4j:slf4j-api -->
-        <slf4j.version>1.7.36</slf4j.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <!-- renovate: depName=ch.qos.logback:logback-core -->
+        <logback.version>1.5.18</logback.version>
         <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
         <composum.nodes.version>4.3.5</composum.nodes.version>
         <!-- renovate: depName=com.fasterxml.jackson.core:jackson-core -->
@@ -166,7 +168,7 @@
                 <version>1.9.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
+                    <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,logback.version,composum.nodes.version,jackson.version</replacePropertyVariables>
                     <aggregates>
                         <aggregate>
                             <classifier>oak_tar</classifier>
