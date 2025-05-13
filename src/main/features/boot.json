@@ -69,7 +69,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.log:5.5.0",
+            "id":"org.apache.sling:org.apache.sling.commons.log:jar:all:6.0.0",
             "start-order":"1"
         },
         {
@@ -150,10 +150,6 @@
         },
         {
             "id":"org.slf4j:log4j-over-slf4j:${slf4j.version}",
-            "start-order":"1"
-        },
-        {
-            "id":"org.slf4j:slf4j-api:${slf4j.version}",
             "start-order":"1"
         },
         {
