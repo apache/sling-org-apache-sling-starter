@@ -34,7 +34,7 @@
     </scm>
 
     <properties>
-        <sling.java.version>11</sling.java.version>
+        <sling.java.version>17</sling.java.version>
         <starter.min.bundles.count>126</starter.min.bundles.count>
         <sling.feature.launcher.version>1.3.2</sling.feature.launcher.version>
 
