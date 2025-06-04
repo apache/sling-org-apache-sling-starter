@@ -1,7 +1,7 @@
 {
     "bundles": [
         {
-            "id":"org.apache.felix:org.apache.felix.webconsole:4.9.6",
+            "id":"org.apache.felix:org.apache.felix.webconsole:5.0.12",
             "start-order":"5"
         },    
         {
@@ -25,11 +25,11 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.log.webconsole:1.0.0",
+            "id":"org.apache.sling:org.apache.sling.commons.log.webconsole:1.0.2",
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.extensions.webconsolebranding:1.0.2",
+            "id":"org.apache.sling:org.apache.sling.extensions.webconsolebranding:1.0.4",
             "start-order":"5"
         },
         {
@@ -37,11 +37,11 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.webconsoleplugin:1.1.0",
+            "id":"org.apache.felix:org.apache.felix.http.webconsoleplugin:1.2.2",
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.inventoryprinter:1.0.0",
+            "id":"org.apache.felix:org.apache.felix.http.inventoryprinter:1.0.2",
             "start-order":"5"
         },
         {
@@ -53,7 +53,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.serviceuser.webconsole:1.0.2",
+            "id":"org.apache.sling:org.apache.sling.serviceuser.webconsole:1.0.4",
             "start-order":"20"
         },
         {

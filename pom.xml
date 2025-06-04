@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one or more contributor license
     agreements. See the NOTICE file distributed with this work for additional information
@@ -16,43 +16,41 @@
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling</artifactId>
-        <version>52</version>
+        <version>62</version>
         <relativePath />
     </parent>
 
     <artifactId>org.apache.sling.starter</artifactId>
-    <version>13-SNAPSHOT</version>
+    <version>14-SNAPSHOT</version>
 
     <name>Apache Sling Starter</name>
-    <description>
-        The Sling Starter demo application.
-    </description>
+    <description>The Sling Starter demo application.</description>
 
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-starter.git</developerConnection>
-        <url>https://github.com/apache/sling-org-apache-sling-starter.git</url>
         <tag>HEAD</tag>
+        <url>https://github.com/apache/sling-org-apache-sling-starter.git</url>
     </scm>
 
     <properties>
-        <sling.java.version>11</sling.java.version>
+        <sling.java.version>17</sling.java.version>
         <starter.min.bundles.count>126</starter.min.bundles.count>
-        <sling.feature.launcher.version>1.3.0</sling.feature.launcher.version>
+        <sling.feature.launcher.version>1.3.2</sling.feature.launcher.version>
 
         <!-- versions to be replaced in the feature files -->
         <!-- renovate: depName=org.ow2.asm:asm -->
-        <asm.version>9.6</asm.version>
+        <asm.version>9.8</asm.version>
         <!-- renovate: depName=org.apache.jackrabbit:jackrabbit-jcr-commons -->
-        <jackrabbit.version>2.20.13</jackrabbit.version>
+        <jackrabbit.version>2.22.0</jackrabbit.version>
         <!-- renovate: depName=org.apache.jackrabbit:oak-api -->
-        <oak.version>1.58.0</oak.version>
+        <oak.version>1.78.0</oak.version>
         <!-- renovate: depName=org.slf4j:slf4j-api -->
-        <slf4j.version>1.7.36</slf4j.version>
+        <slf4j.version>2.0.17</slf4j.version>
         <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
-        <composum.nodes.version>4.2.3</composum.nodes.version>
+        <composum.nodes.version>4.3.5</composum.nodes.version>
         <!-- renovate: depName=com.fasterxml.jackson.core:jackson-core -->
-        <jackson.version>2.16.0</jackson.version>
+        <jackson.version>2.19.0</jackson.version>
         <!-- renovate: depName=org.codehaus.groovy:groovy -->
         <groovy.version>4.0.10</groovy.version>
         <!-- skip index generation for all builds except for CI and release -->
@@ -64,14 +62,88 @@
         <docker.image.name>apache/sling</docker.image.name>
         <docker.image.tag>snapshot</docker.image.tag>
         <!-- pass a list of platforms to enable multi-arch builds: linux/amd64,linux/arm64 -->
-        <docker.platforms></docker.platforms>
+        <docker.platforms />
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
         <it.startTimeoutSeconds>60</it.startTimeoutSeconds>
         <!-- used for reproducible builds (https://maven.apache.org/guides/mini/guide-reproducible-builds.htm), automatically updated during release -->
-        <project.build.outputTimestamp>1647263109</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1736842792</project.build.outputTimestamp>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.14</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.utils</artifactId>
+            <version>1.11.8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.launchpad.integration-tests</artifactId>
+            <version>14-SNAPSHOT</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xmlParserAPIs</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
     <build>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- Extend RAT configuration from parent pom -->
+                    <groupId>org.apache.rat</groupId>
+                    <artifactId>apache-rat-plugin</artifactId>
+                    <configuration>
+                        <excludes combine.children="append">
+                            <!-- Exclude sling instance -->
+                            <exclude>sling/**</exclude>
+                            <exclude>launcher/**</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-antrun-plugin</artifactId>
+                                        <versionRange>[3.0.0,)</versionRange>
+                                        <goals>
+                                            <goal>run</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -91,7 +163,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingfeature-maven-plugin</artifactId>
-                <version>1.8.0</version>
+                <version>1.9.2</version>
                 <extensions>true</extensions>
                 <configuration>
                     <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
@@ -157,22 +229,22 @@
                 <executions>
                     <execution>
                         <id>aggregate-features</id>
-                        <phase>prepare-package</phase>
                         <goals>
                             <goal>aggregate-features</goal>
                             <goal>analyse-features</goal>
                             <goal>attach-features</goal>
                             <goal>attach-featurearchives</goal>
                         </goals>
+                        <phase>prepare-package</phase>
                     </execution>
                     <execution>
                         <id>create-repository</id>
-                        <phase>package</phase>
                         <goals>
                             <goal>repository</goal>
                         </goals>
+                        <phase>package</phase>
                     </execution>
-               </executions>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -207,7 +279,7 @@
             <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-indexer-maven-plugin</artifactId>
-                <version>6.4.0</version>
+                <version>7.1.0</version>
                 <executions>
                     <execution>
                         <id>index</id>
@@ -246,10 +318,10 @@
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>pre-integration-test</phase>
                         <goals>
                             <goal>run</goal>
                         </goals>
+                        <phase>pre-integration-test</phase>
                         <configuration>
                             <target if="${docker.skip}">
                                 <echo>WARNING: docker.skip is ${docker.skip}, Docker-based tests will not be executed.</echo>
@@ -267,7 +339,7 @@
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.43.4</version>
+                <version>0.46.0</version>
                 <configuration>
                     <skip>${docker.skip}</skip>
                     <containerNamePattern>%e</containerNamePattern>
@@ -276,11 +348,11 @@
                 <executions>
                     <execution>
                         <id>start-mongo</id>
-                        <!-- must run prior feature-launcher-maven-plugin:start  -->
-                        <phase>pre-integration-test</phase>
                         <goals>
                             <goal>start</goal>
                         </goals>
+                        <!-- must run prior feature-launcher-maven-plugin:start  -->
+                        <phase>pre-integration-test</phase>
                         <configuration>
                             <images>
                                 <image>
@@ -301,11 +373,11 @@
                     </execution>
                     <execution>
                         <id>stop-mongo</id>
-                        <!-- must run after feature-launcher-maven-plugin:stop  -->
-                        <phase>verify</phase>
                         <goals>
                             <goal>stop</goal>
                         </goals>
+                        <!-- must run after feature-launcher-maven-plugin:stop  -->
+                        <phase>verify</phase>
                         <configuration>
                             <images>
                                 <image>
@@ -326,12 +398,12 @@
                     </execution>
                     <execution>
                         <id>build-docker-image</id>
-                        <phase>package</phase>
                         <goals>
                             <goal>build</goal>
                             <!-- -D docker.skip.push=false -->
                             <goal>push</goal>
                         </goals>
+                        <phase>package</phase>
                         <configuration>
                             <!-- Configure the sling image only for build, we don't want to run it  -->
                             <images>
@@ -359,7 +431,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>feature-launcher-maven-plugin</artifactId>
-                <version>0.1.6</version>
+                <version>0.1.8</version>
                 <configuration>
                     <launches>
                         <launch>
@@ -413,19 +485,11 @@
             </plugin>
             <!-- run the ITs -->
             <plugin>
-               <artifactId>maven-failsafe-plugin</artifactId>
-               <executions>
-                   <execution>
-                       <goals>
-                           <goal>integration-test</goal>
-                           <goal>verify</goal>
-                       </goals>
-                   </execution>
-               </executions>
-               <configuration>
-                   <dependenciesToScan>
-                       <dependency>org.apache.sling:org.apache.sling.launchpad.integration-tests</dependency>
-                   </dependenciesToScan>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <dependenciesToScan>
+                        <dependency>org.apache.sling:org.apache.sling.launchpad.integration-tests</dependency>
+                    </dependenciesToScan>
                     <includes>
                         <include>**/*Test.java</include>
                         <include>**/*IT.java</include>
@@ -435,118 +499,44 @@
                         <!-- Don't run provisioning model ITs in the feature model context -->
                         <exclude>org/apache/sling/launchpad/webapp/integrationtest/provisioning/**.java</exclude>
                     </excludes>
-                   <systemPropertyVariables>
-                       <launchpad.http.server.url>http://localhost:${http.port}/</launchpad.http.server.url>
-                       <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
-                       <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
-                       <!-- Comma-separated list of paths to check for 200 status (added for SLING-10402) -->
-                       <starter.check.paths>
-                            /slingshot/users/slingshot1/travel/home/images/home.jpg,
+                    <systemPropertyVariables>
+                        <launchpad.http.server.url>http://localhost:${http.port}/</launchpad.http.server.url>
+                        <starter.http.test.ports>false:${http.port},${docker.skip}:${http.port.mongo}</starter.http.test.ports>
+                        <starter.min.bundles.count>${starter.min.bundles.count}</starter.min.bundles.count>
+                        <!-- Comma-separated list of paths to check for 200 status (added for SLING-10402) -->
+                        <starter.check.paths>/slingshot/users/slingshot1/travel/home/images/home.jpg,
                             /slingshot/resources/images/background.jpg,
                             /slingshot/users/slingshot2/places/landing/images/landing.jpg,
                             /starter.html,
                             /bin/browser.html,
-                            /system/console/bundles,
-                        </starter.check.paths>
-                   </systemPropertyVariables>
-               </configuration>
+                            /system/console/bundles,</starter.check.paths>
+                    </systemPropertyVariables>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <!-- don't use oddeven release policy for Sling Starter -->
+                    <projectVersionPolicyId>default</projectVersionPolicyId>
+                </configuration>
             </plugin>
         </plugins>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <!-- Extend RAT configuration from parent pom -->
-                    <groupId>org.apache.rat</groupId>
-                    <artifactId>apache-rat-plugin</artifactId>
-                    <configuration>
-                        <excludes combine.children="append">
-                            <!-- Exclude sling instance -->
-                            <exclude>sling/**</exclude>
-                            <exclude>launcher/**</exclude>
-                        </excludes>
-                    </configuration>
-                </plugin>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.apache.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            maven-antrun-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [3.0.0,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>run</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
-    
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.14</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.utils</artifactId>
-            <version>1.11.8</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-             <groupId>org.apache.sling</groupId>
-             <artifactId>org.apache.sling.launchpad.integration-tests</artifactId>
-             <version>${project.version}</version>
-             <scope>test</scope>
-             <exclusions>
-                 <exclusion>
-                     <groupId>xerces</groupId>
-                     <artifactId>xmlParserAPIs</artifactId>
-                 </exclusion>
-             </exclusions>
-        </dependency>
-        <!-- provided-scope dependency of the commons.johnzon bundle -->
-        <dependency>
-            <groupId>org.apache.johnzon</groupId>
-            <artifactId>johnzon-core</artifactId>
-            <version>1.0.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-    
+
     <profiles>
         <profile>
             <!-- enabled during release builds -->
             <id>apache-release</id>
             <properties>
-               <bnd.index.generation.skip>false</bnd.index.generation.skip>
+                <bnd.index.generation.skip>false</bnd.index.generation.skip>
             </properties>
         </profile>
         <profile>
@@ -558,23 +548,38 @@
                 </property>
             </activation>
             <properties>
-               <bnd.index.generation.skip>false</bnd.index.generation.skip>
-               <docker.skip>false</docker.skip>
+                <bnd.index.generation.skip>false</bnd.index.generation.skip>
+                <docker.skip>false</docker.skip>
             </properties>
             <!-- workaround for https://github.com/bndtools/bnd/issues/5247 -->
             <repositories>
                 <repository>
-                    <id>Nexus</id>
-                    <name>Nexus</name>
-                    <url>https://repository.apache.org/snapshots/</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
                     <releases>
                         <enabled>false</enabled>
                     </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>Nexus</id>
+                    <name>Nexus</name>
+                    <url>https://repository.apache.org/snapshots/</url>
                 </repository>
             </repositories>
+        </profile>
+        <profile>
+            <id>ci-windows</id>
+            <!-- Additional CI profile for Windows, see SLING-11905-->
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+                <property>
+                    <name>ci</name>
+                </property>
+            </activation>
+            <properties>
+                <docker.skip>true</docker.skip>
+            </properties>
         </profile>
     </profiles>
 </project>

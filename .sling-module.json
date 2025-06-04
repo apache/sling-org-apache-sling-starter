@@ -3,7 +3,6 @@
         "emailRecipients": ["dev@sling.apache.org"],
         "sonarQubeEnabled": false,
         "jdks": [
-          11,
           17,
           21
         ],

@@ -1,35 +1,31 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
  */
 package org.apache.sling.launchpad;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.felix.utils.json.JSONParser;
 import org.apache.http.Header;
@@ -56,15 +52,23 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 @RunWith(Parameterized.class)
 public class SmokeIT {
     private static final String CHECK_PATHS_PROPERTY = "starter.check.paths";
 
     private final int slingHttpPort;
-    private static final int STARTER_MIN_BUNDLES_COUNT = Integer.getInteger("starter.min.bundles.count", Integer.MAX_VALUE);
+    private static final int STARTER_MIN_BUNDLES_COUNT =
+            Integer.getInteger("starter.min.bundles.count", Integer.MAX_VALUE);
 
     @Rule
     public final StarterReadyRule launchpadRule;
+
     private HttpClientContext httpClientContext;
 
     @Parameterized.Parameters(name = "Port: {0,number,#}")
@@ -72,12 +76,13 @@ public class SmokeIT {
         // This is a string of Sling instance port numbers to test, like
         //     false:80,true:1234
         // meaning: do not skip testing on port 80 but skip testing port 1234
-        final Stream<String> portDefs = Stream.of(System.getProperty("starter.http.test.ports").split(","));
+        final Stream<String> portDefs =
+                Stream.of(System.getProperty("starter.http.test.ports").split(","));
         final List<Object[]> result = new ArrayList<>();
         portDefs.forEach(def -> {
-            final String [] parts = def.split(":");
-            if("false".equals(parts[0])) {
-                result.add(new Object[]{Integer.valueOf(parts[1].trim())});
+            final String[] parts = def.split(":");
+            if ("false".equals(parts[0])) {
+                result.add(new Object[] {Integer.valueOf(parts[1].trim())});
             }
         });
         return result;
@@ -114,15 +119,15 @@ public class SmokeIT {
     @Test
     public void verifyAllBundlesStarted() throws Exception {
 
-        try ( CloseableHttpClient client = newClient() ) {
+        try (CloseableHttpClient client = newClient()) {
 
             HttpGet get = new HttpGet("http://localhost:" + slingHttpPort + "/system/console/bundles.json");
 
             // pass the context to ensure preemptive basic auth is used
             // https://hc.apache.org/httpcomponents-client-ga/tutorial/html/authentication.html
-            try ( CloseableHttpResponse response = client.execute(get, httpClientContext) ) {
+            try (CloseableHttpResponse response = client.execute(get, httpClientContext)) {
 
-                if ( response.getStatusLine().getStatusCode() != 200 ) {
+                if (response.getStatusLine().getStatusCode() != 200) {
                     fail("Unexpected status line " + response.getStatusLine());
                 }
 
@@ -136,20 +141,22 @@ public class SmokeIT {
 
                 @SuppressWarnings("unchecked")
                 List<Object> bundles = (List<Object>) obj.get("data");
-                if(bundles.size() < STARTER_MIN_BUNDLES_COUNT) {
+                if (bundles.size() < STARTER_MIN_BUNDLES_COUNT) {
                     fail("Expected at least " + STARTER_MIN_BUNDLES_COUNT + " bundles, got " + bundles.size());
                 }
 
                 BundleStatus bs = new BundleStatus(status);
 
-                if ( bs.resolvedBundles != 0 || bs.installedBundles != 0 ) {
+                if (bs.resolvedBundles != 0 || bs.installedBundles != 0) {
 
                     StringBuilder out = new StringBuilder();
                     out.append("Expected all bundles to be active, but instead got ")
-                        .append(bs.resolvedBundles).append(" resolved bundles, ")
-                        .append(bs.installedBundles).append(" installed bundlles: ");
+                            .append(bs.resolvedBundles)
+                            .append(" resolved bundles, ")
+                            .append(bs.installedBundles)
+                            .append(" installed bundlles: ");
 
-                    for ( int i = 0 ; i < bundles.size(); i++ ) {
+                    for (int i = 0; i < bundles.size(); i++) {
                         @SuppressWarnings("unchecked")
                         Map<String, Object> bundle = (Map<String, Object>) bundles.get(i);
 
@@ -157,13 +164,18 @@ public class SmokeIT {
                         String bundleSymbolicName = (String) bundle.get("symbolicName");
                         String bundleVersion = (String) bundle.get("version");
 
-                        switch ( bundleState ) {
+                        switch (bundleState) {
                             case "Active":
                             case "Fragment":
                                 continue;
 
                             default:
-                                out.append("\n- ").append(bundleSymbolicName).append(" ").append(bundleVersion).append(" is in state " ).append(bundleState);
+                                out.append("\n- ")
+                                        .append(bundleSymbolicName)
+                                        .append(" ")
+                                        .append(bundleVersion)
+                                        .append(" is in state ")
+                                        .append(bundleState);
                         }
                     }
 
@@ -175,13 +187,13 @@ public class SmokeIT {
 
     @Test
     public void ensureRepositoryIsStarted() throws Exception {
-        try ( CloseableHttpClient client = newClient() ) {
+        try (CloseableHttpClient client = newClient()) {
 
             HttpGet get = new HttpGet("http://localhost:" + slingHttpPort + "/server/default/jcr:root/content");
 
-            try ( CloseableHttpResponse response = client.execute(get) ) {
+            try (CloseableHttpResponse response = client.execute(get)) {
 
-                if ( response.getStatusLine().getStatusCode() != 200 ) {
+                if (response.getStatusLine().getStatusCode() != 200) {
                     fail("Unexpected status line " + response.getStatusLine());
                 }
 
@@ -215,19 +227,17 @@ public class SmokeIT {
         final String baseURL = String.format("http://localhost:%d", slingHttpPort);
         final List<UrlCheck> checks = new ArrayList<>();
         Stream.of(System.getProperty(CHECK_PATHS_PROPERTY).split(","))
-            .map(path -> path.trim())
-            .filter(path -> !path.isEmpty())
-            .forEach(path -> checks.add(new UrlCheck(baseURL, path))
-        );
+                .map(path -> path.trim())
+                .filter(path -> !path.isEmpty())
+                .forEach(path -> checks.add(new UrlCheck(baseURL, path)));
 
-        try ( CloseableHttpClient client = newClient() ) {
+        try (CloseableHttpClient client = newClient()) {
             UrlCheck.runAll(client, TRIES, WAIT_BETWEEN_TRIES_MILLIS, checks);
         }
 
         assertTrue(
-            String.format("Expecting at least %d tests, got %d", minTests, checks.size()), 
-            checks.size() >= minTests
-        );
+                String.format("Expecting at least %d tests, got %d", minTests, checks.size()),
+                checks.size() >= minTests);
     }
 
     static class BundleStatus {
@@ -240,12 +250,11 @@ public class SmokeIT {
 
         public BundleStatus(List<Object> array) {
 
-            totalBundles = (Long)array.get(0);
-            activeBundles = (Long)array.get(1);
-            activeFragments = (Long)array.get(2);
-            resolvedBundles = (Long)array.get(3);
-            installedBundles = (Long)array.get(4);
-
+            totalBundles = (Long) array.get(0);
+            activeBundles = (Long) array.get(1);
+            activeFragments = (Long) array.get(2);
+            resolvedBundles = (Long) array.get(3);
+            installedBundles = (Long) array.get(4);
         }
     }
 }

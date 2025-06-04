@@ -33,9 +33,17 @@ See [Releasing a new version of the Sling starter](https://cwiki.apache.org/conf
      ```bash
      target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_tar.json
      ```
+     If you are using Windows:
+     ```bat
+     target\dependency\org.apache.sling.feature.launcher\bin\launcher.bat -f target\slingfeature-tmp\feature-oak_tar.json
+     ```
    - Oak MongoDB DocumentStore with
      ```bash
      target/dependency/org.apache.sling.feature.launcher/bin/launcher -f target/slingfeature-tmp/feature-oak_mongo.json
+     ```
+     If you are using Windows:
+     ```bat
+     target\dependency\org.apache.sling.feature.launcher\bin\launcher.bat -f target\slingfeature-tmp\feature-oak_mongo.json
      ```
      This expects a MongoDB server to be running, search for `mongodb://` in the feature files for the expected URL (currently `mongodb://localhost:27017`).
 

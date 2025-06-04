@@ -6,7 +6,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.validation.api:1.0.0",
+            "id":"org.apache.sling:org.apache.sling.validation.api:1.0.2",
             "start-order":"20"
         },
         {
