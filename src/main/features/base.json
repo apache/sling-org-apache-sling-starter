@@ -207,7 +207,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:fontbox:3.0.1",
+            "id":"org.apache.pdfbox:fontbox:3.0.5",
             "start-order":"10"
         },
         {
@@ -215,11 +215,11 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox-io:3.0.1",
+            "id":"org.apache.pdfbox:pdfbox-io:3.0.5",
             "start-order":"10"
         },
         {
-            "id":"org.apache.pdfbox:pdfbox:3.0.1",
+            "id":"org.apache.pdfbox:pdfbox:3.0.5",
             "start-order":"10"
         },
         {
