@@ -6,7 +6,7 @@
       "start-order": "25"
     },
     {
-      "id": "org.apache.sling:org.apache.sling.junit.remote:1.0.12",
+      "id": "org.apache.sling:org.apache.sling.junit.remote:1.0.14",
       "start-order": "25"
     },
     {
