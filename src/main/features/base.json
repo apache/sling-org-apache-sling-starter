@@ -219,11 +219,11 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-core:1.28.5",
+            "id":"org.apache.tika:tika-core:3.2.0",
             "start-order":"10"
         },
         {
-            "id":"org.apache.tika:tika-parsers:1.28.5",
+            "id":"org.apache.tika:tika-parsers:3.2.0",
             "start-order":"10"
         },
         {
