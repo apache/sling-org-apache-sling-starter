@@ -187,7 +187,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.auth.core:1.7.0",
+            "id":"org.apache.sling:org.apache.sling.auth.core:2.0.0",
             "start-order":"5"
         },
         {
