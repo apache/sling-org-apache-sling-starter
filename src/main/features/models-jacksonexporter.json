@@ -18,7 +18,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.jacksonexporter:1.1.6",
+            "id":"org.apache.sling:org.apache.sling.models.jacksonexporter:2.0.0",
             "start-order":"20"
         }
     ]
