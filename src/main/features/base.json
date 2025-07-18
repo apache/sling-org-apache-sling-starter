@@ -31,8 +31,8 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.commons:commons-math:2.2",
-            "start-order":"20"
+            "id":"org.apache.commons:commons-math3:3.6.1",
+            "start-order":"15"
         },
         {
             "id":"org.apache.geronimo.bundles:jstl:1.2_1",
