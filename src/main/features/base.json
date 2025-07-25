@@ -183,7 +183,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.api:3.0.0",
+            "id":"org.apache.sling:org.apache.sling.api:3.0.2",
             "start-order":"5"
         },
         {
