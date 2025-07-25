@@ -31,6 +31,22 @@
             "start-order":"15"
         },
         {
+            "id":"com.fasterxml.jackson.core:jackson-annotations:${jackson.version}",
+            "start-order":"15"
+        },
+        {
+            "id":"com.fasterxml.jackson.core:jackson-core:${jackson.version}",
+            "start-order":"15"
+        },
+        {
+            "id":"com.fasterxml.jackson.core:jackson-databind:${jackson.version}",
+            "start-order":"15"
+        },
+        {
+            "id":"com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jackson.version}",
+            "start-order":"15"
+        },
+        {
             "id":"org.apache.commons:commons-math:2.2",
             "start-order":"20"
         },
