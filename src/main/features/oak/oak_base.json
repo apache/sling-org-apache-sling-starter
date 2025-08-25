@@ -138,7 +138,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:2.2.30",
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.usermanager:3.0.0",
             "start-order":"20"
         }
     ],
