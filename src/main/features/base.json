@@ -107,7 +107,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.i18n:3.0.0-SNAPSHOT",
+            "id":"org.apache.sling:org.apache.sling.i18n:3.0.0",
             "start-order":"20"
         },
         {
@@ -119,7 +119,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.models.api:2.0.0-SNAPSHOT",
+            "id":"org.apache.sling:org.apache.sling.models.api:2.0.0",
             "start-order":"20"
         },
         {
