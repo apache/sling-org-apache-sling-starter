@@ -5,9 +5,18 @@
              "start-order":"15"
         },
         {
-             "id":"org.mongodb:mongo-java-driver:3.12.14",
+             "id":"org.mongodb:mongodb-driver-sync:5.2.1",
              "start-order":"15"
-         }
+        },
+        {
+            "id": "org.mongodb:bson:5.2.1",
+            "start-order":"15"
+        },
+        {
+            "id": "org.mongodb:mongodb-driver-core:5.2.1",
+            "start-order":"15"
+        } 
+
     ],
     "configurations":{
         "org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService":{
