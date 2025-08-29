@@ -134,7 +134,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:4.0.2",
+            "id":"org.apache.sling:org.apache.sling.jcr.jackrabbit.accessmanager:5.0.0",
             "start-order":"20"
         },
         {
