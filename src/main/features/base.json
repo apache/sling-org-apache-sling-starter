@@ -11,7 +11,7 @@
             "start-order":"5"
         },
         {
-            "id":"commons-codec:commons-codec:1.18.0",
+            "id":"commons-codec:commons-codec:1.19.0",
             "start-order":"5"
         },
         {
@@ -183,7 +183,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty12:1.0.36",
+            "id":"org.apache.felix:org.apache.felix.http.jetty12:1.1.0",
             "start-order":"5"
         },
         {
@@ -203,7 +203,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.auth.core:2.0.0",
+            "id":"org.apache.sling:org.apache.sling.auth.core:2.0.2",
             "start-order":"5"
         },
         {
