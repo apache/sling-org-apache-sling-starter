@@ -206,6 +206,8 @@
          },
         "org.apache.sling.jackrabbit.usermanager.impl.resource.AuthorizableResourceProvider":{
             "resources.for.nested.properties":true
-         }
+         },
+        "org.apache.sling.jcr.oak.server.internal.index.LuceneIndexRepositoryInitializer":{
+        }
     }
 }
