@@ -114,7 +114,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.oak.server:1.4.2",
+            "id":"org.apache.sling:org.apache.sling.jcr.oak.server:1.4.4",
             "start-order":"16"
         },
         {
@@ -206,6 +206,8 @@
          },
         "org.apache.sling.jackrabbit.usermanager.impl.resource.AuthorizableResourceProvider":{
             "resources.for.nested.properties":true
-         }
+         },
+        "org.apache.sling.jcr.oak.server.internal.index.LuceneIndexRepositoryInitializer":{
+        }
     }
 }
