@@ -449,11 +449,6 @@
                                     <org.apache.felix.http.jetty.responseBufferSize>5000000</org.apache.felix.http.jetty.responseBufferSize>
                                 </frameworkProperties>
                             </launcherArguments>
-                            <repositoryUrls>
-                                <repositoryUrl>file://${project.build.directory}/artifacts</repositoryUrl>
-                                <repositoryUrl>https://repo.maven.apache.org/maven2</repositoryUrl>
-                                <repositoryUrl>https://repository.apache.org/content/groups/snapshots</repositoryUrl>
-                            </repositoryUrls>
                             <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
                         </launch>
                         <launch>
@@ -472,11 +467,6 @@
                                     <org.apache.felix.http.jetty.responseBufferSize>5000000</org.apache.felix.http.jetty.responseBufferSize>
                                 </frameworkProperties>
                             </launcherArguments>
-                            <repositoryUrls>
-                                <repositoryUrl>file://${project.build.directory}/artifacts</repositoryUrl>
-                                <repositoryUrl>https://repo.maven.apache.org/maven2</repositoryUrl>
-                                <repositoryUrl>https://repository.apache.org/content/groups/snapshots</repositoryUrl>
-                            </repositoryUrls>
                             <environmentVariables>
                                 <MONGODB_PORT>${mongo.port}</MONGODB_PORT>
                             </environmentVariables>
