@@ -16,5 +16,5 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+@Library('sling@issue/SLING-12927') _
 slingOsgiBundleBuild()
