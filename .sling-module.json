@@ -4,7 +4,8 @@
         "sonarQubeEnabled": false,
         "jdks": [
           17,
-          21
+          21,
+          25
         ],
         "operatingSystems": [
             "linux"
