@@ -343,7 +343,6 @@
                 <configuration>
                     <skip>${docker.skip}</skip>
                     <containerNamePattern>%e</containerNamePattern>
-                    <stopMode>kill</stopMode>
                 </configuration>
                 <executions>
                     <execution>
