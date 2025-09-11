@@ -5,7 +5,7 @@
              "start-order":"15"
         },
         {
-             "id":"org.mongodb:mongodb-driver-sync:5.2.1",
+             "id":"org.mongodb:mongodb-driver-sync:5.6.0",
              "start-order":"15"
         },
         {
