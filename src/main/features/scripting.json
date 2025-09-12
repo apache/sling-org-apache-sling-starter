@@ -58,7 +58,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly:1.4.28-1.4.0",
+            "id":"org.apache.sling:org.apache.sling.scripting.sightly:2.0.0-1.4.0",
             "start-order":"20"
         },
         {
