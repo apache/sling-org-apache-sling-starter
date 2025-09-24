@@ -1,7 +1,7 @@
 {
     "bundles":[
          {
-             "id":"com.h2database:h2-mvstore:2.3.232",
+             "id":"com.h2database:h2-mvstore:2.4.240",
              "start-order":"15"
         },
         {
