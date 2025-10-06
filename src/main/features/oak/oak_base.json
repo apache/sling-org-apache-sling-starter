@@ -118,7 +118,7 @@
             "start-order":"16"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.jcr.resource:3.3.2",
+            "id":"org.apache.sling:org.apache.sling.jcr.resource:3.3.6",
             "start-order":"20"
         },
         {
