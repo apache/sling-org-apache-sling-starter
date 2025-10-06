@@ -40,7 +40,7 @@
 
         <!-- versions to be replaced in the feature files -->
         <!-- renovate: depName=org.ow2.asm:asm -->
-        <asm.version>9.8</asm.version>
+        <asm.version>9.9</asm.version>
         <!-- renovate: depName=org.apache.jackrabbit:jackrabbit-jcr-commons -->
         <jackrabbit.version>2.22.2</jackrabbit.version>
         <!-- renovate: depName=org.apache.jackrabbit:oak-api -->
