@@ -6,7 +6,11 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.event:4.3.18",
+            "id":"org.apache.sling:org.apache.sling.event.api:1.0.4",
+            "start-order":"20"
+        },
+        {
+            "id":"org.apache.sling:org.apache.sling.event:4.4.0",
             "start-order":"20"
         }
     ],
