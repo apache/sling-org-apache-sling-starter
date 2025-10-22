@@ -1,11 +1,15 @@
 {
     "bundles": [
         {
-            "id":"org.apache.sling:org.apache.sling.starter.content:2.0.0",
+            "id":"org.apache.sling:org.apache.sling.starter.content:2.0.1-SNAPSHOT",
             "start-order":"20"
         }
     ],
     "configurations": {
+        "org.apache.sling.auth.form.FormAuthenticationHandler":{
+            "preferReasonCode":true,
+            "form.login.form":"/starter.login.html"
+        },
         "org.apache.felix.hc.core.impl.filter.ServiceUnavailableFilter~startupandshutdown":{
             "osgi.http.whiteboard.filter.regex":"(?!/system/).*",
             "avoid404DuringStartup":true,
