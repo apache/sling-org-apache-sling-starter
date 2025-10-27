@@ -25,7 +25,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.log.webconsole:1.0.2",
+            "id":"org.apache.sling:org.apache.sling.commons.log.webconsole:2.0.0",
             "start-order":"5"
         },
         {
