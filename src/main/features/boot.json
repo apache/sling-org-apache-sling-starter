@@ -105,7 +105,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.settings:1.4.2",
+            "id":"org.apache.sling:org.apache.sling.settings:1.5.0",
             "start-order":"1"
         },
         {
