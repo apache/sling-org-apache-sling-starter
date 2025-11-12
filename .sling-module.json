@@ -10,7 +10,7 @@
             "linux"
         ],
         "rebuildFrequency": "@daily",
-        "additionalMavenParams": "-Dit.startTimeoutSeconds=120",
+        "additionalMavenParams": "-Dit.startTimeoutSeconds=120 -Dspotless.skip=true",
         "archivePatterns": [
             "**/logs/*.log"
         ]

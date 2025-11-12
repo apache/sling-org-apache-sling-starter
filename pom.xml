@@ -343,6 +343,8 @@
                 <configuration>
                     <skip>${docker.skip}</skip>
                     <containerNamePattern>%e</containerNamePattern>
+                    <!-- workaround for https://github.com/fabric8io/docker-maven-plugin/issues/1887 -->
+                    <exposeContainerProps></exposeContainerProps>
                 </configuration>
                 <executions>
                     <execution>
