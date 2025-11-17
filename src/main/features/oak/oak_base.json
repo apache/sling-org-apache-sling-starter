@@ -30,6 +30,10 @@
             "start-order":"15"
         },
         {
+            "id":"org.apache.jackrabbit:oak-auth-external:${oak.version}",
+            "start-order":"15"
+        },
+        {
             "id":"org.apache.jackrabbit:oak-blob-plugins:${oak.version}",
             "start-order":"15"
         },
