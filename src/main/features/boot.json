@@ -65,7 +65,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.log:jar:all:6.0.0",
+            "id":"org.apache.sling:org.apache.sling.commons.log:jar:all:6.0.2",
             "start-order":"1"
         },
         {
