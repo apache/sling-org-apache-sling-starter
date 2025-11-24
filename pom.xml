@@ -495,8 +495,6 @@
                     </includes>
                     <excludes>
                         <exclude>${failsafe.exclude}</exclude>
-                        <!-- Don't run provisioning model ITs in the feature model context -->
-                        <exclude>org/apache/sling/launchpad/webapp/integrationtest/provisioning/**.java</exclude>
                     </excludes>
                     <systemPropertyVariables>
                         <launchpad.http.server.url>http://localhost:${http.port}/</launchpad.http.server.url>
