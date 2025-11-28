@@ -89,7 +89,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.launchpad.integration-tests</artifactId>
+            <artifactId>org.apache.sling.starter.integration-tests</artifactId>
             <version>14-SNAPSHOT</version>
             <scope>test</scope>
             <exclusions>
@@ -487,7 +487,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
                     <dependenciesToScan>
-                        <dependency>org.apache.sling:org.apache.sling.launchpad.integration-tests</dependency>
+                        <dependency>org.apache.sling:org.apache.sling.starter.integration-tests</dependency>
                     </dependenciesToScan>
                     <includes>
                         <include>**/*Test.java</include>
