@@ -4,7 +4,8 @@
         "sonarQubeEnabled": false,
         "jdks": [
           17,
-          21
+          21,
+          25
         ],
         "rebuildFrequency": "@daily",
         "additionalMavenParams": "-Dit.startTimeoutSeconds=120",
