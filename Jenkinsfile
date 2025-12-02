@@ -17,4 +17,5 @@
  * under the License.
  */
 
+@Library('sling@issue/SLING-12954') _
 slingOsgiBundleBuild()
