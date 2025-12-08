@@ -143,7 +143,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.servlets.resolver:3.0.2",
+            "id":"org.apache.sling:org.apache.sling.servlets.resolver:3.0.4",
             "start-order":"20"
         },
         {
@@ -183,7 +183,7 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.http.jetty12:1.1.4",
+            "id":"org.apache.felix:org.apache.felix.http.jetty12:1.1.6",
             "start-order":"5"
         },
         {
@@ -243,7 +243,7 @@
             "start-order":"10"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.resource.filter:1.0.0",
+            "id":"org.apache.sling:org.apache.sling.resource.filter:1.0.2",
             "start-order":"15"
         },
         {
