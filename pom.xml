@@ -21,7 +21,7 @@
     </parent>
 
     <artifactId>org.apache.sling.starter</artifactId>
-    <version>15-SNAPSHOT</version>
+    <version>14-SNAPSHOT</version>
 
     <name>Apache Sling Starter</name>
     <description>The Sling Starter demo application.</description>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.starter.integration-tests</artifactId>
-            <version>15-SNAPSHOT</version>
+            <version>14</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
