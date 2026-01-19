@@ -31,7 +31,7 @@
             "start-order":"15"
         },
         {
-            "id":"com.fasterxml.jackson.core:jackson-annotations:2.20",
+            "id":"com.fasterxml.jackson.core:jackson-annotations:2.21",
             "start-order":"15"
         },
         {
