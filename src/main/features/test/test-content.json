@@ -16,6 +16,9 @@
     "org.apache.sling.servlets.resolver.SlingServletResolver": {
       "servletresolver.cacheSize": 0
     },
+    "org.apache.sling.scripting.sightly.impl.engine.SightlyEngineConfiguration": {
+      "scriptResolutionCacheSize": 2048
+    },
     "integrationTestsConfig": {
       "message": "This test config should be loaded at startup"
     }
