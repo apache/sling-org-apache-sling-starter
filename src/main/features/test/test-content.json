@@ -2,7 +2,7 @@
   "id":"${project.groupId}:${project.artifactId}:slingosgifeature:test-content:${project.version}",  
   "bundles":[
     {
-      "id": "org.apache.sling:org.apache.sling.starter.test-services:14",
+      "id": "org.apache.sling:org.apache.sling.starter.test-services:15-SNAPSHOT",
       "start-order": "25"
     }
   ],
@@ -15,6 +15,9 @@
     },
     "org.apache.sling.servlets.resolver.SlingServletResolver": {
       "servletresolver.cacheSize": 0
+    },
+    "org.apache.sling.scripting.sightly.impl.engine.SightlyEngineConfiguration": {
+      "scriptResolutionCacheSize": 2048
     },
     "integrationTestsConfig": {
       "message": "This test config should be loaded at startup"
