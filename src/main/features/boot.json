@@ -5,6 +5,10 @@
     },
     "bundles":[
         {
+            "id": "org.apache.sling:org.apache.sling.jaxp-configurator:1.0.0",
+            "start-order":"1"
+        },
+        {
             "id":"org.apache.aries:org.apache.aries.util:1.1.3",
             "start-order":"1"
         },
