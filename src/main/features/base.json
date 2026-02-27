@@ -99,7 +99,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.engine:3.0.0",
+            "id":"org.apache.sling:org.apache.sling.engine:3.0.2",
             "start-order":"20"
         },
         {
