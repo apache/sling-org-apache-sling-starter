@@ -117,7 +117,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.codehaus.woodstox:stax2-api:4.2.2",
+            "id":"org.codehaus.woodstox:stax2-api:4.3.0",
             "start-order":"1"
         },
         {
