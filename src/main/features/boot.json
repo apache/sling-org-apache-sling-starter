@@ -153,7 +153,7 @@
             "start-order":"1"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.scr:2.2.14",
+            "id":"org.apache.felix:org.apache.felix.scr:2.2.18",
             "start-order":"1"
         }
 
