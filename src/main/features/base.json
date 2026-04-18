@@ -83,7 +83,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.commons.fsclassloader:1.0.16",
+            "id":"org.apache.sling:org.apache.sling.commons.fsclassloader:2.0.0",
             "start-order":"20"
         },
         {
