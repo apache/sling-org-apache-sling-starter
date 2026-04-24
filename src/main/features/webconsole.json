@@ -57,7 +57,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.installer.console:1.1.2",
+            "id":"org.apache.sling:org.apache.sling.installer.console:2.0.0",
             "start-order":"20"
         }
     ],
