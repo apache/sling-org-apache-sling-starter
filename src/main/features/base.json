@@ -63,7 +63,7 @@
             "start-order":"15"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.adapter:2.3.0",
+            "id":"org.apache.sling:org.apache.sling.adapter:3.0.0",
             "start-order":"20"
         },
         {
