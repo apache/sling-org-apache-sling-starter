@@ -102,12 +102,38 @@ following environment variables:
 | `JAVA_DEBUG_PORT`    | Run Sling Starter in Java debug mode   | `5005`               |
 | `EXTRA_JAVA_OPTS`    | Extra java options e.g `Xmx` or `Xms`. | `-Xms256m -Xmx2048m` |
 
+The following command arguments are supported:
+
+| Command argument | Description                            | Example              |
+|------------------|----------------------------------------|----------------------|
+| --repository-urls | Repository URLs to be used by Sling Starter. Replaces built-in values. | `file:///opt/sling/m2repo https://repo.maven.apache.org/maven2` |
+| --extra-features | Extra features to be added to the Sling Starter | `mvn:org.apache.sling/org.apache.sling.thumbnails/1.0.2/slingosgifeature/default` |
+
+
+> [!NOTE]  
+> The --extra-features argument is intended for quick experiments and debugging. When using the this functionality there is no guarantee that the features are compatible with the 
+> Sling Starter configuration and startup will proceed even if some bundles cannot resolve. It is recommended to build a custom image with the required features and to 
+> run the appropriate feature model analysers during the build.
+
 > **Example**
 > running Sling Starter in debug mode with custom memory settings
 
 ```bash
 docker run -p 8080:8080 -p 5005:5005 -e JAVA_DEBUG_PORT=5005 -e EXTRA_JAVA_OPTS='-Xms256m -Xmx2048m' apache/sling:snapshot
 ```
+
+> running Sling Starter with an additional feature available in the default repositories
+
+```bash
+docker run -p 8080:8080 apache/sling:snapshot oak_tar --extra-features mvn:org.apache.sling/org.apache.sling.thumbnails/1.0.2/slingosgifeature/default
+```
+
+> running Sling Starter with a SNAPSHOT feature available in the local Maven repository
+
+```bash
+docker run -p 8080:8080 -v $HOME/.m2/repository:/opt/sling/m2repo apache/sling:snapshot oak_tar --repository-urls file:///opt/sling/m2repo https://repo.maven.apache.org/maven2  --extra-features mvn:org.apache.sling/org.apache.sling.thumbnails/1.0.3-SNAPSHOT/slingosgifeature/default
+```
+
 
 ## Building the Docker image
 
