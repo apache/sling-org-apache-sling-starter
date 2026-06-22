@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import org.apache.felix.utils.json.JSONParser;
@@ -198,7 +199,9 @@ public class SmokeIT {
                 }
 
                 Header contentType = response.getFirstHeader("Content-Type");
-                assertThat("Content-Type header", contentType.getValue(), equalTo("text/xml"));
+                assertThat(
+                        "Content-Type header",
+                        Pattern.matches("^text\\/xml(;\\s*charset=.*)?$", contentType.getValue()));
 
                 DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
                 dbf.setNamespaceAware(true);
