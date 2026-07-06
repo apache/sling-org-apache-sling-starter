@@ -24,7 +24,7 @@
         {
             "id":"org.apache.jackrabbit:jackrabbit-webdav:${jackrabbit.version}",
             "start-order":"15"
-        },        
+        },
         {
             "id":"org.apache.jackrabbit:oak-api:${oak.version}",
             "start-order":"15"
@@ -91,6 +91,10 @@
         },
         {
             "id":"org.apache.jackrabbit:oak-authorization-principalbased:${oak.version}",
+            "start-order":"15"
+        },
+        {
+            "id":"com.github.ben-manes.caffeine:caffeine:3.2.4",
             "start-order":"15"
         },
         {
