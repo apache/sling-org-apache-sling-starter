@@ -26,7 +26,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.javascript:3.1.4",
+            "id":"org.apache.sling:org.apache.sling.scripting.javascript:3.1.6",
             "start-order":"20"
         },
         {
