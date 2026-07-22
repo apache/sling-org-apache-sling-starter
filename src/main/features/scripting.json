@@ -38,7 +38,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.jsp:2.6.2",
+            "id":"org.apache.sling:org.apache.sling.scripting.jsp:2.7.0",
             "start-order":"20"
         },
         {
