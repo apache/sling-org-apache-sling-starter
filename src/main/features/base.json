@@ -23,7 +23,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.commons:commons-collections4:4.5.0",
+            "id":"org.apache.commons:commons-collections4:4.6.0",
             "start-order":"15"
         },
         {
