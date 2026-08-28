@@ -50,6 +50,13 @@
       ]
     },
     {
+      "groupName": "MongoDB Java Driver",
+      "matchPackageNames": [
+        "org.mongodb:{/,}**"
+      ],
+      "separateMultipleMinor": true
+    },
+    {
       "matchManagers": [
         "maven"
       ],
