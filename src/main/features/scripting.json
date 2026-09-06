@@ -2,7 +2,7 @@
 {
     "bundles":[
         {
-            "id":"org.antlr:antlr4-runtime:4.7.1",
+            "id":"org.antlr:antlr4-runtime:4.13.2",
             "start-order":"20"
         },
         {
