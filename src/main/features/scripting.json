@@ -50,7 +50,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.scripting.sightly.js.provider:1.2.14",
+            "id":"org.apache.sling:org.apache.sling.scripting.sightly.js.provider:1.2.16",
             "start-order":"20"
         },
         {
