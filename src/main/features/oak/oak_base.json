@@ -94,7 +94,7 @@
             "start-order":"15"
         },
         {
-            "id":"com.github.ben-manes.caffeine:caffeine:3.2.4",
+            "id":"com.github.ben-manes.caffeine:caffeine:3.3.0",
             "start-order":"15"
         },
         {
