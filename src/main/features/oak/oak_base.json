@@ -134,7 +134,7 @@
             "start-order":"20"
         },    
         {
-            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:4.2.0",
+            "id":"org.apache.jackrabbit.vault:org.apache.jackrabbit.vault:4.3.0",
             "start-order":"20"
         },
         {
