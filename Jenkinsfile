@@ -17,4 +17,5 @@
  * under the License.
  */
 
+@Library('sling@diagnostics/maven-settings') _
 slingOsgiBundleBuild()
