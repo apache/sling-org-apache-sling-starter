@@ -2,55 +2,14 @@
 {
     "bundles":[
         {
-            "id":"com.composum.nodes:composum-nodes-commons:${composum.nodes.version}",
-            "start-order":"20"
-        },
-        {
-            "id":"com.composum.nodes:composum-nodes-console:${composum.nodes.version}",
-            "start-order":"20"
-        },
-        {
-            "id":"com.composum.nodes:composum-nodes-jslibs:${composum.nodes.version}",
-            "start-order":"20"
-        },
-        {
-            "id":"com.composum.nodes:composum-nodes-pckgmgr:${composum.nodes.version}",
-            "start-order":"20"
-        },
-        {
-            "id":"com.composum.nodes:composum-nodes-usermgr:${composum.nodes.version}",
+            "id":"com.composum.tools:composum-tools-sling-bundle:1.5.0",
             "start-order":"20"
         }
     ],
     "configurations":{
-        "org.apache.sling.jcr.base.internal.LoginAdminWhitelist.fragment~composum":{
-            "whitelist.bundles":[
-                "com.composum.nodes.commons",
-                "com.composum.nodes.pckgmgr",
-                "com.composum.nodes.usermgr"
-            ],
-            "whitelist.name":"composum"
-        },
-        "com.composum.sling.core.proxy.GenericProxyRequest~health": {
-          "tags.to.strip":[
-            "body"
-          ],
-          "name":"System Health",
-          "XSLT.chain.paths":[
-          ],
-          "tags.to.rename":[
-            "html:div"
-          ],
-          "targetUrl":"",
-          "tags.to.drop":[
-            "head",
-            "style",
-            "script",
-            "link"
-          ],
-          "referencePath":"/",
-          "enabled":true,
-          "targetPattern":"/system/health.*"
-        }
+        "com.composum.sling.dashboard.impl.Dashboard":{},
+        "com.composum.sling.packages.PackageManager":{},
+        "com.composum.sling.usermgr.UserManager":{},
+        "com.composum.sling.changes.Changes":{}
     }
 }

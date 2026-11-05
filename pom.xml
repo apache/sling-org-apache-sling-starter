@@ -47,8 +47,6 @@
         <oak.version>2.6.0</oak.version>
         <!-- renovate: depName=org.slf4j:slf4j-api -->
         <slf4j.version>2.0.19</slf4j.version>
-        <!-- renovate: depName=com.composum.nodes:composum-nodes-commons -->
-        <composum.nodes.version>4.3.5</composum.nodes.version>
         <!-- renovate: depName=com.fasterxml.jackson.core:jackson-core -->
         <jackson.version>2.22.2</jackson.version>
         <!-- renovate: depName=org.codehaus.groovy:groovy -->
@@ -166,7 +164,7 @@
                 <version>1.9.6</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,composum.nodes.version,jackson.version</replacePropertyVariables>
+                    <replacePropertyVariables>asm.version,jackrabbit.version,groovy.version,oak.version,slf4j.version,jackson.version</replacePropertyVariables>
                     <aggregates>
                         <aggregate>
                             <classifier>oak_tar</classifier>
@@ -505,7 +503,7 @@
                             /slingshot/resources/images/background.jpg,
                             /slingshot/users/slingshot2/places/landing/images/landing.jpg,
                             /starter.html,
-                            /bin/browser.html,
+                            /apps/cpm/tools.browser.html,
                             /system/console/bundles,</starter.check.paths>
                     </systemPropertyVariables>
                 </configuration>
